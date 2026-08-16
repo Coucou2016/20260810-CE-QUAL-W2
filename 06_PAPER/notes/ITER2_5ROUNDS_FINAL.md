@@ -53,4 +53,6 @@ Per-round notes: `06_PAPER/notes/ITER_ROUNDS/round2_0{1..5}.md`.
 Matured manuscript: `06_PAPER/drafts/P1_GMD_draft_v2.md` (single mainline; no v3 split).  
 Local HTML: `06_PAPER/drafts/P1_paper.html` (rebuild via `06_PAPER/analysis/build_paper_html.py`).
 
-## Final HEAD SHA`n`n`1bb3145` (pin commit; content closeout `1105455`)
+## Final HEAD SHA
+
+`9462328` (tip; content closeout `1105455`; prior pin `1bb3145`)
