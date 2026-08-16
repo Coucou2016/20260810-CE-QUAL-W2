@@ -336,7 +336,7 @@ class ReportBuilder:
             f"2016–2025 有效小时超 120% 比例为 {fmt(ex25.get('pct_hours_gt_120'),1)}%，但<strong>无样本外 NSE</strong>（模型约到 2011）。"
             f" Columbia 湿段 SOD（Sediment Oxygen Demand，底泥耗氧）均值 {fmt(sod.get('mean'),3)} gO₂/m²/d，"
             f"落在 Almeida 扫描带内比例 {pct(sod.get('frac_in_0.5_3.0'),1)}，但是 DeGray 模板移植，非现场率定。"
-            f" W5 文献审计：38 篇中可重建 VPR 仅 {w5c.get('vpr_reconstruct',{}).get('yes','待补充')}/38（"
+            f" W5 文献审计：38 篇中VPR-core 可重建仅 {w5c.get('vpr_reconstruct',{}).get('yes','待补充')}/38（"
             f"{fmt(self.w5.get('headline',{}).get('vpr_reconstruct_yes_pct'),1)}%），全文获取 "
             f"{w5c.get('fulltext_true','待补充')}/38，其余标 unknown。"
         )
@@ -591,6 +591,27 @@ class ReportBuilder:
         self.p(
             f"数字审计（2026-08-16）：草稿关键数字相对 JSON 检查 40 项，PASS=40，FAIL=0"
             f"（`notes/P1_number_audit_20260816.md`）。"
+        )
+        self.h(3, "证据分层与禁止项（过程纪律）", "process-depth-audit")
+        self.p(
+            "全过程把证据分成四层，并在写数字前先声明层别："
+            "（L1）对观测技能——仅 Bonneville CCIW 配对窗；"
+            "（L2）输出通道内部一致性——DeGray T、Columbia DO；"
+            "（L3）观测–观测核对与描述统计——DART 匹配、超标频率；"
+            "（L4）数值健康与参数移植量级——NHR、SOD。"
+            "跨层复用同一指标名（例如 NSE）而不改下标，是本项目明确禁止的写法。"
+        )
+        self.p(
+            "禁止项在过程笔记中反复核对：不得编造缺失 JSON 字段；不得把 OFF 缺失的 B 文件写成零序列；"
+            "不得把 2016–2025 超标比例写成样本外 NSE；不得把 W5 unknown 改写成 no；"
+            "不得在未获独立观测前给 DeGray/Columbia 写 skill。本报告生成脚本从 analysis/*.json 读数，"
+            "缺失统一输出「待补充」。"
+        )
+        self.p(
+            "图件优先使用 `06_PAPER/figures/*.png`（SciencePlots；中文回退 Microsoft YaHei）。"
+            "报告 HTML 为单文件自包含：CSS 内嵌、图片 Base64、无 CDN、无相对/网络图路径。"
+            "深度图解由 `report_fig_narratives.py` + `report_fig_narratives_extra.py` 组装，"
+            "对每张纳入图执行九段式讲解，子图逐一覆盖。"
         )
 
     def _w3_table(self) -> None:
@@ -1054,21 +1075,24 @@ class ReportBuilder:
             [
                 ["纳入研究", fmt(hc.get("n_selected")), "综述表 1 = 38"],
                 ["全文可读", fmt(counts.get("fulltext_true")), ft_pct_disp],
-                ["VPR 可重建 yes", fmt(hc.get("vpr_reconstruct_yes")), f"{fmt(hc.get('vpr_reconstruct_yes_pct'),1)}%"],
-                ["VPR unknown", fmt(counts.get("vpr_reconstruct", {}).get("unknown")), "无全文且摘要不够"],
+                ["VPR-core 可重建 yes", fmt(hc.get("vpr_reconstruct_yes")), f"{fmt(hc.get('vpr_reconstruct_yes_pct'),1)}%（文献审计口径）"],
+                ["VPR-core unknown", fmt(counts.get("vpr_reconstruct", {}).get("unknown")), "无全文且摘要不够；unknown≠no"],
                 ["写出输出文件/列名", "0", "0%"],
                 ["报 R²", fmt(counts.get("metrics_reported_true", {}).get("r2")), ""],
                 ["报 R² 不报 NSE", fmt(hc.get("only_r2_not_nse")), f"占报 R² 者 {fmt(only_r2_of_r2,1)}%"],
                 ["报 KGE", "0", "0%"],
-                ["表 2 确认 W2↔观测技能", fmt(hc.get("table2_confirmed_w2_obs_sim_skill")), "仅 Neto 0.32"],
+                ["表 2：确认 W2↔观测技能", "1", "仅 Neto 0.32（1/12）"],
+                ["表 2：确认其他数学对象", "7", "相关/负荷曲线/误标等（7/12）"],
+                ["表 2：仍 unresolved", "4", "不可并入「非技能」（4/12）"],
             ],
             "表 5　W5 文献审计摘要（分母 38，除非注明）",
         )
         self.note_pending("W5 其余 29 篇全文（付费墙）；VPR unknown=19 维持 unknown，不猜测")
         self.p(
-            "表 2 的 12 个 R² 中，经核对能确认是 W2 输出对观测技能的只有 1 条（Neto 2023 的 0.32）；"
-            "其余为相关分析、负荷情景曲线、或把流域模型/水位指标误标为水质技能。这比「没写断面」更重："
-            "表在比较不同数学对象。"
+            "表 2 的 12 个 R² 中，经核对：**1** 条确认是 W2 输出对观测技能（Neto 2023 的 0.32）；"
+            "**7** 条确认是其他数学对象（相关分析、负荷情景曲线、水位指标误标等）；"
+            "**4** 条仍为 unresolved/unknown（不可把 unknown 并入「非技能」）。这比「没写断面」更重："
+            "表在比较不同数学对象。文献审计的可重建口径记为 **VPR-core**（论文正文可定位断面/层深/组分/时段即可；不要求输出文件名）。"
         )
 
         # ---- w2eval
@@ -1128,6 +1152,17 @@ class ReportBuilder:
             "OFF 后四组负厚度均为 0，则进一步表明路径构造方式是关键条件。NHR 的科学价值在于让这种条件被看见，"
             "而不是把八次运行升级成普遍数值定律。"
         )
+        self.h(3, "阅读本报告图件时的统一规程", "disc-fig-protocol")
+        self.p(
+            "对本报告纳入的每一张图，正文固定采用九段式讲解：背景与全篇作用、怎么读、每条曲线/分量含义、"
+            "逐子图/逐面板精读、物理意义与方程链、结论、原因与替代解释及证据边界、常见误读与排除、通俗复述。"
+            "九段式不是修辞装饰，而是强制把图形从「插图点缀」升级为可审计证据：读者应能不打开 JSON 也能知道"
+            "该图回答什么问题、不回答什么问题。若某图缺少文件或指标，统一标「待补充」，禁止补造曲线。"
+        )
+        self.p(
+            "硬边界在图解层同样生效：internal consistency 图不得写入观测技能表；门控文件缺失不得写成物理量删除；"
+            "NHR 计数不得写成时间步定律；超标频率不得写成 OOS NSE；SOD 落带不得写成现场率定；W5 unknown 不得改写成 no。"
+        )
         self.h(3, "证据链的可复用形式", "disc-reuse")
         self.p(
             "本研究可复用的不是某个阈值，而是四步顺序：先用 VPR 锁定数学对象，再声明控制律，"
@@ -1143,13 +1178,16 @@ class ReportBuilder:
         self.h(2, "主要结论", "conclusions")
         self.ul(
             [
-                "Bonneville：同一 CCIW 上 R² 窄带、NSE 大散；最优序列在 TDGTarget 门控文件中；"
-                "SYSTDG 快照仍在，故非「物理量删除」。",
-                "DeGray / Columbia：内部一致性再现高 R² 负 NSE / 断面歧义；无观测则无 skill 表述。",
-                "NHR：exit 0 可掩盖负厚度；5/4/1/5 仅 DLTINTER=ON；OFF 全 0；非普遍时间步定律。",
-                "DART 核对支持库内观测未被实质性改写；无样本外 NSE。",
-                "W5：VPR 可重建 2/38；表 2 确认技能 1/12；KGE=0；全文 9/38。",
-                "Columbia SOD 量级落在 Almeida 带内，但是移植参数。",
+                "Bonneville（观测技能，n=1614）：同一 CCIW 上 R² 落在约 0.5082–0.5512 的窄带，而 NSE 为约 −2.8044 / +0.5 / −2.7516；"
+                "技能最好且 β≈1、峰值钉在约 120.1% 的序列只存在于 TDGTarget 门控文件；SYSTDG 控制前快照仍写入 TDG_output 且 ON≡OFF，故不是「物理量删除」。",
+                "DeGray / Columbia（内部一致性）：T2 vs Tvolavg 给出 R²≈0.9027 而 NSE≈−0.5855；DO I49 vs I33 给出 R²≈0.6505 而 NSE≈−1.4821。"
+                "官方案例无独立观测时，禁止把这些数字写成对观测技能。",
+                "NHR：exit 0 可与负厚度回退并存；Long Lake DLTINTER=ON 下 DLTMAX 20/50/100/200 s 负厚度 5/4/1/5（非单调），OFF 后全 0；"
+                "因此 NHR 应随技能报告，而不是被表述为普遍时间步定律。",
+                "DART 核对：小时 n=17805，MAE=0.026537，匹配率≈0.994945，支持示例观测未被实质性改写；2016–2025 超标小时 21.2% 只是观测描述，无样本外 NSE。",
+                "W5：VPR-core 可重建 2/38；表 2 分类 1/7/4（确认技能/确认其他对象/unresolved）；文献 KGE 报出数为 0；全文 9/38，unknown=19。",
+                "Columbia SOD：湿段均值 0.8762 gO₂/m²/d，约 89.55% 落在 0.5–3.0 对照带，但是 DeGray 成岩模板移植，非现场率定。",
+                "可复用产物是 VPR→控制律→多指标+α/β→NHR→证据类型 的报告协议（及 w2eval run-card），不是新的 CE-QUAL-W2 过程方程。",
             ]
         )
 

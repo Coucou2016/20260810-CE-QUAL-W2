@@ -1,5 +1,8 @@
 # Dual-agent GitHub review — 20260816
 
+> **Deduped:** Primary public-release dual-agent log is `DUAL_AGENT_GITHUB_20260816.md`. This file keeps only the *second* ChatGPT GitHub-review pass (checklist + DOI verify). Do not duplicate push/repo baseline labor from the primary note.
+
+
 **ChatGPT (advisor):** https://chatgpt.com/c/6a8188fb-f1f0-83ea-b44b-cd639d077748  
 **Title:** GMD框架复核与创新 / GitHub仓库评审  
 **Mode:** new chat; web search ON; **no attachments**; text asked ChatGPT to read public repo  

@@ -114,3 +114,14 @@ Cursor = sole executor + independent verifier. ChatGPT = advisor with **web sear
 ## 8. Bottom line
 
 Public structured workspace is live. Advisor affirms **GMD Methods framing** and core empirical chain, with novelty and VPR/Table-2 wording tightened. Submission still blocked on **persistent Zenodo archive**, not on the scientific spine.
+
+---
+
+## 8. Follow-on ChatGPT re-review (deduped)
+
+Second advisor pass (public-repo read, no attachments) is recorded in
+`DUAL_AGENT_GITHUB_REVIEW_20260816.md` (commit `7d9811b` applied draft softens + portable `w2eval` root).
+
+**Do not re-litigate here:** KEEP GMD Methods; VPR-core vs full VPR; Table 2 **1/7/4**; hard vetoes (no Zenodo DOI invent; no OOS NSE; no “first provenance” claim). Queued items 7–10 in the REVIEW note remain open (pairing sensitivity / figure splits / NHR axis / Zenodo mint).
+
+**2026-08-16 rebuild:** report triad + `P1_paper.html` regenerated for alignment with those softens — see `REBUILD_PUSH_20260816.md`. Large html/pdf stay gitignored.
