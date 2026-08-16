@@ -1,0 +1,723 @@
+Overall recommendation
+
+The strongest architecture is a GMD “Methods for assessment of models” paper written with an Environmental Modelling & Software protocol logic, rather than a conventional CE-QUAL-W2 application IMRaD paper.
+
+A useful distinction is:
+
+Almeida & Coelho (2025) is an excellent model for how to organize a CE-QUAL-W2 model-evaluation application: model/version → calibration/evaluation data → alternative formulations → metrics → results → discussion. GMD explicitly classifies it as a Model evaluation paper. 
+GMD
++1
+
+Your manuscript has a different center of gravity. The principal product is the evaluation methodology—VPR, control-aware output provenance, NHR, and reproducible run-cards—with CE-QUAL-W2 official examples serving as demonstrations. That maps more naturally to GMD’s Methods for assessment of models category, where evaluation frameworks and metric/diagnostic packages are a recognized manuscript class. Recent examples likewise present evaluation frameworks or standardized workflows as the methodological object. 
+GMD
++2
+GMD
++2
+
+If, during writing, the manuscript remains overwhelmingly CE-QUAL-W2-specific and the framework cannot be convincingly abstracted beyond W2, then switch the submission label to GMD Model evaluation paper rather than artificially claiming a universal methodology. GMD is unusually explicit that evaluation papers should make preprocessing, run-control and post-processing steps reproducible. 
+GMD
++1
+
+My journal ranking is therefore (1) GMD — Methods for assessment of models; (2) Environmental Modelling & Software — Research Article; (3) GMD — Model evaluation paper if generalization remains limited. EMS currently lists Research Articles, Reviews, Position Papers, Introductory Overviews, Commentaries and Book Reviews; there is not a separate formal “software paper” category, so an EMS submission of this work would normally be a Research Article. 
+科学直达
++1
+
+1. Three imitable writing architectures
+Architecture	Narrative spine	Good fit to your paper?	What to imitate	Main danger
+Classic application IMRaD	Problem → model setup → calibration/evaluation → results → interpretation	Moderate/low	Clear case descriptions and strict Results/Discussion separation	VPR, gating and NHR can look like unrelated “bugs found in several examples”
+GMD model-description/evaluation architecture	Evaluation question → model/version and evidence → assessment method → controlled examples → diagnostic results → implications/reproducibility	Very high	Versioning, explicit assessment object, evidence categories, complete computational provenance	Could become too CE-QUAL-W2-specific unless framework is stated independently of examples
+EMS protocol/tool architecture	Deficiency in current practice → design requirements → named protocol → implementation → demonstrations → applicability/limits	Very high, especially if w2eval matures	A small number of auditable protocol elements, checklist/run-card, demonstrations rather than “applications”	Overclaiming “standard” or “general protocol” from one model family
+Architecture A — classic IMRaD
+
+Almeida & Coelho is the closest CE-QUAL-W2 template. Their paper starts from a narrowly defined evaluation question, describes CE-QUAL-W2 v4.5 and alternative SOD formulations, specifies calibration/evaluation observations and performance metrics, then separates Results, Discussion and Conclusions. It is a strong model for case discipline, but not for the novelty hierarchy of your manuscript. 
+GMD
++1
+
+The problem with copying it literally is that your paper could become:
+
+Bonneville result → DeGray result → Columbia result → Long Lake result.
+
+That would make the reviewer ask: “What is the scientific contribution beyond an audit of some examples?”
+
+Instead, the cases should be subordinate to three methodological questions:
+
+Q1. What exactly is being evaluated? → VPR.
+Q2. Under what run/control state does that evaluation quantity exist and what does it represent? → gated-output/control-rule provenance.
+Q3. Was the numerical execution itself sufficiently healthy to interpret a statistical score? → NHR.
+
+That turns multiple examples into replications of a common assessment logic.
+
+Architecture B — GMD assessment/evaluation
+
+This is the strongest match. GMD explicitly accommodates “methods for assessment of models”; published examples include metric frameworks and standardized validation workflows rather than new environmental process models themselves. GMD’s publication guidance also strongly emphasizes scripting and provenance of preprocessing, execution and post-processing, which aligns unusually well with your w2eval run-card concept. 
+GMD
++2
+GMD
++2
+
+The ideal spine is:
+
+assessment problem → evidence taxonomy → framework → CE-QUAL-W2 test corpus → diagnostic demonstrations → boundary conditions on interpretation → reproducible implementation.
+
+That structure lets you say that the paper is about evaluation integrity, not about proving that CE-QUAL-W2 is accurate or inaccurate.
+
+Architecture C — EMS protocol/tool paper
+
+Jakeman et al. organize good modelling practice as ten iterative steps rather than around one case study. Bennett et al. similarly organize model-performance assessment around purpose, data, diagnostics, criteria and deeper investigation. More recently, Planque et al. present OPE as a named reporting protocol, while Seuru et al. use the ODE structure to turn reproducibility/documentation requirements into an actionable protocol. 
+科学直达
++3
+科学直达
++3
+科学直达
++3
+
+This suggests a useful lesson for your paper: do not create ten new acronyms. Keep only a compact hierarchy, for example:
+
+Evaluation record = VPR + control-state provenance + NHR + run-card
+
+with conventional performance statistics underneath it.
+
+I would not present NSE/KGE/R² as another methodological pillar. They are downstream statistics; your methodological argument is that their interpretation depends on what quantity reached the metric calculation and under what numerical/control conditions.
+
+2. Journal/article type and bounded novelty claims
+Recommended submission identity
+
+Target: Geoscientific Model Development
+Manuscript type: Methods for assessment of models
+
+A working conceptual positioning would be:
+
+A provenance- and numerical-health-aware framework for reproducible evaluation of CE-QUAL-W2 simulations
+
+I would avoid putting “standard”, “universal”, “validation standard”, or “mandatory” in the title.
+
+If w2eval becomes a sufficiently documented software package by submission, a tool/version title can become attractive. If it remains an MVP supporting a methodological paper, make the framework the paper and the software its reference implementation.
+
+Contribution 1 — Variable provenance record (VPR)
+
+Recommended claim:
+
+We show that goodness-of-fit statistics can depend materially on the provenance of the evaluated output variable, and introduce a variable provenance record (VPR) to make the model quantity, extraction route, processing state, and evaluation target explicit.
+
+Case-level formulation:
+
+In the Bonneville TDG demonstration, alternative output channels produce similar correlation structure while yielding materially different NSE values, illustrating why variable provenance should be reported together with goodness-of-fit statistics.
+
+This is methodologically well supported by the performance-metric literature. Legates & McCabe showed why correlation-based agreement alone cannot establish correspondence between observations and simulations; Gupta et al. decomposed efficiency behaviour into correlation, bias and variability components; Knoben et al. later showed that NSE and KGE have different benchmark interpretations and should not be numerically equated. 
+AGU Publications
++2
+科学直达
++2
+
+Do not write:
+
+“R² is misleading and NSE reveals the true model skill.”
+
+The correct argument is upstream of that:
+
+“R² and NSE describe different properties, and neither resolves ambiguity in what model quantity was supplied to the metric.”
+
+That is substantially stronger scientifically.
+
+Contribution 2 — control-rule confounding and gated outputs
+
+Recommended general claim:
+
+We identify control-state dependence as an evaluation confounder when diagnostic or controller-specific outputs are conditionally available, and incorporate control-state provenance into the evaluation record.
+
+For the actual CE-QUAL-W2 behaviour, retain the exact semantics:
+
+When TDGTA is OFF, the controller-specific TDGTarget_output.csv is absent, whereas the SYSTDG TDG_output.csv remains available as a pre-control snapshot; the framework therefore treats output availability and output meaning as functions of run configuration.
+
+Do not call this “deletion of TDG”, “removal of the physical variable”, or evidence that TDG ceases to exist. The contribution is about evaluation-channel availability and semantic provenance.
+
+A useful conceptual figure should explicitly show:
+
+model state → output generation → controller gate → exported quantity → post-processing → metric
+
+rather than simply “model → NSE”.
+
+Contribution 3 — NHR
+
+Recommended claim:
+
+We propose that statistical performance be accompanied by a numerical health record (NHR) that documents execution diagnostics relevant to interpretation of the reported skill.
+
+Then immediately bound it:
+
+The NHR is a reporting and diagnostic recommendation rather than a universal timestep-stability criterion; in the present examples, the clearest H1<0 evidence is concentrated in the Long Lake case.
+
+The key conceptual contribution is therefore not:
+
+“H1<0 proves that CE-QUAL-W2 requires timestep X.”
+
+It is:
+
+“A fit statistic alone does not document whether a model execution encountered numerical-health events that may matter to interpretation.”
+
+That fits the broader reproducibility logic emphasized by GMD, where run control and complete processing provenance are explicitly part of reproducible model evaluation. 
+GMD
++1
+
+Contribution 4 — reproducibility audit/run-cards
+
+Recommended claim:
+
+We implement these reporting elements in reproducible run-cards and use official CE-QUAL-W2 examples as a heterogeneous test corpus for auditing evaluation provenance and numerical-health information.
+
+Not:
+
+“We provide the first reproducible validation of CE-QUAL-W2.”
+
+That is too broad. Stagge et al.'s empirical reproducibility study in hydrology provides strong justification for machine-readable artefacts, directions, code and data, while GMD explicitly asks for scripted processing in evaluation studies. 
+Nature
++1
+
+3. Executable manuscript framework
+
+I would structure the manuscript as follows.
+
+1. Introduction
+1.1 Model performance statistics are only one layer of evaluation
+
+Start with standard model evaluation, not CE-QUAL-W2.
+
+Establish three points:
+
+Model performance depends on the evaluation purpose and data context.
+
+R², NSE and KGE quantify different aspects of model–observation correspondence.
+
+A metric cannot by itself encode variable provenance, control state or numerical execution quality.
+
+Bennett et al. explicitly make performance assessment conditional on model purpose, available data and evaluation objectives. Legates & McCabe, Gupta et al., Knoben et al., and Clark et al. give you the statistical foundation for avoiding single-score interpretations. 
+AGU Publications
++4
+科学直达
++4
+AGU Publications
++4
+
+A safe contribution bridge is:
+
+“These considerations do not imply that goodness-of-fit values cannot be compared across studies; rather, meaningful comparison requires sufficient alignment in the evaluated quantity, observations, sampling and aggregation, metric definition, calibration/evaluation status, and model configuration.”
+
+That should become one of the manuscript’s recurring principles.
+
+1.2 CE-QUAL-W2 as a useful evaluation test bed
+
+Briefly establish that CE-QUAL-W2 is mature and broadly applied. Benicio et al. systematically reviewed applications over 2003–2023 and identified widespread use in reservoir eutrophication/water-quality studies; Almeida & Coelho provide a very recent formal GMD evaluation of CE-QUAL-W2 v4.5 sediment diagenesis. Therefore, do not claim there is an absence of CE-QUAL-W2 evaluation literature. 
+MDPI
++1
+
+Your gap is narrower:
+
+Existing application and model-evaluation studies primarily address how well selected CE-QUAL-W2 configurations reproduce environmental quantities. The present work instead examines the reproducibility and interpretability of the evaluation process itself, focusing on variable provenance, control-dependent output availability, and numerical-health reporting.
+
+An even safer literature-gap formulation is:
+
+“Within the literature and official-example material examined here, we did not identify a unified evaluation record that jointly documents these three elements.”
+
+Use that rather than “no previous study has…”, unless you later conduct a formal systematic search supporting the latter.
+
+1.3 Contributions
+
+Use exactly three methodological contributions plus one implementation contribution:
+
+VPR.
+
+control-aware/gated-output evaluation.
+
+NHR.
+
+w2eval run-cards as the reproducible implementation.
+
+Figure 1: conceptual evaluation chain.
+
+Recommended blocks:
+
+model configuration → simulation → exported channel → provenance/control interpretation → observation alignment → metric
+
+and beneath it:
+
+run-card + NHR
+
+This should be the manuscript’s defining figure.
+
+2. Evaluation concepts and claim taxonomy
+
+This section will prevent later reviewer confusion.
+
+2.1 Observational skill
+
+Define this strictly as comparison to suitable independent observations.
+
+2.2 Internal consistency
+
+Define model-output-to-model-output or related internal diagnostic agreement separately.
+
+Then explicitly state:
+
+For DeGray temperature and Columbia dissolved oxygen, where the analyses considered here lack independent observational counterparts, the reported comparisons are interpreted as internal consistency tests rather than observational skill assessments.
+
+2.3 Numerical health
+
+Define as execution-level diagnostic evidence, separate from observational skill.
+
+A model can conceptually occupy four quadrants:
+
+	Numerically healthy	Numerical-health flags
+High observational skill	interpretable good fit	good fit requiring numerical scrutiny
+Low observational skill	physical/parameter/evaluation problem candidate	mixed numerical + model/data issue
+
+This is a useful conceptual device because NHR is orthogonal to skill, not another skill score.
+
+2.4 Reproducibility
+
+Define this around reconstruction of:
+
+configuration → run → output selection → processing → metric.
+
+Table 1 — Evidence/claim taxonomy
+
+Columns:
+
+Case | quantity | independent observations? | comparison type | provenance known? | control-state dependence? | numerical-health record? | maximum defensible claim
+
+Include your cases here.
+
+This table is probably more important than a generic CE-QUAL-W2 parameter table.
+
+3. Evaluation framework
+3.1 Variable provenance record
+
+Minimum VPR fields:
+
+model and version;
+
+case/run ID;
+
+physical quantity;
+
+source output file;
+
+source variable/column;
+
+spatial location/support;
+
+temporal support and aggregation;
+
+units/transformation;
+
+pre-/post-control status where applicable;
+
+observation/reference source;
+
+alignment operation;
+
+calibration/evaluation relationship;
+
+metric definition.
+
+Contribution sentence:
+
+“VPR moves the identity of the evaluated quantity from an implicit preprocessing assumption to an auditable component of the evaluation result.”
+
+3.2 Control-state-aware evaluation
+
+Define gated outputs without suggesting disappearance of state variables.
+
+Figure 2 — TDG output-state diagram
+
+For example:
+
+TDGTA = ON → controller output available → TDGTarget_output.csv
+
+SYSTDG → TDG_output.csv → pre-control snapshot
+
+TDGTA = OFF → TDGTarget_output.csv absent
+
+Use a legend explicitly stating:
+
+“File availability is distinguished from existence of the simulated physical quantity.”
+
+That single sentence will pre-empt a likely reviewer misreading.
+
+3.3 Performance statistics and conditional comparability
+
+Give equations for R², NSE, KGE and any error metrics you actually report.
+
+Do not rank them as “bad/good/best”.
+
+Instead, use a table:
+
+Metric	Primarily captures	Important limitation here
+R²	strength of linear association	does not itself quantify bias/magnitude agreement
+NSE	squared-error performance relative to observed-mean benchmark	sensitive to error structure and observed variability
+KGE	correlation + bias + variability components	benchmark does not have the same numerical interpretation as NSE
+RMSE/MAE	absolute discrepancy	scale/unit dependent
+
+Legates & McCabe support the caution about correlation-only assessments; Gupta et al. supply the decomposed efficiency interpretation; Knoben et al. show directly why NSE and KGE scores/benchmarks should not be treated interchangeably. 
+AGU Publications
++2
+科学直达
++2
+
+Then define a comparability envelope, for example:
+
+Two published GoF values are most defensibly compared when sufficiently aligned in:
+
+variable semantics + observation source/support + temporal/spatial aggregation + metric implementation + transformation + period + calibration/evaluation status + control regime + numerical-health context.
+
+This is much better than saying “GoF across studies is incomparable”.
+
+3.4 Numerical health record
+
+Specify exactly which entries constitute NHR.
+
+Keep H1<0 as one demonstrated diagnostic, not the definition of NHR.
+
+Possible schema:
+
+run termination | warnings | negative-thickness events | H1<0 events | timestep summary | convergence/restart information | output completeness | parser anomalies
+
+Only include items genuinely extractable from your existing material.
+
+3.5 Run-card specification
+
+Define w2eval run-card fields and reproduction sequence.
+
+Table 2 — Minimum reporting fields can be the actionable protocol contribution.
+
+This is where the paper takes on the useful Jakeman/Planque/ODE characteristic: the conceptual recommendation becomes something another group can actually complete. 
+科学直达
++2
+科学直达
++2
+
+4. Demonstration corpus and experimental design
+
+Do not call these “validation sites” collectively.
+
+Call them something like:
+
+“Evaluation demonstrations using official CE-QUAL-W2 examples.”
+
+For each case report:
+
+model/example identity;
+
+exact configuration;
+
+evaluated variable;
+
+output channel;
+
+available external observations;
+
+permitted evidence class;
+
+relevant experiment.
+
+Suggested mapping:
+
+Bonneville TDG → VPR and metric sensitivity.
+TDG controller configuration → gated-output semantics.
+DeGray temperature → internal-consistency demonstration.
+Columbia DO → internal-consistency demonstration.
+Columbia SOD → transplanted-parameter magnitude check only.
+Long Lake → principal NHR/H1<0 demonstration.
+
+For Columbia SOD, write explicitly:
+
+“The SOD parameters are transplanted rather than locally field-calibrated; this test therefore addresses magnitude plausibility only.”
+
+5. Results
+
+Organize by methodological finding, not reservoir.
+
+5.1 Variable provenance changes metric interpretation
+
+Bonneville is the central experiment.
+
+Figure 3: same evaluation target, three provenance channels, with R² and NSE shown together.
+
+Lead sentence:
+
+“The provenance experiment demonstrates that similar correlation does not guarantee similar efficiency when the evaluated model quantity is changed.”
+
+Do not generalize the NSE sign/flip beyond the demonstrated channels.
+
+5.2 Controller state determines availability and meaning of evaluation outputs
+
+Present the ON/OFF output matrix.
+
+Table 3: configuration × output × semantic role × evaluable?
+
+Maintain the exact TDG semantics given above.
+
+5.3 Internal consistency cannot substitute for observational skill
+
+Put DeGray/Columbia here precisely because they are useful negative controls on interpretation.
+
+Sentence:
+
+“These cases demonstrate reproducibility of internal relationships but provide no independent observational basis for estimating environmental predictive skill.”
+
+5.4 Numerical health and statistical performance are complementary records
+
+Long Lake is the principal demonstration.
+
+Figure 4: a paired NHR/skill display rather than a claimed universal H1–NSE law.
+
+Good caption wording:
+
+“Illustration of joint skill and numerical-health reporting; the observed H1<0 behaviour is case evidence and is not proposed as a universal timestep criterion.”
+
+5.5 Reproducibility audit
+
+Table 4 — official-example audit matrix
+
+Possible columns:
+
+example | runs from supplied configuration | expected output recovered | VPR complete | gated output identified | NHR extractable | independent observations | run-card complete
+
+This can be one of your strongest tables.
+
+6. Discussion
+6.1 Evaluation begins before a metric is calculated
+
+This is probably the key conceptual section.
+
+A strong sentence is:
+
+“Our results indicate that statistical model evaluation has an upstream provenance problem: before interpreting a goodness-of-fit score, the evaluator must establish which model quantity generated the score and under which numerical and control configuration.”
+
+6.2 Conditional comparability, not incomparability
+
+State the principle carefully:
+
+“Cross-study GoF comparison is conditionally informative. Its evidential strength increases when the studies align in target-variable semantics, observational support, aggregation, metric implementation, calibration status and run configuration; where these conditions differ, numerical contrasts should be interpreted descriptively rather than as direct model rankings.”
+
+Bennett et al.'s fit-to-purpose evaluation framework and the efficiency-metric literature support this contextual treatment rather than universal score interpretation. 
+科学直达
++2
+HESS
++2
+
+6.3 Relationship to existing CE-QUAL-W2 work
+
+This is where Benicio and Almeida should do different jobs.
+
+Benicio et al.: establishes breadth of CE-QUAL-W2 application and existing calibration/application practice.
+Almeida & Coelho: demonstrates what a rigorous contemporary CE-QUAL-W2 model-evaluation paper looks like.
+
+Your contrast:
+
+“The proposed framework does not replace conventional calibration or performance evaluation of the type demonstrated by Almeida and Coelho (2025). It adds an auditable layer describing the provenance, run configuration and numerical-health context under which such performance statistics are produced.”
+
+That is a clean, defensible novelty position. 
+MDPI
++1
+
+6.4 Reproducibility
+
+Tie run-cards to GMD requirements and reproducibility literature.
+
+Scientific Data work by Stagge et al. found low reproduction success from published hydrology artefacts and identified availability of data, models, code and instructions as central bottlenecks. GMD likewise explicitly emphasizes scripting of run control and data processing. 
+Nature
++1
+
+6.5 Limitations
+
+This subsection should be unusually explicit:
+
+NHR is a reporting recommendation, not a universal timestep law.
+
+H1<0 evidence is principally Long Lake.
+
+DeGray T / Columbia DO demonstrate internal consistency, not observational skill.
+
+Columbia SOD is a transplanted-parameter magnitude check, not field calibration.
+
+The ~2011 model does not currently have out-of-sample NSE evidence.
+
+2016–2025 exceedance statistics are descriptive retrospective summaries and not forecast skill.
+
+Demonstrations are CE-QUAL-W2-specific; transferability of VPR/NHR concepts to other models is argued conceptually but has not yet been empirically demonstrated across model families.
+
+That last sentence will substantially reduce the risk of an EMS/GMD reviewer saying the framework generality is asserted rather than shown.
+
+7. Conclusions
+
+Keep this to three claims:
+
+First, model-evaluation statistics should be traceable to an explicitly documented model variable and processing provenance.
+
+Second, control configuration and conditional output generation can affect what quantity is available for evaluation and should therefore be recorded as part of the evaluation context.
+
+Third, numerical-health diagnostics should accompany statistical skill so that fit and execution health are not conflated.
+
+Then:
+
+“The accompanying run-card implementation provides a reproducible means of recording these elements for the CE-QUAL-W2 examples investigated here.”
+
+No “mandatory standard”, “guarantees comparability”, or “solves validation”.
+
+4. Curated primary-source reading list
+
+I would put the following 12 at the top of the writing pile.
+
+1. Almeida & Coelho — closest CE-QUAL-W2/GMD structural template
+
+Almeida, M. & Coelho, P. (2025). “Evaluating the performance of CE-QUAL-W2 version 4.5 sediment diagenesis model.” Geoscientific Model Development, 18, 6135–6165.
+DOI: https://doi.org/10.5194/gmd-18-6135-2025
+ 
+GMD
+
+Imitate: strict version identification, explicit evaluation dataset, alternative formulations, metric section, separate Results/Discussion, code/data availability.
+
+Do not imitate literally: its application-first narrative. Your evaluation framework should precede the cases.
+
+2. Jakeman, Letcher & Norton — protocol-paper archetype
+
+Jakeman, A. J., Letcher, R. A. & Norton, J. P. (2006). “Ten iterative steps in development and evaluation of environmental models.” Environmental Modelling & Software, 21(5), 602–614.
+DOI: https://doi.org/10.1016/j.envsoft.2006.01.004
+ 
+科学直达
+
+Imitate: convert good practice from prose recommendations into an executable sequence; make assumptions, data limitations, calibration/testing and utility explicit.
+
+Access note: primary ScienceDirect metadata/abstract verified; full-text access may depend on subscription.
+
+3. Bennett et al. — strongest conceptual evaluation reference
+
+Bennett, N. D., Croke, B. F. W., Guariso, G., Guillaume, J. H. A., Hamilton, S. H., Jakeman, A. J., et al. (2013). “Characterising performance of environmental models.” Environmental Modelling & Software, 40, 1–20.
+DOI: https://doi.org/10.1016/j.envsoft.2012.09.011
+ 
+科学直达
+
+Imitate: evaluation sequence from purpose and data through visual diagnostics, basic criteria and advanced diagnostics. Most useful citation for your conditional comparability framing.
+
+Access note: primary ScienceDirect record verified; institutional access may be required for full text.
+
+4. Planque et al. — closest protocol-reporting analogue
+
+Planque, B., Aarflot, J. M., Buttay, L., Carroll, J., Fransner, F., Hansen, C., et al. (2022). “A standard protocol for describing the evaluation of ecological models.” Ecological Modelling, 471, 110059.
+DOI: https://doi.org/10.1016/j.ecolmodel.2022.110059
+ 
+科学直达
+
+Imitate: named, finite reporting protocol; explicitly separate model objectives, patterns/evidence and evaluation; demonstrate the protocol on cases.
+
+Most relevant lesson: a protocol contribution should result in questions/fields that another modeller can actually answer, which argues strongly for your run-card table.
+
+5. Seuru et al. — current EMS protocol architecture
+
+Seuru, S., Grimm, V., Barton, C. M., Perez, L., Mahdizadeh Gharakhanlou, N., Sengupta, R. & Dagnino, A. M. (2026). “The ODE (Overview, Data, and Execution) protocol for a standardized use of machine learning in environmental, social and related interdisciplinary sciences.” Environmental Modelling & Software, 198, 106912.
+DOI: https://doi.org/10.1016/j.envsoft.2026.106912
+ 
+科学直达
+
+Imitate: current EMS method: identify a reproducibility/documentation problem, define a compact protocol, and make the reporting procedure operational.
+
+Do not borrow “standardized” unless your evidence supports that stronger ambition.
+
+6. Legates & McCabe — why R² cannot carry validation alone
+
+Legates, D. R. & McCabe, G. J. Jr. (1999). “Evaluating the use of ‘goodness-of-fit’ measures in hydrologic and hydroclimatic model validation.” Water Resources Research, 35(1), 233–241.
+DOI: https://doi.org/10.1029/1998WR900018
+ 
+AGU Publications
+
+Imitate: do not treat correlation as agreement in magnitude.
+
+This is directly useful for Bonneville: similar R² across channels does not make provenance irrelevant.
+
+7. Gupta et al. — NSE decomposition / origin of KGE logic
+
+Gupta, H. V., Kling, H., Yilmaz, K. K. & Martinez, G. F. (2009). “Decomposition of the mean squared error and NSE performance criteria: Implications for improving hydrological modelling.” Journal of Hydrology, 377(1–2), 80–91.
+DOI: https://doi.org/10.1016/j.jhydrol.2009.08.003
+ 
+科学直达
+
+Imitate: interpret aggregate efficiency through correlation, bias and variability rather than as a one-dimensional “accuracy” score.
+
+This gives you a technical explanation for why similar correlation can coexist with divergent NSE behaviour.
+
+8. Knoben, Freer & Woods — essential NSE/KGE guardrail
+
+Knoben, W. J. M., Freer, J. E. & Woods, R. A. (2019). “Technical note: Inherent benchmark or not? Comparing Nash–Sutcliffe and Kling–Gupta efficiency scores.” Hydrology and Earth System Sciences, 23, 4323–4331.
+DOI: https://doi.org/10.5194/hess-23-4323-2019
+ 
+HESS
+
+Imitate: explain metric benchmarks analytically rather than importing universal categories. In particular, KGE and NSE do not share an equivalent zero benchmark.
+
+This is one of the strongest references against indiscriminate cross-paper metric ranking.
+
+9. Clark et al. — modern critique of metric overinterpretation
+
+Clark, M. P., Vogel, R. M., Lamontagne, J. R., Mizukami, N., Knoben, W. J. M., Tang, G., et al. (2021). “The Abuse of Popular Performance Metrics in Hydrologic Modeling.” Water Resources Research, 57(9), e2020WR029001.
+DOI: https://doi.org/10.1029/2020WR029001
+ 
+AGU Publications
+
+Imitate: discuss what a metric actually identifies, its sampling/context limitations, and the danger of collapsing model performance into one scalar.
+
+Use it to motivate contextualized metrics, not to declare NSE/KGE invalid.
+
+10. Benicio, Basso & Formiga — CE-QUAL-W2 application landscape
+
+Benicio, S. H. M., Basso, R. E. & Formiga, K. T. M. (2024). “Global Applications of the CE-QUAL-W2 Model in Reservoir Eutrophication: A Systematic Review and Perspectives for Brazil.” Water, 16(24), 3556.
+DOI: https://doi.org/10.3390/w16243556
+ 
+MDPI
+
+Imitate: use its systematic map to establish that CE-QUAL-W2 has a substantial application literature.
+
+Gap lesson: do not say “CE-QUAL-W2 lacks evaluation”. Instead distinguish application/calibration literature from your evaluation-provenance and reproducibility methodology.
+
+11. Stagge et al. — strongest reproducibility-audit analogue
+
+Stagge, J. H., Rosenberg, D. E., Abdallah, A. M., Akbar, H., Attallah, N. A. & James, R. (2019). “Assessing data availability and research reproducibility in hydrology and water resources.” Scientific Data, 6, 190030.
+DOI: https://doi.org/10.1038/sdata.2019.30
+ 
+Nature
+
+Imitate: define explicit reproducibility artefacts and audit criteria rather than making reproducibility a qualitative statement.
+
+This is particularly useful for justifying run-cards and an official-example success/failure matrix.
+
+12. Lindenschmidt et al. — Nature-portfolio/CE-QUAL-W2 provenance model
+
+Lindenschmidt, K.-E., Carr, M. K., Sadeghian, A. & Morales-Marin, L. (2019). “CE-QUAL-W2 model of dam outflow elevation impact on temperature, dissolved oxygen and nutrients in a reservoir.” Scientific Data, 6, 312.
+DOI: https://doi.org/10.1038/s41597-019-0316-y
+ 
+Nature
+
+Imitate: treat the model configuration, input/output products and reusable simulation artefacts themselves as scientific objects with traceable provenance.
+
+This is the most useful “Nature-adjacent” reference here, but it reinforces a data/provenance architecture, not a reason to style the current paper as a Nature research article.
+
+The gap I would actually claim
+
+After comparing these literatures, I would make the novelty paragraph approximately this narrow:
+
+Contemporary CE-QUAL-W2 studies provide increasingly rigorous calibration, process evaluation and application-specific performance assessment, while the broader environmental-modelling literature provides mature guidance on model evaluation, performance metrics and reproducibility. The remaining methodological issue addressed here is narrower: statistical performance can be difficult to interpret or reproduce when the identity and processing provenance of the evaluated model variable, the control configuration governing diagnostic outputs, and the numerical health of the simulation are not recorded together. We therefore develop and demonstrate a provenance-aware evaluation workflow comprising a variable provenance record, control-state-aware output auditing, numerical-health reporting, and reproducible run-cards.
+
+That claim is consistent with Benicio rather than contradicting it, and complementary to Almeida rather than trying to displace it. 
+MDPI
++2
+GMD
++2
+
+The paper’s strongest conceptual sentence, in my view, is:
+
+A goodness-of-fit value is not only a property of a model and observations; it is a property of a specified model quantity, observation pairing, processing pathway, run configuration, and metric.
+
+Then the hard boundary immediately after it:
+
+This does not make cross-study goodness-of-fit comparison intrinsically invalid; it makes its interpretation conditional on sufficient alignment of those evaluation conditions.
+
+That pairing gives VPR, gating, NHR and the reproducibility audit one coherent methodological rationale without requiring any unsupported claim of new observational skill.

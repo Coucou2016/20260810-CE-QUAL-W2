@@ -1,0 +1,6 @@
+time=2026-08-16 14:47:42
+pdf_ok=True
+Chrome/Edge: chrome/edge ok: chrome.exe; exit=0
+checks={'base64_count': 25, 'http_img': 0, 'rel_img': 0, 'local_img': 0, 'file_img': 0}
+embedded_imgs=25
+pending=['样本外 NSE（需扩展 TMEND 与 2016+ 边界后计算）', 'Columbia / DeGray 独立野外观测（目前无，不得假装有 skill）', 'W5 其余 29 篇全文（付费墙）；VPR unknown=19 维持 unknown，不猜测', 'Zenodo DOI（清单已在 06_PAPER/zenodo/，尚未上传铸造）', 'T3 跨版本漂移实验', 'T4 NHR 源码插桩（TSR 抽样无法代表 DLTMIN 时长占比）']

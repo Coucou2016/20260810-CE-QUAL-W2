@@ -1,0 +1,164 @@
+{
+  "review": {
+    "citation": "Benicio, Basso & Formiga 2024, Water 16:3556",
+    "doi": "10.3390/w16243556",
+    "stated_n_selected": 38,
+    "table1_n": 38,
+    "table2_n": 12,
+    "inclusion_rule": "All 38 rows of review Table 1 = refs [12-14,18,21-54]. Refs 1-11,15-17,19-20,55-65 are not selected studies.",
+    "table1_vs_38": "Table 1 has 38 rows matching the 38 selected. No discrepancy."
+  },
+  "definitions": {
+    "fulltext": "true if methods+results on calibration were read from OA HTML/PDF (not abstract-only).",
+    "vpr": "Variable Provenance Record = {output file, column, segment I, layer K, units, derivation chain, time support, pairing tolerance} as in PAPER_PLAN.",
+    "vpr_variable": "yes=names W2 output file or column; partial=names constituents compared but not file/column/derivation; no=not stated; unknown=FT unavailable.",
+    "vpr_location": "yes=segment I and/or layer K or named station mapped onto the grid for the obs-sim pairs; partial=reach/dam/epilimnion without I/K; no=only grid dimensions; unknown=FT unavailable.",
+    "vpr_reconstruct": "From the paper alone (not SI). yes=I (or mapped station) + layer/depth + constituent identity + comparison period, enough that a second analyst would extract the same series. partial=some of these. no=cannot. unknown=FT missing and abstract silent. Output filename is never present in this set; yes does not require the filename.",
+    "control_rule": "described=paper states withdrawal elevation / selective withdrawal / flow-control / diversion operation used in the run. not_mentioned=operations are in scope (multi-purpose dam, TGR, etc.) but state not declared. NA=not an operations/controller/TDG paper. TDG targets: none of the 38.",
+    "only_r2_not_nse": "r2==true AND nse!=true. Includes papers whose only R2 is not W2 obs-sim skill; see table2_r2_is_w2_obs_sim_skill.",
+    "table2_r2_is_w2_obs_sim_skill": "true only if the Table 2 number is goodness-of-fit between W2 output and field observations of that constituent.",
+    "metrics": "Coded from the paper's own GOF for any model it reports (W2, SWAT, SWMM, complete-mix). Excerpt states which model."
+  },
+  "counts": {
+    "n": 38,
+    "fulltext_true": 9,
+    "fulltext_true_pct": 23.7,
+    "vpr_reconstruct": {
+      "yes": 2,
+      "partial": 6,
+      "no": 11,
+      "unknown": 19
+    },
+    "vpr_reconstruct_yes_pct": 5.3,
+    "vpr_reconstruct_yes_or_partial": 8,
+    "vpr_location": {
+      "yes": 3,
+      "partial": 11
+    },
+    "vpr_variable": {
+      "yes": 0,
+      "partial": 34
+    },
+    "metrics_reported_true": {
+      "r2": 11,
+      "nse": 2,
+      "kge": 0,
+      "pbias": 1,
+      "rmse": 7,
+      "mae": 4
+    },
+    "r2_true_and_nse_true": 2,
+    "only_r2_not_nse": 9,
+    "only_r2_not_nse_pct_of_38": 23.7,
+    "only_r2_not_nse_pct_of_r2_true": 81.8,
+    "control_rule": {
+      "described": 11,
+      "not_mentioned": 3,
+      "NA": 24,
+      "unknown": 0
+    },
+    "open_inputs_or_code_true": 1,
+    "cal_val_split": {
+      "yes": 16,
+      "partial": 1,
+      "inherited": 8,
+      "no": 1,
+      "unknown": 12
+    }
+  },
+  "table2": {
+    "n": 12,
+    "skill_true": [
+      {
+        "n": 23,
+        "r2": "0.32",
+        "vpr_reconstruct": "yes"
+      }
+    ],
+    "skill_false": [
+      {
+        "n": 12,
+        "r2": "0.76",
+        "why_excerpt_head": "Table 2 value is complete-mix TP vs Class A pan K in the dry season, not CE-QUAL-W2 goodness-of-fit."
+      },
+      {
+        "n": 13,
+        "r2": "0.70",
+        "why_excerpt_head": "Table 2 R2=0.70 is TPin vs inflow power-law, not W2 vs field TP."
+      },
+      {
+        "n": 18,
+        "r2": "0.6781",
+        "why_excerpt_head": "CRITICAL Table 2 error: 0.6781 is inflow-T vs air-T correlation, tabulated as DO skill."
+      },
+      {
+        "n": 24,
+        "r2": "0.41",
+        "why_excerpt_head": "Parent calibration for [12] and [13]. Table 2 uses K-TP correlation."
+      },
+      {
+        "n": 31,
+        "r2": "0.92",
+        "why_excerpt_head": "Table 2 mislabels 0.92 as Flow/TN/TP; paper's 0.92 is W2 water-surface elevation. Rare case that names NSE as a W2 metric."
+      },
+      {
+        "n": 51,
+        "r2": "0.977",
+        "why_excerpt_head": "Table 2 highest R2 is a load-reduction response curve, not calibration skill."
+      },
+      {
+        "n": 53,
+        "r2": "0.9605 and 0.9724",
+        "why_excerpt_head": "Table 2 params list many WQ variables but the R2 values are P-load-reduction correlations per review §3.7."
+      }
+    ],
+    "skill_unknown": [
+      {
+        "n": 21,
+        "r2": "0.906",
+        "vpr_reconstruct": "no"
+      },
+      {
+        "n": 26,
+        "r2": "0.92",
+        "vpr_reconstruct": "unknown"
+      },
+      {
+        "n": 40,
+        "r2": ">0.9",
+        "vpr_reconstruct": "unknown"
+      },
+      {
+        "n": 42,
+        "r2": "0.62-0.95",
+        "vpr_reconstruct": "no"
+      }
+    ],
+    "vpr_reconstruct_for_table2": {
+      "12": "no",
+      "13": "no",
+      "18": "partial",
+      "21": "no",
+      "23": "yes",
+      "24": "partial",
+      "26": "unknown",
+      "31": "partial",
+      "40": "unknown",
+      "42": "no",
+      "51": "no",
+      "53": "partial"
+    }
+  },
+  "headline": {
+    "n_selected": 38,
+    "vpr_reconstruct_yes": 2,
+    "vpr_reconstruct_yes_pct": 5.3,
+    "only_r2_not_nse": 9,
+    "only_r2_not_nse_pct": 23.7,
+    "fulltext_rate_pct": 23.7,
+    "kge_true": 0,
+    "open_decks": 1,
+    "table2_n": 12,
+    "table2_confirmed_w2_obs_sim_skill": 1
+  }
+}

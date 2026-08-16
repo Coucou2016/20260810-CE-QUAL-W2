@@ -1,0 +1,42 @@
+{
+  "generated": "2026-08-15T01:27:26",
+  "n_cards": 5,
+  "cards": [
+    {
+      "card_id": "bonneville_tdgta_on",
+      "title": "Bonneville TDGTA ON — three calibers + SYSTDG pre-control snapshot",
+      "mode": "skill_vs_observations",
+      "json": "bonneville_tdgta_on.json",
+      "markdown": "bonneville_tdgta_on.md"
+    },
+    {
+      "card_id": "bonneville_tdgta_off",
+      "title": "Bonneville TDGTA OFF — B file gone; S is pre-control snapshot",
+      "mode": "skill_vs_observations",
+      "json": "bonneville_tdgta_off.json",
+      "markdown": "bonneville_tdgta_off.md"
+    },
+    {
+      "card_id": "longlake_dlt_nhr",
+      "title": "Long Lake official vs DLTMAX scan (DLTINTER ON/OFF)",
+      "mode": "numerical_health",
+      "json": "longlake_dlt_nhr.json",
+      "markdown": "longlake_dlt_nhr.md"
+    },
+    {
+      "card_id": "columbia_do_internal",
+      "title": "Columbia DO internal consistency + SOD magnitude note",
+      "mode": "internal_consistency",
+      "json": "columbia_do_internal.json",
+      "markdown": "columbia_do_internal.md"
+    },
+    {
+      "card_id": "degray_t_internal",
+      "title": "DeGray temperature internal consistency (no independent observations)",
+      "mode": "internal_consistency",
+      "json": "degray_t_internal.json",
+      "markdown": "degray_t_internal.md"
+    }
+  ],
+  "note": "MVP reads existing analysis JSON; does not execute w2_v455_ifx.exe."
+}

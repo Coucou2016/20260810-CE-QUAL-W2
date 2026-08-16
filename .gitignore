@@ -1,0 +1,54 @@
+# === Large local archives / model runs (not for public GitHub) ===
+01_RAW_DOWNLOADS/
+02_LIBRARY/
+03_MERGED_PDF/
+04_MARKDOWN/
+05_REPRO_RUNS/*
+!05_REPRO_RUNS/README.md
+
+# Hourly DART/CCIW observation cache (fetch locally; see 00_INDEX/download_dart_cciw.py)
+06_PAPER/data/dart_cciw/
+
+# Regenerated megabyte HTML/PDF (keep Markdown + build scripts; regenerate locally)
+report.html
+report.pdf
+06_PAPER/report/report.html
+06_PAPER/report/report.pdf
+06_PAPER/drafts/P1_paper.html
+
+# Analysis caches / intermediates
+06_PAPER/analysis/_w5_cache/
+06_PAPER/analysis/__pycache__/
+06_PAPER/analysis/*.png
+!06_PAPER/figures/
+
+# Python / OS / editor
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.log
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+
+# Secrets / credentials / agent chatter
+**/secrets/
+**/*credential*
+**/*secret*
+agent-transcripts/
+.cursor/
+*.pem
+*.key
+
+# PDF literature cache under analysis
+06_PAPER/analysis/_w5_cache/**/*.pdf

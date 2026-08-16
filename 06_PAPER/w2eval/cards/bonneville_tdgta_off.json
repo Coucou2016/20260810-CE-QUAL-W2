@@ -1,0 +1,208 @@
+{
+  "card_id": "bonneville_tdgta_off",
+  "title": "Bonneville TDGTA OFF — B file gone; S is pre-control snapshot",
+  "generated": "2026-08-15T01:27:26",
+  "mode": "skill_vs_observations",
+  "tdgta": "OFF",
+  "case": {
+    "run_dir": "05_REPRO_RUNS/run_20260814_bonneville_notarget/Bonneville_SYSTDG",
+    "example": "Bonneville_SYSTDG (TDGTA=OFF, not re-run for W3; already at TMEND)"
+  },
+  "claim": "Do not write that the physical TDG variable was deleted. SYSTDG still writes TDG_TDG to TDG_output.csv (ON≡OFF, mae=0). The skill-best / β≈1 / 120.1% series exists only in TDGTarget_output.csv, which disappears when TDGTA=OFF.",
+  "vpr": [
+    {
+      "caliber": "A",
+      "file": "c_wdo_76.csv + t_wdo_76.csv",
+      "column": "N2, DO → Henry TDG%",
+      "segment": 76,
+      "layer": "withdrawal mix (WDO)",
+      "unit": "% saturation",
+      "derived_from": "same Henry conversion as ON A",
+      "time_support": "instantaneous WDO vs CCIW",
+      "pairing_tolerance": "nearest, tol=0.05 d"
+    },
+    {
+      "caliber": "B",
+      "file": "TDGTarget_output.csv",
+      "column": "TDG_TDG",
+      "segment": "tailwater / controller",
+      "layer": "post-control (file not written)",
+      "unit": "% saturation",
+      "derived_from": "TDGtarget.f90 InitTDGtarget — not called when TDGTA=OFF",
+      "time_support": "n/a",
+      "pairing_tolerance": "n/a",
+      "notes": "File absent together with TDGTarget_warning.opt."
+    },
+    {
+      "caliber": "C",
+      "file": "BON_tsr_1_seg40.csv",
+      "column": "TDG",
+      "segment": 40,
+      "layer": "TSR in-reservoir",
+      "unit": "% saturation",
+      "derived_from": "native TSR; nearly identical to ON C",
+      "time_support": "instantaneous TSR",
+      "pairing_tolerance": "nearest, tol=0.05 d"
+    },
+    {
+      "caliber": "S",
+      "file": "TDG_output.csv",
+      "column": "TDG_TDG",
+      "segment": "SYSTDG unit 88888",
+      "layer": "pre-control snapshot",
+      "unit": "% saturation",
+      "derived_from": "same write timing as ON S; cannot stand in for B",
+      "time_support": "daily",
+      "pairing_tolerance": "nearest, tol=0.6 d"
+    },
+    {
+      "caliber": "obs",
+      "file": "CCIW_TDG_Temp_2011-2015.csv",
+      "column": "Total dissolved gas",
+      "segment": "CCIW",
+      "layer": "n/a",
+      "unit": "% saturation",
+      "derived_from": "same observation series as ON card",
+      "time_support": "hourly valid in JDAY 40613–40681",
+      "pairing_tolerance": "see A/C and B/S"
+    }
+  ],
+  "metrics_panel": {
+    "kind": "skill_vs_observations",
+    "observation": "CCIW Total dissolved gas %",
+    "n": 1614,
+    "window": "JDAY 40613–40681 (paired); n=1614",
+    "note": "OFF A NSE=−2.337, paired max 123.99%. OFF S NSE=+0.357, paired max 127.49%, raw max 131.7%. Paired S does not reach obs 129.1%. Turning the controller off does not make A a usable forecast.",
+    "calibers": [
+      {
+        "caliber": "A",
+        "title": "N2+DO Henry (seg76)",
+        "available": true,
+        "status": "ok",
+        "file": "c_wdo_76.csv + t_wdo_76.csv",
+        "column": null,
+        "n": 1614,
+        "r2": 0.5212,
+        "nse": -2.3371,
+        "kge": 0.1603,
+        "r": 0.7219,
+        "alpha": 1.7909,
+        "beta": 0.9528,
+        "pbias": -4.7228,
+        "mae": 5.6707,
+        "pairing": "nearest, tol=0.05 (eval_bonneville_tailwater.align)",
+        "sim_max": 123.99,
+        "obs_max": 129.1
+      },
+      {
+        "caliber": "B",
+        "title": "controller TDG_TDG (TDGTarget_output) — ABSENT",
+        "available": false,
+        "status": "file_absent",
+        "file": "TDGTarget_output.csv",
+        "column": null,
+        "n": null,
+        "r2": null,
+        "nse": null,
+        "kge": null,
+        "r": null,
+        "alpha": null,
+        "beta": null,
+        "pbias": null,
+        "mae": null,
+        "pairing": "nearest, tol=0.6 (daily sim vs CCIW)"
+      },
+      {
+        "caliber": "C",
+        "title": "TSR seg40 TDG",
+        "available": true,
+        "status": "ok",
+        "file": "BON_tsr_1_seg40.csv",
+        "column": null,
+        "n": 1614,
+        "r2": 0.5511,
+        "nse": -2.7522,
+        "kge": 0.3855,
+        "r": 0.7424,
+        "alpha": 1.5548,
+        "beta": 0.9414,
+        "pbias": -5.8621,
+        "mae": 6.8413,
+        "pairing": "nearest, tol=0.05 (eval_bonneville_tailwater.align)",
+        "sim_max": 123.42,
+        "obs_max": 129.1
+      },
+      {
+        "caliber": "S",
+        "title": "SYSTDG native TDG_TDG (TDG_output.csv, pre-control)",
+        "available": true,
+        "status": "ok",
+        "file": "TDG_output.csv",
+        "column": null,
+        "n": 1614,
+        "r2": 0.5614,
+        "nse": 0.3573,
+        "kge": 0.7057,
+        "r": 0.7492,
+        "alpha": 1.1539,
+        "beta": 1.0072,
+        "pbias": 0.7238,
+        "mae": 2.7463,
+        "pairing": "nearest, tol=0.6 (daily sim vs CCIW)",
+        "sim_max": 127.49,
+        "obs_max": 129.1
+      }
+    ],
+    "on_vs_off_same_file": {
+      "A_mae": 0.6951,
+      "C_mae": 0.0075,
+      "S_mae": 0.0,
+      "S_raw_max": 131.7
+    }
+  },
+  "nhr": {
+    "case_dir": "05_REPRO_RUNS/run_20260814_bonneville_notarget/Bonneville_SYSTDG",
+    "wrn_path": "05_REPRO_RUNS/run_20260814_bonneville_notarget/Bonneville_SYSTDG/w2.wrn",
+    "wrn_exists": true,
+    "neg_surface_thickness_count": 0,
+    "add_layer_count": 48,
+    "subtract_layer_count": 49,
+    "low_water_count": 0,
+    "dltmin_hint_count": 0,
+    "exit_code_zero": true,
+    "exit_zero_masks_rollback": false,
+    "dltinter": "OFF",
+    "dltmin_s": 1.0,
+    "dltmax": [
+      3600.0
+    ],
+    "normal_termination": true,
+    "snp_file": "BON_snp.opt",
+    "snp_n_violations": 7614,
+    "snp_pct_violations": 1.71,
+    "snp_total_iterations": 444801,
+    "w2_err_present": false,
+    "completed": true,
+    "last_jday": null,
+    "window_dlt": null,
+    "neg_events": [],
+    "source": "06_PAPER/analysis/nhr_existing_runs.json or nhr_dlt_scan.json (parse_nhr.py)",
+    "label": "TDGTA OFF"
+  },
+  "notes": [
+    "Disappeared when TDGTA=OFF: TDGTarget_output.csv, TDGTarget_warning.opt only.",
+    "ON vs OFF TDG_output.csv mae=0 is a write-timing result, not 'controller has no effect'.",
+    "ON TDG_output vs TDGTarget: MAE=1.7073, raw max 131.7 vs 120.1."
+  ],
+  "figures": [
+    "06_PAPER/figures/W3_tdgta_on_off_timeseries.png",
+    "06_PAPER/figures/W3_tdgta_on_off_scatter.png",
+    "06_PAPER/figures/W3_tdgta_kge_decomposition.png"
+  ],
+  "sources": [
+    "06_PAPER/analysis/w3_tdgta_off_metrics.json",
+    "06_PAPER/analysis/nhr_existing_runs.json",
+    "00_INDEX/eval_w3_tdgta_off.py",
+    "00_INDEX/parse_nhr.py"
+  ]
+}

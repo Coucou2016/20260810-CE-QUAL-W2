@@ -1,0 +1,2878 @@
+{
+  "generated": "2026-08-15T01:11:12",
+  "scan": "Long Lake DLTMAX at DLTD=30 (JDAY 30-40 window); official knot=100 s",
+  "source_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan",
+  "n_jobs": 8,
+  "jobs": [
+    {
+      "name": "dltmax_100",
+      "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_100",
+      "dltmax_window_30_40": 100,
+      "dltf_window_30_40": 0.9,
+      "dltinter": "ON",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg_surface_thickness_count": 1,
+      "add_layer_count": 3,
+      "subtract_layer_count": 3,
+      "low_water_count": 0,
+      "dltmin_reduced_count": 1,
+      "dltmin_set_count": 1,
+      "dltmin_hint_count": 2,
+      "exit_zero_masks_rollback": true,
+      "snp_runtime": {
+        "present": true,
+        "file": "snp1.opt",
+        "bytes": 9614876,
+        "normal_termination": true,
+        "runtime_error": false,
+        "total_iterations": 226804,
+        "n_violations": 2395,
+        "pct_violations": 1.06,
+        "avg_timestep_s": 91,
+        "sim_days": 238.95833333333334,
+        "tail_add_layer_count": 0,
+        "tail_subtract_layer_count": 0
+      },
+      "dlt_trajectory": {
+        "present": true,
+        "file": "tsr_1_seg2.csv",
+        "last_jday": 239.943,
+        "full": {
+          "label": "full",
+          "n_samples": 2390,
+          "jday_first": 1.042,
+          "jday_last": 239.943,
+          "dlt_min_s": 5.0,
+          "dlt_max_s": 507.576,
+          "dlt_mean_s": 128.41096443514644,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        },
+        "window": {
+          "label": "jday[30.0,40.0)",
+          "n_samples": 100,
+          "jday_first": 30.042,
+          "jday_last": 39.942,
+          "dlt_min_s": 53.941,
+          "dlt_max_s": 227.041,
+          "dlt_mean_s": 143.98532999999995,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        }
+      },
+      "neg_events": [
+        {
+          "segment": 3,
+          "jday": 31.936,
+          "dlt_at_warning": 74.022,
+          "z_m": 28.154,
+          "h1_m": -27.144,
+          "reduced_to_s": 0.1,
+          "nit": 13452
+        }
+      ],
+      "add_layer_jdays": [
+        33.883,
+        47.808,
+        54.659
+      ],
+      "subtract_layer_jdays": [
+        14.614,
+        25.449,
+        30.702
+      ],
+      "full_nhr": {
+        "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_100",
+        "case_name": "dltmax_100",
+        "parsed_at": "2026-08-15T01:09:30",
+        "completed": true,
+        "last_jday": 239.943,
+        "dlt_schedule": {
+          "tmstrt": 1.0417,
+          "tmend": 240.0,
+          "ndlt": 6,
+          "dltmin": 0.1,
+          "dltinter": "ON",
+          "dltd": [
+            1.0,
+            1.2,
+            30.0,
+            40.0,
+            175.0,
+            193.0
+          ],
+          "dltmax": [
+            5.0,
+            800.0,
+            100.0,
+            1800.0,
+            60.0,
+            100.0
+          ],
+          "dltf": [
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.2,
+            0.2
+          ],
+          "windows": [
+            {
+              "index": 0,
+              "jday_start": 1.0,
+              "jday_end": 1.2,
+              "dltmax": 5.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 1,
+              "jday_start": 1.2,
+              "jday_end": 30.0,
+              "dltmax": 800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 2,
+              "jday_start": 30.0,
+              "jday_end": 40.0,
+              "dltmax": 100.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 3,
+              "jday_start": 40.0,
+              "jday_end": 175.0,
+              "dltmax": 1800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 4,
+              "jday_start": 175.0,
+              "jday_end": 193.0,
+              "dltmax": 60.0,
+              "dltf": 0.2
+            },
+            {
+              "index": 5,
+              "jday_start": 193.0,
+              "jday_end": 240.0,
+              "dltmax": 100.0,
+              "dltf": 0.2
+            }
+          ]
+        },
+        "nhr": {
+          "neg_surface_thickness_count": 1,
+          "neg_surface_thickness_events": [
+            {
+              "segment": 3,
+              "jday": 31.936,
+              "dlt_at_warning": 74.022,
+              "z_m": 28.154,
+              "h1_m": -27.144,
+              "reduced_to_s": 0.1,
+              "nit": 13452
+            }
+          ],
+          "add_layer_count": 3,
+          "add_layer_jdays": [
+            33.883,
+            47.808,
+            54.659
+          ],
+          "add_layer_events": [
+            {
+              "layer": 4,
+              "jday": 33.883,
+              "nit": 14700,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 47.808,
+              "nit": 25224,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 2,
+              "jday": 54.659,
+              "nit": 29020,
+              "izmin": 34,
+              "waterbody": 1
+            }
+          ],
+          "subtract_layer_count": 3,
+          "subtract_layer_jdays": [
+            14.614,
+            25.449,
+            30.702
+          ],
+          "subtract_layer_events": [
+            {
+              "layer": 2,
+              "jday": 14.614,
+              "nit": 4559,
+              "izmin": 7,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 25.449,
+              "nit": 9196,
+              "izmin": 20,
+              "waterbody": 1
+            },
+            {
+              "layer": 4,
+              "jday": 30.702,
+              "nit": 12787,
+              "izmin": 20,
+              "waterbody": 1
+            }
+          ],
+          "low_water_count": 0,
+          "low_water_events": [],
+          "ws_above_layer2_count": 1,
+          "ws_above_layer2_events": [
+            {
+              "segment": 2,
+              "jday": 1.042
+            }
+          ],
+          "h1h2_gt_035_count": 0,
+          "h1h2_gt_035_events": [],
+          "dltmin_reduced_count": 1,
+          "dltmin_reduced_events": [
+            {
+              "reduced_to_s": 0.1,
+              "jday": 31.936,
+              "nit": 13452
+            }
+          ],
+          "dltmin_set_count": 1,
+          "dltmin_set_events": [
+            {
+              "dlt_before_s": 0.09,
+              "jday": 31.936
+            }
+          ],
+          "dltmin_hint_count": 2,
+          "wrn_exists": true,
+          "wrn_bytes": 1093,
+          "w2_err": {
+            "present": false,
+            "unstable_ws_count": 0,
+            "text_head": ""
+          },
+          "snp_runtime": {
+            "present": true,
+            "file": "snp1.opt",
+            "bytes": 9614876,
+            "normal_termination": true,
+            "runtime_error": false,
+            "total_iterations": 226804,
+            "n_violations": 2395,
+            "pct_violations": 1.06,
+            "avg_timestep_s": 91,
+            "sim_days": 238.95833333333334,
+            "tail_add_layer_count": 0,
+            "tail_subtract_layer_count": 0
+          },
+          "dlt_trajectory": {
+            "present": true,
+            "file": "tsr_1_seg2.csv",
+            "last_jday": 239.943,
+            "full": {
+              "label": "full",
+              "n_samples": 2390,
+              "jday_first": 1.042,
+              "jday_last": 239.943,
+              "dlt_min_s": 5.0,
+              "dlt_max_s": 507.576,
+              "dlt_mean_s": 128.41096443514644,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            },
+            "window": {
+              "label": "jday[30.0,40.0)",
+              "n_samples": 100,
+              "jday_first": 30.042,
+              "jday_last": 39.942,
+              "dlt_min_s": 53.941,
+              "dlt_max_s": 227.041,
+              "dlt_mean_s": 143.98532999999995,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            }
+          },
+          "exit_zero_masks_rollback": true
+        }
+      }
+    },
+    {
+      "name": "dltmax_100_interoff",
+      "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_100_interoff",
+      "dltmax_window_30_40": 100,
+      "dltf_window_30_40": 0.9,
+      "dltinter": "OFF",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg_surface_thickness_count": 0,
+      "add_layer_count": 3,
+      "subtract_layer_count": 3,
+      "low_water_count": 0,
+      "dltmin_reduced_count": 0,
+      "dltmin_set_count": 0,
+      "dltmin_hint_count": 0,
+      "exit_zero_masks_rollback": false,
+      "snp_runtime": {
+        "present": true,
+        "file": "snp1.opt",
+        "bytes": 9614879,
+        "normal_termination": true,
+        "runtime_error": false,
+        "total_iterations": 182227,
+        "n_violations": 16915,
+        "pct_violations": 9.28,
+        "avg_timestep_s": 113,
+        "sim_days": 238.95833333333334,
+        "tail_add_layer_count": 0,
+        "tail_subtract_layer_count": 0
+      },
+      "dlt_trajectory": {
+        "present": true,
+        "file": "tsr_1_seg2.csv",
+        "last_jday": 239.943,
+        "full": {
+          "label": "full",
+          "n_samples": 2390,
+          "jday_first": 1.042,
+          "jday_last": 239.943,
+          "dlt_min_s": 5.0,
+          "dlt_max_s": 527.997,
+          "dlt_mean_s": 163.7969836820084,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        },
+        "window": {
+          "label": "jday[30.0,40.0)",
+          "n_samples": 100,
+          "jday_first": 30.042,
+          "jday_last": 39.942,
+          "dlt_min_s": 100.0,
+          "dlt_max_s": 100.0,
+          "dlt_mean_s": 100.0,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        }
+      },
+      "neg_events": [],
+      "add_layer_jdays": [
+        33.881,
+        47.798,
+        54.657
+      ],
+      "subtract_layer_jdays": [
+        14.61,
+        25.445,
+        30.701
+      ],
+      "full_nhr": {
+        "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_100_interoff",
+        "case_name": "dltmax_100_interoff",
+        "parsed_at": "2026-08-15T01:09:30",
+        "completed": true,
+        "last_jday": 239.943,
+        "dlt_schedule": {
+          "tmstrt": 1.0417,
+          "tmend": 240.0,
+          "ndlt": 6,
+          "dltmin": 0.1,
+          "dltinter": "OFF",
+          "dltd": [
+            1.0,
+            1.2,
+            30.0,
+            40.0,
+            175.0,
+            193.0
+          ],
+          "dltmax": [
+            5.0,
+            800.0,
+            100.0,
+            1800.0,
+            60.0,
+            100.0
+          ],
+          "dltf": [
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.2,
+            0.2
+          ],
+          "windows": [
+            {
+              "index": 0,
+              "jday_start": 1.0,
+              "jday_end": 1.2,
+              "dltmax": 5.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 1,
+              "jday_start": 1.2,
+              "jday_end": 30.0,
+              "dltmax": 800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 2,
+              "jday_start": 30.0,
+              "jday_end": 40.0,
+              "dltmax": 100.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 3,
+              "jday_start": 40.0,
+              "jday_end": 175.0,
+              "dltmax": 1800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 4,
+              "jday_start": 175.0,
+              "jday_end": 193.0,
+              "dltmax": 60.0,
+              "dltf": 0.2
+            },
+            {
+              "index": 5,
+              "jday_start": 193.0,
+              "jday_end": 240.0,
+              "dltmax": 100.0,
+              "dltf": 0.2
+            }
+          ]
+        },
+        "nhr": {
+          "neg_surface_thickness_count": 0,
+          "neg_surface_thickness_events": [],
+          "add_layer_count": 3,
+          "add_layer_jdays": [
+            33.881,
+            47.798,
+            54.657
+          ],
+          "add_layer_events": [
+            {
+              "layer": 4,
+              "jday": 33.881,
+              "nit": 18029,
+              "izmin": 20,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 47.798,
+              "nit": 29070,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 2,
+              "jday": 54.657,
+              "nit": 32734,
+              "izmin": 34,
+              "waterbody": 1
+            }
+          ],
+          "subtract_layer_count": 3,
+          "subtract_layer_jdays": [
+            14.61,
+            25.445,
+            30.701
+          ],
+          "subtract_layer_events": [
+            {
+              "layer": 2,
+              "jday": 14.61,
+              "nit": 7204,
+              "izmin": 7,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 25.445,
+              "nit": 11901,
+              "izmin": 20,
+              "waterbody": 1
+            },
+            {
+              "layer": 4,
+              "jday": 30.701,
+              "nit": 15065,
+              "izmin": 20,
+              "waterbody": 1
+            }
+          ],
+          "low_water_count": 0,
+          "low_water_events": [],
+          "ws_above_layer2_count": 1,
+          "ws_above_layer2_events": [
+            {
+              "segment": 2,
+              "jday": 1.042
+            }
+          ],
+          "h1h2_gt_035_count": 0,
+          "h1h2_gt_035_events": [],
+          "dltmin_reduced_count": 0,
+          "dltmin_reduced_events": [],
+          "dltmin_set_count": 0,
+          "dltmin_set_events": [],
+          "dltmin_hint_count": 0,
+          "wrn_exists": true,
+          "wrn_bytes": 742,
+          "w2_err": {
+            "present": false,
+            "unstable_ws_count": 0,
+            "text_head": ""
+          },
+          "snp_runtime": {
+            "present": true,
+            "file": "snp1.opt",
+            "bytes": 9614879,
+            "normal_termination": true,
+            "runtime_error": false,
+            "total_iterations": 182227,
+            "n_violations": 16915,
+            "pct_violations": 9.28,
+            "avg_timestep_s": 113,
+            "sim_days": 238.95833333333334,
+            "tail_add_layer_count": 0,
+            "tail_subtract_layer_count": 0
+          },
+          "dlt_trajectory": {
+            "present": true,
+            "file": "tsr_1_seg2.csv",
+            "last_jday": 239.943,
+            "full": {
+              "label": "full",
+              "n_samples": 2390,
+              "jday_first": 1.042,
+              "jday_last": 239.943,
+              "dlt_min_s": 5.0,
+              "dlt_max_s": 527.997,
+              "dlt_mean_s": 163.7969836820084,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            },
+            "window": {
+              "label": "jday[30.0,40.0)",
+              "n_samples": 100,
+              "jday_first": 30.042,
+              "jday_last": 39.942,
+              "dlt_min_s": 100.0,
+              "dlt_max_s": 100.0,
+              "dlt_mean_s": 100.0,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            }
+          },
+          "exit_zero_masks_rollback": false
+        }
+      }
+    },
+    {
+      "name": "dltmax_20",
+      "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_20",
+      "dltmax_window_30_40": 20,
+      "dltf_window_30_40": 0.9,
+      "dltinter": "ON",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg_surface_thickness_count": 5,
+      "add_layer_count": 3,
+      "subtract_layer_count": 3,
+      "low_water_count": 0,
+      "dltmin_reduced_count": 5,
+      "dltmin_set_count": 5,
+      "dltmin_hint_count": 10,
+      "exit_zero_masks_rollback": true,
+      "snp_runtime": {
+        "present": true,
+        "file": "snp1.opt",
+        "bytes": 9614876,
+        "normal_termination": true,
+        "runtime_error": false,
+        "total_iterations": 230624,
+        "n_violations": 2494,
+        "pct_violations": 1.08,
+        "avg_timestep_s": 89,
+        "sim_days": 238.95833333333334,
+        "tail_add_layer_count": 0,
+        "tail_subtract_layer_count": 0
+      },
+      "dlt_trajectory": {
+        "present": true,
+        "file": "tsr_1_seg2.csv",
+        "last_jday": 239.943,
+        "full": {
+          "label": "full",
+          "n_samples": 2390,
+          "jday_first": 1.042,
+          "jday_last": 239.943,
+          "dlt_min_s": 5.0,
+          "dlt_max_s": 507.576,
+          "dlt_mean_s": 127.12144560669451,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        },
+        "window": {
+          "label": "jday[30.0,40.0)",
+          "n_samples": 100,
+          "jday_first": 30.042,
+          "jday_last": 39.943,
+          "dlt_min_s": 27.39,
+          "dlt_max_s": 231.096,
+          "dlt_mean_s": 151.35912,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        }
+      },
+      "neg_events": [
+        {
+          "segment": 3,
+          "jday": 31.975,
+          "dlt_at_warning": 239.731,
+          "z_m": 10.958,
+          "h1_m": -9.948,
+          "reduced_to_s": 0.1,
+          "nit": 17796
+        },
+        {
+          "segment": 3,
+          "jday": 32.688,
+          "dlt_at_warning": 89.46,
+          "z_m": 20.265,
+          "h1_m": -19.255,
+          "reduced_to_s": 0.1,
+          "nit": 18271
+        },
+        {
+          "segment": 3,
+          "jday": 32.867,
+          "dlt_at_warning": 213.683,
+          "z_m": 11.947,
+          "h1_m": -10.937,
+          "reduced_to_s": 0.1,
+          "nit": 18463
+        },
+        {
+          "segment": 3,
+          "jday": 33.015,
+          "dlt_at_warning": 188.004,
+          "z_m": 48.257,
+          "h1_m": -47.247,
+          "reduced_to_s": 0.1,
+          "nit": 18605
+        },
+        {
+          "segment": 3,
+          "jday": 33.122,
+          "dlt_at_warning": 233.28,
+          "z_m": 12.0,
+          "h1_m": -10.99,
+          "reduced_to_s": 0.1,
+          "nit": 18726
+        }
+      ],
+      "add_layer_jdays": [
+        33.884,
+        47.8,
+        54.657
+      ],
+      "subtract_layer_jdays": [
+        14.614,
+        25.447,
+        30.708
+      ],
+      "full_nhr": {
+        "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_20",
+        "case_name": "dltmax_20",
+        "parsed_at": "2026-08-15T01:09:30",
+        "completed": true,
+        "last_jday": 239.943,
+        "dlt_schedule": {
+          "tmstrt": 1.0417,
+          "tmend": 240.0,
+          "ndlt": 6,
+          "dltmin": 0.1,
+          "dltinter": "ON",
+          "dltd": [
+            1.0,
+            1.2,
+            30.0,
+            40.0,
+            175.0,
+            193.0
+          ],
+          "dltmax": [
+            5.0,
+            800.0,
+            20.0,
+            1800.0,
+            60.0,
+            100.0
+          ],
+          "dltf": [
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.2,
+            0.2
+          ],
+          "windows": [
+            {
+              "index": 0,
+              "jday_start": 1.0,
+              "jday_end": 1.2,
+              "dltmax": 5.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 1,
+              "jday_start": 1.2,
+              "jday_end": 30.0,
+              "dltmax": 800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 2,
+              "jday_start": 30.0,
+              "jday_end": 40.0,
+              "dltmax": 20.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 3,
+              "jday_start": 40.0,
+              "jday_end": 175.0,
+              "dltmax": 1800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 4,
+              "jday_start": 175.0,
+              "jday_end": 193.0,
+              "dltmax": 60.0,
+              "dltf": 0.2
+            },
+            {
+              "index": 5,
+              "jday_start": 193.0,
+              "jday_end": 240.0,
+              "dltmax": 100.0,
+              "dltf": 0.2
+            }
+          ]
+        },
+        "nhr": {
+          "neg_surface_thickness_count": 5,
+          "neg_surface_thickness_events": [
+            {
+              "segment": 3,
+              "jday": 31.975,
+              "dlt_at_warning": 239.731,
+              "z_m": 10.958,
+              "h1_m": -9.948,
+              "reduced_to_s": 0.1,
+              "nit": 17796
+            },
+            {
+              "segment": 3,
+              "jday": 32.688,
+              "dlt_at_warning": 89.46,
+              "z_m": 20.265,
+              "h1_m": -19.255,
+              "reduced_to_s": 0.1,
+              "nit": 18271
+            },
+            {
+              "segment": 3,
+              "jday": 32.867,
+              "dlt_at_warning": 213.683,
+              "z_m": 11.947,
+              "h1_m": -10.937,
+              "reduced_to_s": 0.1,
+              "nit": 18463
+            },
+            {
+              "segment": 3,
+              "jday": 33.015,
+              "dlt_at_warning": 188.004,
+              "z_m": 48.257,
+              "h1_m": -47.247,
+              "reduced_to_s": 0.1,
+              "nit": 18605
+            },
+            {
+              "segment": 3,
+              "jday": 33.122,
+              "dlt_at_warning": 233.28,
+              "z_m": 12.0,
+              "h1_m": -10.99,
+              "reduced_to_s": 0.1,
+              "nit": 18726
+            }
+          ],
+          "add_layer_count": 3,
+          "add_layer_jdays": [
+            33.884,
+            47.8,
+            54.657
+          ],
+          "add_layer_events": [
+            {
+              "layer": 4,
+              "jday": 33.884,
+              "nit": 19283,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 47.8,
+              "nit": 28930,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 2,
+              "jday": 54.657,
+              "nit": 32726,
+              "izmin": 34,
+              "waterbody": 1
+            }
+          ],
+          "subtract_layer_count": 3,
+          "subtract_layer_jdays": [
+            14.614,
+            25.447,
+            30.708
+          ],
+          "subtract_layer_events": [
+            {
+              "layer": 2,
+              "jday": 14.614,
+              "nit": 4559,
+              "izmin": 7,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 25.447,
+              "nit": 9448,
+              "izmin": 20,
+              "waterbody": 1
+            },
+            {
+              "layer": 4,
+              "jday": 30.708,
+              "nit": 17102,
+              "izmin": 20,
+              "waterbody": 1
+            }
+          ],
+          "low_water_count": 0,
+          "low_water_events": [],
+          "ws_above_layer2_count": 1,
+          "ws_above_layer2_events": [
+            {
+              "segment": 2,
+              "jday": 1.042
+            }
+          ],
+          "h1h2_gt_035_count": 0,
+          "h1h2_gt_035_events": [],
+          "dltmin_reduced_count": 5,
+          "dltmin_reduced_events": [
+            {
+              "reduced_to_s": 0.1,
+              "jday": 31.975,
+              "nit": 17796
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 32.688,
+              "nit": 18271
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 32.867,
+              "nit": 18463
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 33.015,
+              "nit": 18605
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 33.122,
+              "nit": 18726
+            }
+          ],
+          "dltmin_set_count": 5,
+          "dltmin_set_events": [
+            {
+              "dlt_before_s": 0.09,
+              "jday": 31.975
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 32.688
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 32.867
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 33.015
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 33.122
+            }
+          ],
+          "dltmin_hint_count": 10,
+          "wrn_exists": true,
+          "wrn_bytes": 2504,
+          "w2_err": {
+            "present": false,
+            "unstable_ws_count": 0,
+            "text_head": ""
+          },
+          "snp_runtime": {
+            "present": true,
+            "file": "snp1.opt",
+            "bytes": 9614876,
+            "normal_termination": true,
+            "runtime_error": false,
+            "total_iterations": 230624,
+            "n_violations": 2494,
+            "pct_violations": 1.08,
+            "avg_timestep_s": 89,
+            "sim_days": 238.95833333333334,
+            "tail_add_layer_count": 0,
+            "tail_subtract_layer_count": 0
+          },
+          "dlt_trajectory": {
+            "present": true,
+            "file": "tsr_1_seg2.csv",
+            "last_jday": 239.943,
+            "full": {
+              "label": "full",
+              "n_samples": 2390,
+              "jday_first": 1.042,
+              "jday_last": 239.943,
+              "dlt_min_s": 5.0,
+              "dlt_max_s": 507.576,
+              "dlt_mean_s": 127.12144560669451,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            },
+            "window": {
+              "label": "jday[30.0,40.0)",
+              "n_samples": 100,
+              "jday_first": 30.042,
+              "jday_last": 39.943,
+              "dlt_min_s": 27.39,
+              "dlt_max_s": 231.096,
+              "dlt_mean_s": 151.35912,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            }
+          },
+          "exit_zero_masks_rollback": true
+        }
+      }
+    },
+    {
+      "name": "dltmax_200",
+      "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_200",
+      "dltmax_window_30_40": 200,
+      "dltf_window_30_40": 0.9,
+      "dltinter": "ON",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg_surface_thickness_count": 5,
+      "add_layer_count": 3,
+      "subtract_layer_count": 3,
+      "low_water_count": 0,
+      "dltmin_reduced_count": 5,
+      "dltmin_set_count": 5,
+      "dltmin_hint_count": 10,
+      "exit_zero_masks_rollback": true,
+      "snp_runtime": {
+        "present": true,
+        "file": "snp1.opt",
+        "bytes": 9614876,
+        "normal_termination": true,
+        "runtime_error": false,
+        "total_iterations": 225647,
+        "n_violations": 2837,
+        "pct_violations": 1.26,
+        "avg_timestep_s": 91,
+        "sim_days": 238.95833333333334,
+        "tail_add_layer_count": 0,
+        "tail_subtract_layer_count": 0
+      },
+      "dlt_trajectory": {
+        "present": true,
+        "file": "tsr_1_seg2.csv",
+        "last_jday": 239.943,
+        "full": {
+          "label": "full",
+          "n_samples": 2390,
+          "jday_first": 1.042,
+          "jday_last": 239.943,
+          "dlt_min_s": 5.0,
+          "dlt_max_s": 507.576,
+          "dlt_mean_s": 130.10739958158993,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        },
+        "window": {
+          "label": "jday[30.0,40.0)",
+          "n_samples": 100,
+          "jday_first": 30.042,
+          "jday_last": 39.943,
+          "dlt_min_s": 53.011,
+          "dlt_max_s": 229.709,
+          "dlt_mean_s": 155.01974,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        }
+      },
+      "neg_events": [
+        {
+          "segment": 3,
+          "jday": 30.977,
+          "dlt_at_warning": 114.588,
+          "z_m": 14.46,
+          "h1_m": -13.45,
+          "reduced_to_s": 0.1,
+          "nit": 12283
+        },
+        {
+          "segment": 2,
+          "jday": 32.429,
+          "dlt_at_warning": 191.108,
+          "z_m": 16.046,
+          "h1_m": -15.036,
+          "reduced_to_s": 0.1,
+          "nit": 13135
+        },
+        {
+          "segment": 2,
+          "jday": 32.76,
+          "dlt_at_warning": 240.243,
+          "z_m": 3.137,
+          "h1_m": -2.127,
+          "reduced_to_s": 0.1,
+          "nit": 13398
+        },
+        {
+          "segment": 3,
+          "jday": 32.905,
+          "dlt_at_warning": 127.354,
+          "z_m": 23.481,
+          "h1_m": -22.471,
+          "reduced_to_s": 0.1,
+          "nit": 13544
+        },
+        {
+          "segment": 3,
+          "jday": 32.995,
+          "dlt_at_warning": 207.36,
+          "z_m": 3.202,
+          "h1_m": -2.192,
+          "reduced_to_s": 0.1,
+          "nit": 13655
+        }
+      ],
+      "add_layer_jdays": [
+        33.883,
+        47.8,
+        54.659
+      ],
+      "subtract_layer_jdays": [
+        14.614,
+        25.449,
+        30.704
+      ],
+      "full_nhr": {
+        "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_200",
+        "case_name": "dltmax_200",
+        "parsed_at": "2026-08-15T01:09:30",
+        "completed": true,
+        "last_jday": 239.943,
+        "dlt_schedule": {
+          "tmstrt": 1.0417,
+          "tmend": 240.0,
+          "ndlt": 6,
+          "dltmin": 0.1,
+          "dltinter": "ON",
+          "dltd": [
+            1.0,
+            1.2,
+            30.0,
+            40.0,
+            175.0,
+            193.0
+          ],
+          "dltmax": [
+            5.0,
+            800.0,
+            200.0,
+            1800.0,
+            60.0,
+            100.0
+          ],
+          "dltf": [
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.2,
+            0.2
+          ],
+          "windows": [
+            {
+              "index": 0,
+              "jday_start": 1.0,
+              "jday_end": 1.2,
+              "dltmax": 5.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 1,
+              "jday_start": 1.2,
+              "jday_end": 30.0,
+              "dltmax": 800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 2,
+              "jday_start": 30.0,
+              "jday_end": 40.0,
+              "dltmax": 200.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 3,
+              "jday_start": 40.0,
+              "jday_end": 175.0,
+              "dltmax": 1800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 4,
+              "jday_start": 175.0,
+              "jday_end": 193.0,
+              "dltmax": 60.0,
+              "dltf": 0.2
+            },
+            {
+              "index": 5,
+              "jday_start": 193.0,
+              "jday_end": 240.0,
+              "dltmax": 100.0,
+              "dltf": 0.2
+            }
+          ]
+        },
+        "nhr": {
+          "neg_surface_thickness_count": 5,
+          "neg_surface_thickness_events": [
+            {
+              "segment": 3,
+              "jday": 30.977,
+              "dlt_at_warning": 114.588,
+              "z_m": 14.46,
+              "h1_m": -13.45,
+              "reduced_to_s": 0.1,
+              "nit": 12283
+            },
+            {
+              "segment": 2,
+              "jday": 32.429,
+              "dlt_at_warning": 191.108,
+              "z_m": 16.046,
+              "h1_m": -15.036,
+              "reduced_to_s": 0.1,
+              "nit": 13135
+            },
+            {
+              "segment": 2,
+              "jday": 32.76,
+              "dlt_at_warning": 240.243,
+              "z_m": 3.137,
+              "h1_m": -2.127,
+              "reduced_to_s": 0.1,
+              "nit": 13398
+            },
+            {
+              "segment": 3,
+              "jday": 32.905,
+              "dlt_at_warning": 127.354,
+              "z_m": 23.481,
+              "h1_m": -22.471,
+              "reduced_to_s": 0.1,
+              "nit": 13544
+            },
+            {
+              "segment": 3,
+              "jday": 32.995,
+              "dlt_at_warning": 207.36,
+              "z_m": 3.202,
+              "h1_m": -2.192,
+              "reduced_to_s": 0.1,
+              "nit": 13655
+            }
+          ],
+          "add_layer_count": 3,
+          "add_layer_jdays": [
+            33.883,
+            47.8,
+            54.659
+          ],
+          "add_layer_events": [
+            {
+              "layer": 4,
+              "jday": 33.883,
+              "nit": 14277,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 47.8,
+              "nit": 23944,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 2,
+              "jday": 54.659,
+              "nit": 27747,
+              "izmin": 33,
+              "waterbody": 1
+            }
+          ],
+          "subtract_layer_count": 3,
+          "subtract_layer_jdays": [
+            14.614,
+            25.449,
+            30.704
+          ],
+          "subtract_layer_events": [
+            {
+              "layer": 2,
+              "jday": 14.614,
+              "nit": 4559,
+              "izmin": 7,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 25.449,
+              "nit": 9201,
+              "izmin": 20,
+              "waterbody": 1
+            },
+            {
+              "layer": 4,
+              "jday": 30.704,
+              "nit": 12138,
+              "izmin": 20,
+              "waterbody": 1
+            }
+          ],
+          "low_water_count": 0,
+          "low_water_events": [],
+          "ws_above_layer2_count": 1,
+          "ws_above_layer2_events": [
+            {
+              "segment": 2,
+              "jday": 1.042
+            }
+          ],
+          "h1h2_gt_035_count": 0,
+          "h1h2_gt_035_events": [],
+          "dltmin_reduced_count": 5,
+          "dltmin_reduced_events": [
+            {
+              "reduced_to_s": 0.1,
+              "jday": 30.977,
+              "nit": 12283
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 32.429,
+              "nit": 13135
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 32.76,
+              "nit": 13398
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 32.905,
+              "nit": 13544
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 32.995,
+              "nit": 13655
+            }
+          ],
+          "dltmin_set_count": 5,
+          "dltmin_set_events": [
+            {
+              "dlt_before_s": 0.09,
+              "jday": 30.977
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 32.429
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 32.76
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 32.905
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 32.995
+            }
+          ],
+          "dltmin_hint_count": 10,
+          "wrn_exists": true,
+          "wrn_bytes": 2502,
+          "w2_err": {
+            "present": false,
+            "unstable_ws_count": 0,
+            "text_head": ""
+          },
+          "snp_runtime": {
+            "present": true,
+            "file": "snp1.opt",
+            "bytes": 9614876,
+            "normal_termination": true,
+            "runtime_error": false,
+            "total_iterations": 225647,
+            "n_violations": 2837,
+            "pct_violations": 1.26,
+            "avg_timestep_s": 91,
+            "sim_days": 238.95833333333334,
+            "tail_add_layer_count": 0,
+            "tail_subtract_layer_count": 0
+          },
+          "dlt_trajectory": {
+            "present": true,
+            "file": "tsr_1_seg2.csv",
+            "last_jday": 239.943,
+            "full": {
+              "label": "full",
+              "n_samples": 2390,
+              "jday_first": 1.042,
+              "jday_last": 239.943,
+              "dlt_min_s": 5.0,
+              "dlt_max_s": 507.576,
+              "dlt_mean_s": 130.10739958158993,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            },
+            "window": {
+              "label": "jday[30.0,40.0)",
+              "n_samples": 100,
+              "jday_first": 30.042,
+              "jday_last": 39.943,
+              "dlt_min_s": 53.011,
+              "dlt_max_s": 229.709,
+              "dlt_mean_s": 155.01974,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            }
+          },
+          "exit_zero_masks_rollback": true
+        }
+      }
+    },
+    {
+      "name": "dltmax_200_interoff",
+      "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_200_interoff",
+      "dltmax_window_30_40": 200,
+      "dltf_window_30_40": 0.9,
+      "dltinter": "OFF",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg_surface_thickness_count": 0,
+      "add_layer_count": 3,
+      "subtract_layer_count": 3,
+      "low_water_count": 0,
+      "dltmin_reduced_count": 0,
+      "dltmin_set_count": 0,
+      "dltmin_hint_count": 0,
+      "exit_zero_masks_rollback": false,
+      "snp_runtime": {
+        "present": true,
+        "file": "snp1.opt",
+        "bytes": 9614879,
+        "normal_termination": true,
+        "runtime_error": false,
+        "total_iterations": 179497,
+        "n_violations": 17018,
+        "pct_violations": 9.48,
+        "avg_timestep_s": 115,
+        "sim_days": 238.95833333333334,
+        "tail_add_layer_count": 0,
+        "tail_subtract_layer_count": 0
+      },
+      "dlt_trajectory": {
+        "present": true,
+        "file": "tsr_1_seg2.csv",
+        "last_jday": 239.943,
+        "full": {
+          "label": "full",
+          "n_samples": 2390,
+          "jday_first": 1.042,
+          "jday_last": 239.943,
+          "dlt_min_s": 5.0,
+          "dlt_max_s": 527.997,
+          "dlt_mean_s": 166.04492845188292,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        },
+        "window": {
+          "label": "jday[30.0,40.0)",
+          "n_samples": 100,
+          "jday_first": 30.042,
+          "jday_last": 39.943,
+          "dlt_min_s": 109.497,
+          "dlt_max_s": 200.0,
+          "dlt_mean_s": 151.08220000000003,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        }
+      },
+      "neg_events": [],
+      "add_layer_jdays": [
+        33.884,
+        47.8,
+        54.659
+      ],
+      "subtract_layer_jdays": [
+        14.61,
+        25.445,
+        30.704
+      ],
+      "full_nhr": {
+        "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_200_interoff",
+        "case_name": "dltmax_200_interoff",
+        "parsed_at": "2026-08-15T01:09:30",
+        "completed": true,
+        "last_jday": 239.943,
+        "dlt_schedule": {
+          "tmstrt": 1.0417,
+          "tmend": 240.0,
+          "ndlt": 6,
+          "dltmin": 0.1,
+          "dltinter": "OFF",
+          "dltd": [
+            1.0,
+            1.2,
+            30.0,
+            40.0,
+            175.0,
+            193.0
+          ],
+          "dltmax": [
+            5.0,
+            800.0,
+            200.0,
+            1800.0,
+            60.0,
+            100.0
+          ],
+          "dltf": [
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.2,
+            0.2
+          ],
+          "windows": [
+            {
+              "index": 0,
+              "jday_start": 1.0,
+              "jday_end": 1.2,
+              "dltmax": 5.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 1,
+              "jday_start": 1.2,
+              "jday_end": 30.0,
+              "dltmax": 800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 2,
+              "jday_start": 30.0,
+              "jday_end": 40.0,
+              "dltmax": 200.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 3,
+              "jday_start": 40.0,
+              "jday_end": 175.0,
+              "dltmax": 1800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 4,
+              "jday_start": 175.0,
+              "jday_end": 193.0,
+              "dltmax": 60.0,
+              "dltf": 0.2
+            },
+            {
+              "index": 5,
+              "jday_start": 193.0,
+              "jday_end": 240.0,
+              "dltmax": 100.0,
+              "dltf": 0.2
+            }
+          ]
+        },
+        "nhr": {
+          "neg_surface_thickness_count": 0,
+          "neg_surface_thickness_events": [],
+          "add_layer_count": 3,
+          "add_layer_jdays": [
+            33.884,
+            47.8,
+            54.659
+          ],
+          "add_layer_events": [
+            {
+              "layer": 4,
+              "jday": 33.884,
+              "nit": 16755,
+              "izmin": 31,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 47.8,
+              "nit": 26421,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 2,
+              "jday": 54.659,
+              "nit": 30092,
+              "izmin": 34,
+              "waterbody": 1
+            }
+          ],
+          "subtract_layer_count": 3,
+          "subtract_layer_jdays": [
+            14.61,
+            25.445,
+            30.704
+          ],
+          "subtract_layer_events": [
+            {
+              "layer": 2,
+              "jday": 14.61,
+              "nit": 7204,
+              "izmin": 7,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 25.445,
+              "nit": 11901,
+              "izmin": 20,
+              "waterbody": 1
+            },
+            {
+              "layer": 4,
+              "jday": 30.704,
+              "nit": 14855,
+              "izmin": 20,
+              "waterbody": 1
+            }
+          ],
+          "low_water_count": 0,
+          "low_water_events": [],
+          "ws_above_layer2_count": 1,
+          "ws_above_layer2_events": [
+            {
+              "segment": 2,
+              "jday": 1.042
+            }
+          ],
+          "h1h2_gt_035_count": 0,
+          "h1h2_gt_035_events": [],
+          "dltmin_reduced_count": 0,
+          "dltmin_reduced_events": [],
+          "dltmin_set_count": 0,
+          "dltmin_set_events": [],
+          "dltmin_hint_count": 0,
+          "wrn_exists": true,
+          "wrn_bytes": 742,
+          "w2_err": {
+            "present": false,
+            "unstable_ws_count": 0,
+            "text_head": ""
+          },
+          "snp_runtime": {
+            "present": true,
+            "file": "snp1.opt",
+            "bytes": 9614879,
+            "normal_termination": true,
+            "runtime_error": false,
+            "total_iterations": 179497,
+            "n_violations": 17018,
+            "pct_violations": 9.48,
+            "avg_timestep_s": 115,
+            "sim_days": 238.95833333333334,
+            "tail_add_layer_count": 0,
+            "tail_subtract_layer_count": 0
+          },
+          "dlt_trajectory": {
+            "present": true,
+            "file": "tsr_1_seg2.csv",
+            "last_jday": 239.943,
+            "full": {
+              "label": "full",
+              "n_samples": 2390,
+              "jday_first": 1.042,
+              "jday_last": 239.943,
+              "dlt_min_s": 5.0,
+              "dlt_max_s": 527.997,
+              "dlt_mean_s": 166.04492845188292,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            },
+            "window": {
+              "label": "jday[30.0,40.0)",
+              "n_samples": 100,
+              "jday_first": 30.042,
+              "jday_last": 39.943,
+              "dlt_min_s": 109.497,
+              "dlt_max_s": 200.0,
+              "dlt_mean_s": 151.08220000000003,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            }
+          },
+          "exit_zero_masks_rollback": false
+        }
+      }
+    },
+    {
+      "name": "dltmax_20_interoff",
+      "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_20_interoff",
+      "dltmax_window_30_40": 20,
+      "dltf_window_30_40": 0.9,
+      "dltinter": "OFF",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg_surface_thickness_count": 0,
+      "add_layer_count": 3,
+      "subtract_layer_count": 3,
+      "low_water_count": 0,
+      "dltmin_reduced_count": 0,
+      "dltmin_set_count": 0,
+      "dltmin_hint_count": 0,
+      "exit_zero_masks_rollback": false,
+      "snp_runtime": {
+        "present": true,
+        "file": "snp1.opt",
+        "bytes": 9614878,
+        "normal_termination": true,
+        "runtime_error": false,
+        "total_iterations": 216840,
+        "n_violations": 16803,
+        "pct_violations": 7.75,
+        "avg_timestep_s": 95,
+        "sim_days": 238.95833333333334,
+        "tail_add_layer_count": 0,
+        "tail_subtract_layer_count": 0
+      },
+      "dlt_trajectory": {
+        "present": true,
+        "file": "tsr_1_seg2.csv",
+        "last_jday": 239.943,
+        "full": {
+          "label": "full",
+          "n_samples": 2390,
+          "jday_first": 1.042,
+          "jday_last": 239.943,
+          "dlt_min_s": 5.0,
+          "dlt_max_s": 527.997,
+          "dlt_mean_s": 160.53061715481155,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        },
+        "window": {
+          "label": "jday[30.0,40.0)",
+          "n_samples": 100,
+          "jday_first": 30.042,
+          "jday_last": 39.942,
+          "dlt_min_s": 20.0,
+          "dlt_max_s": 20.0,
+          "dlt_mean_s": 20.0,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        }
+      },
+      "neg_events": [],
+      "add_layer_jdays": [
+        33.88,
+        47.798,
+        54.659
+      ],
+      "subtract_layer_jdays": [
+        14.61,
+        25.445,
+        30.703
+      ],
+      "full_nhr": {
+        "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_20_interoff",
+        "case_name": "dltmax_20_interoff",
+        "parsed_at": "2026-08-15T01:09:30",
+        "completed": true,
+        "last_jday": 239.943,
+        "dlt_schedule": {
+          "tmstrt": 1.0417,
+          "tmend": 240.0,
+          "ndlt": 6,
+          "dltmin": 0.1,
+          "dltinter": "OFF",
+          "dltd": [
+            1.0,
+            1.2,
+            30.0,
+            40.0,
+            175.0,
+            193.0
+          ],
+          "dltmax": [
+            5.0,
+            800.0,
+            20.0,
+            1800.0,
+            60.0,
+            100.0
+          ],
+          "dltf": [
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.2,
+            0.2
+          ],
+          "windows": [
+            {
+              "index": 0,
+              "jday_start": 1.0,
+              "jday_end": 1.2,
+              "dltmax": 5.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 1,
+              "jday_start": 1.2,
+              "jday_end": 30.0,
+              "dltmax": 800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 2,
+              "jday_start": 30.0,
+              "jday_end": 40.0,
+              "dltmax": 20.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 3,
+              "jday_start": 40.0,
+              "jday_end": 175.0,
+              "dltmax": 1800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 4,
+              "jday_start": 175.0,
+              "jday_end": 193.0,
+              "dltmax": 60.0,
+              "dltf": 0.2
+            },
+            {
+              "index": 5,
+              "jday_start": 193.0,
+              "jday_end": 240.0,
+              "dltmax": 100.0,
+              "dltf": 0.2
+            }
+          ]
+        },
+        "nhr": {
+          "neg_surface_thickness_count": 0,
+          "neg_surface_thickness_events": [],
+          "add_layer_count": 3,
+          "add_layer_jdays": [
+            33.88,
+            47.798,
+            54.659
+          ],
+          "add_layer_events": [
+            {
+              "layer": 4,
+              "jday": 33.88,
+              "nit": 31462,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 47.798,
+              "nit": 63691,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 2,
+              "jday": 54.659,
+              "nit": 67362,
+              "izmin": 34,
+              "waterbody": 1
+            }
+          ],
+          "subtract_layer_count": 3,
+          "subtract_layer_jdays": [
+            14.61,
+            25.445,
+            30.703
+          ],
+          "subtract_layer_events": [
+            {
+              "layer": 2,
+              "jday": 14.61,
+              "nit": 7204,
+              "izmin": 7,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 25.445,
+              "nit": 11901,
+              "izmin": 20,
+              "waterbody": 1
+            },
+            {
+              "layer": 4,
+              "jday": 30.703,
+              "nit": 17500,
+              "izmin": 20,
+              "waterbody": 1
+            }
+          ],
+          "low_water_count": 0,
+          "low_water_events": [],
+          "ws_above_layer2_count": 1,
+          "ws_above_layer2_events": [
+            {
+              "segment": 2,
+              "jday": 1.042
+            }
+          ],
+          "h1h2_gt_035_count": 0,
+          "h1h2_gt_035_events": [],
+          "dltmin_reduced_count": 0,
+          "dltmin_reduced_events": [],
+          "dltmin_set_count": 0,
+          "dltmin_set_events": [],
+          "dltmin_hint_count": 0,
+          "wrn_exists": true,
+          "wrn_bytes": 742,
+          "w2_err": {
+            "present": false,
+            "unstable_ws_count": 0,
+            "text_head": ""
+          },
+          "snp_runtime": {
+            "present": true,
+            "file": "snp1.opt",
+            "bytes": 9614878,
+            "normal_termination": true,
+            "runtime_error": false,
+            "total_iterations": 216840,
+            "n_violations": 16803,
+            "pct_violations": 7.75,
+            "avg_timestep_s": 95,
+            "sim_days": 238.95833333333334,
+            "tail_add_layer_count": 0,
+            "tail_subtract_layer_count": 0
+          },
+          "dlt_trajectory": {
+            "present": true,
+            "file": "tsr_1_seg2.csv",
+            "last_jday": 239.943,
+            "full": {
+              "label": "full",
+              "n_samples": 2390,
+              "jday_first": 1.042,
+              "jday_last": 239.943,
+              "dlt_min_s": 5.0,
+              "dlt_max_s": 527.997,
+              "dlt_mean_s": 160.53061715481155,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            },
+            "window": {
+              "label": "jday[30.0,40.0)",
+              "n_samples": 100,
+              "jday_first": 30.042,
+              "jday_last": 39.942,
+              "dlt_min_s": 20.0,
+              "dlt_max_s": 20.0,
+              "dlt_mean_s": 20.0,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            }
+          },
+          "exit_zero_masks_rollback": false
+        }
+      }
+    },
+    {
+      "name": "dltmax_50",
+      "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_50",
+      "dltmax_window_30_40": 50,
+      "dltf_window_30_40": 0.9,
+      "dltinter": "ON",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg_surface_thickness_count": 4,
+      "add_layer_count": 3,
+      "subtract_layer_count": 3,
+      "low_water_count": 0,
+      "dltmin_reduced_count": 4,
+      "dltmin_set_count": 4,
+      "dltmin_hint_count": 8,
+      "exit_zero_masks_rollback": true,
+      "snp_runtime": {
+        "present": true,
+        "file": "snp1.opt",
+        "bytes": 9614876,
+        "normal_termination": true,
+        "runtime_error": false,
+        "total_iterations": 227773,
+        "n_violations": 2586,
+        "pct_violations": 1.14,
+        "avg_timestep_s": 90,
+        "sim_days": 238.95833333333334,
+        "tail_add_layer_count": 0,
+        "tail_subtract_layer_count": 0
+      },
+      "dlt_trajectory": {
+        "present": true,
+        "file": "tsr_1_seg2.csv",
+        "last_jday": 239.943,
+        "full": {
+          "label": "full",
+          "n_samples": 2390,
+          "jday_first": 1.042,
+          "jday_last": 239.943,
+          "dlt_min_s": 5.0,
+          "dlt_max_s": 507.576,
+          "dlt_mean_s": 127.98248995815918,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        },
+        "window": {
+          "label": "jday[30.0,40.0)",
+          "n_samples": 100,
+          "jday_first": 30.042,
+          "jday_last": 39.943,
+          "dlt_min_s": 57.288,
+          "dlt_max_s": 254.189,
+          "dlt_mean_s": 154.49791,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        }
+      },
+      "neg_events": [
+        {
+          "segment": 3,
+          "jday": 32.225,
+          "dlt_at_warning": 139.612,
+          "z_m": 114.532,
+          "h1_m": -113.522,
+          "reduced_to_s": 0.1,
+          "nit": 15159
+        },
+        {
+          "segment": 3,
+          "jday": 32.362,
+          "dlt_at_warning": 193.639,
+          "z_m": 1.949,
+          "h1_m": -0.939,
+          "reduced_to_s": 0.1,
+          "nit": 15300
+        },
+        {
+          "segment": 3,
+          "jday": 32.867,
+          "dlt_at_warning": 181.443,
+          "z_m": 31.541,
+          "h1_m": -30.531,
+          "reduced_to_s": 0.1,
+          "nit": 15678
+        },
+        {
+          "segment": 3,
+          "jday": 32.987,
+          "dlt_at_warning": 189.798,
+          "z_m": 8.387,
+          "h1_m": -7.377,
+          "reduced_to_s": 0.1,
+          "nit": 15804
+        }
+      ],
+      "add_layer_jdays": [
+        33.883,
+        47.8,
+        54.659
+      ],
+      "subtract_layer_jdays": [
+        14.614,
+        25.451,
+        30.706
+      ],
+      "full_nhr": {
+        "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_50",
+        "case_name": "dltmax_50",
+        "parsed_at": "2026-08-15T01:09:30",
+        "completed": true,
+        "last_jday": 239.943,
+        "dlt_schedule": {
+          "tmstrt": 1.0417,
+          "tmend": 240.0,
+          "ndlt": 6,
+          "dltmin": 0.1,
+          "dltinter": "ON",
+          "dltd": [
+            1.0,
+            1.2,
+            30.0,
+            40.0,
+            175.0,
+            193.0
+          ],
+          "dltmax": [
+            5.0,
+            800.0,
+            50.0,
+            1800.0,
+            60.0,
+            100.0
+          ],
+          "dltf": [
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.2,
+            0.2
+          ],
+          "windows": [
+            {
+              "index": 0,
+              "jday_start": 1.0,
+              "jday_end": 1.2,
+              "dltmax": 5.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 1,
+              "jday_start": 1.2,
+              "jday_end": 30.0,
+              "dltmax": 800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 2,
+              "jday_start": 30.0,
+              "jday_end": 40.0,
+              "dltmax": 50.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 3,
+              "jday_start": 40.0,
+              "jday_end": 175.0,
+              "dltmax": 1800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 4,
+              "jday_start": 175.0,
+              "jday_end": 193.0,
+              "dltmax": 60.0,
+              "dltf": 0.2
+            },
+            {
+              "index": 5,
+              "jday_start": 193.0,
+              "jday_end": 240.0,
+              "dltmax": 100.0,
+              "dltf": 0.2
+            }
+          ]
+        },
+        "nhr": {
+          "neg_surface_thickness_count": 4,
+          "neg_surface_thickness_events": [
+            {
+              "segment": 3,
+              "jday": 32.225,
+              "dlt_at_warning": 139.612,
+              "z_m": 114.532,
+              "h1_m": -113.522,
+              "reduced_to_s": 0.1,
+              "nit": 15159
+            },
+            {
+              "segment": 3,
+              "jday": 32.362,
+              "dlt_at_warning": 193.639,
+              "z_m": 1.949,
+              "h1_m": -0.939,
+              "reduced_to_s": 0.1,
+              "nit": 15300
+            },
+            {
+              "segment": 3,
+              "jday": 32.867,
+              "dlt_at_warning": 181.443,
+              "z_m": 31.541,
+              "h1_m": -30.531,
+              "reduced_to_s": 0.1,
+              "nit": 15678
+            },
+            {
+              "segment": 3,
+              "jday": 32.987,
+              "dlt_at_warning": 189.798,
+              "z_m": 8.387,
+              "h1_m": -7.377,
+              "reduced_to_s": 0.1,
+              "nit": 15804
+            }
+          ],
+          "add_layer_count": 3,
+          "add_layer_jdays": [
+            33.883,
+            47.8,
+            54.659
+          ],
+          "add_layer_events": [
+            {
+              "layer": 4,
+              "jday": 33.883,
+              "nit": 16424,
+              "izmin": 27,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 47.8,
+              "nit": 26099,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 2,
+              "jday": 54.659,
+              "nit": 29921,
+              "izmin": 33,
+              "waterbody": 1
+            }
+          ],
+          "subtract_layer_count": 3,
+          "subtract_layer_jdays": [
+            14.614,
+            25.451,
+            30.706
+          ],
+          "subtract_layer_events": [
+            {
+              "layer": 2,
+              "jday": 14.614,
+              "nit": 4559,
+              "izmin": 7,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 25.451,
+              "nit": 9293,
+              "izmin": 20,
+              "waterbody": 1
+            },
+            {
+              "layer": 4,
+              "jday": 30.706,
+              "nit": 14349,
+              "izmin": 20,
+              "waterbody": 1
+            }
+          ],
+          "low_water_count": 0,
+          "low_water_events": [],
+          "ws_above_layer2_count": 1,
+          "ws_above_layer2_events": [
+            {
+              "segment": 2,
+              "jday": 1.042
+            }
+          ],
+          "h1h2_gt_035_count": 0,
+          "h1h2_gt_035_events": [],
+          "dltmin_reduced_count": 4,
+          "dltmin_reduced_events": [
+            {
+              "reduced_to_s": 0.1,
+              "jday": 32.225,
+              "nit": 15159
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 32.362,
+              "nit": 15300
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 32.867,
+              "nit": 15678
+            },
+            {
+              "reduced_to_s": 0.1,
+              "jday": 32.987,
+              "nit": 15804
+            }
+          ],
+          "dltmin_set_count": 4,
+          "dltmin_set_events": [
+            {
+              "dlt_before_s": 0.09,
+              "jday": 32.225
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 32.362
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 32.867
+            },
+            {
+              "dlt_before_s": 0.09,
+              "jday": 32.987
+            }
+          ],
+          "dltmin_hint_count": 8,
+          "wrn_exists": true,
+          "wrn_bytes": 2150,
+          "w2_err": {
+            "present": false,
+            "unstable_ws_count": 0,
+            "text_head": ""
+          },
+          "snp_runtime": {
+            "present": true,
+            "file": "snp1.opt",
+            "bytes": 9614876,
+            "normal_termination": true,
+            "runtime_error": false,
+            "total_iterations": 227773,
+            "n_violations": 2586,
+            "pct_violations": 1.14,
+            "avg_timestep_s": 90,
+            "sim_days": 238.95833333333334,
+            "tail_add_layer_count": 0,
+            "tail_subtract_layer_count": 0
+          },
+          "dlt_trajectory": {
+            "present": true,
+            "file": "tsr_1_seg2.csv",
+            "last_jday": 239.943,
+            "full": {
+              "label": "full",
+              "n_samples": 2390,
+              "jday_first": 1.042,
+              "jday_last": 239.943,
+              "dlt_min_s": 5.0,
+              "dlt_max_s": 507.576,
+              "dlt_mean_s": 127.98248995815918,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            },
+            "window": {
+              "label": "jday[30.0,40.0)",
+              "n_samples": 100,
+              "jday_first": 30.042,
+              "jday_last": 39.943,
+              "dlt_min_s": 57.288,
+              "dlt_max_s": 254.189,
+              "dlt_mean_s": 154.49791,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            }
+          },
+          "exit_zero_masks_rollback": true
+        }
+      }
+    },
+    {
+      "name": "dltmax_50_interoff",
+      "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_50_interoff",
+      "dltmax_window_30_40": 50,
+      "dltf_window_30_40": 0.9,
+      "dltinter": "OFF",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg_surface_thickness_count": 0,
+      "add_layer_count": 3,
+      "subtract_layer_count": 3,
+      "low_water_count": 0,
+      "dltmin_reduced_count": 0,
+      "dltmin_set_count": 0,
+      "dltmin_hint_count": 0,
+      "exit_zero_masks_rollback": false,
+      "snp_runtime": {
+        "present": true,
+        "file": "snp1.opt",
+        "bytes": 9614879,
+        "normal_termination": true,
+        "runtime_error": false,
+        "total_iterations": 191035,
+        "n_violations": 16878,
+        "pct_violations": 8.84,
+        "avg_timestep_s": 108,
+        "sim_days": 238.95833333333334,
+        "tail_add_layer_count": 0,
+        "tail_subtract_layer_count": 0
+      },
+      "dlt_trajectory": {
+        "present": true,
+        "file": "tsr_1_seg2.csv",
+        "last_jday": 239.943,
+        "full": {
+          "label": "full",
+          "n_samples": 2390,
+          "jday_first": 1.042,
+          "jday_last": 239.943,
+          "dlt_min_s": 5.0,
+          "dlt_max_s": 527.997,
+          "dlt_mean_s": 161.55312761506246,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        },
+        "window": {
+          "label": "jday[30.0,40.0)",
+          "n_samples": 100,
+          "jday_first": 30.042,
+          "jday_last": 39.942,
+          "dlt_min_s": 50.0,
+          "dlt_max_s": 50.0,
+          "dlt_mean_s": 50.0,
+          "n_samples_near_dltmin": 0,
+          "frac_samples_near_dltmin": 0.0
+        }
+      },
+      "neg_events": [],
+      "add_layer_jdays": [
+        33.882,
+        47.798,
+        54.657
+      ],
+      "subtract_layer_jdays": [
+        14.61,
+        25.445,
+        30.702
+      ],
+      "full_nhr": {
+        "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_ll_dlt_scan\\dltmax_50_interoff",
+        "case_name": "dltmax_50_interoff",
+        "parsed_at": "2026-08-15T01:09:30",
+        "completed": true,
+        "last_jday": 239.943,
+        "dlt_schedule": {
+          "tmstrt": 1.0417,
+          "tmend": 240.0,
+          "ndlt": 6,
+          "dltmin": 0.1,
+          "dltinter": "OFF",
+          "dltd": [
+            1.0,
+            1.2,
+            30.0,
+            40.0,
+            175.0,
+            193.0
+          ],
+          "dltmax": [
+            5.0,
+            800.0,
+            50.0,
+            1800.0,
+            60.0,
+            100.0
+          ],
+          "dltf": [
+            0.9,
+            0.9,
+            0.9,
+            0.9,
+            0.2,
+            0.2
+          ],
+          "windows": [
+            {
+              "index": 0,
+              "jday_start": 1.0,
+              "jday_end": 1.2,
+              "dltmax": 5.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 1,
+              "jday_start": 1.2,
+              "jday_end": 30.0,
+              "dltmax": 800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 2,
+              "jday_start": 30.0,
+              "jday_end": 40.0,
+              "dltmax": 50.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 3,
+              "jday_start": 40.0,
+              "jday_end": 175.0,
+              "dltmax": 1800.0,
+              "dltf": 0.9
+            },
+            {
+              "index": 4,
+              "jday_start": 175.0,
+              "jday_end": 193.0,
+              "dltmax": 60.0,
+              "dltf": 0.2
+            },
+            {
+              "index": 5,
+              "jday_start": 193.0,
+              "jday_end": 240.0,
+              "dltmax": 100.0,
+              "dltf": 0.2
+            }
+          ]
+        },
+        "nhr": {
+          "neg_surface_thickness_count": 0,
+          "neg_surface_thickness_events": [],
+          "add_layer_count": 3,
+          "add_layer_jdays": [
+            33.882,
+            47.798,
+            54.657
+          ],
+          "add_layer_events": [
+            {
+              "layer": 4,
+              "jday": 33.882,
+              "nit": 21453,
+              "izmin": 22,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 47.798,
+              "nit": 37903,
+              "izmin": 21,
+              "waterbody": 1
+            },
+            {
+              "layer": 2,
+              "jday": 54.657,
+              "nit": 41591,
+              "izmin": 34,
+              "waterbody": 1
+            }
+          ],
+          "subtract_layer_count": 3,
+          "subtract_layer_jdays": [
+            14.61,
+            25.445,
+            30.702
+          ],
+          "subtract_layer_events": [
+            {
+              "layer": 2,
+              "jday": 14.61,
+              "nit": 7204,
+              "izmin": 7,
+              "waterbody": 1
+            },
+            {
+              "layer": 3,
+              "jday": 25.445,
+              "nit": 11901,
+              "izmin": 20,
+              "waterbody": 1
+            },
+            {
+              "layer": 4,
+              "jday": 30.702,
+              "nit": 15686,
+              "izmin": 20,
+              "waterbody": 1
+            }
+          ],
+          "low_water_count": 0,
+          "low_water_events": [],
+          "ws_above_layer2_count": 1,
+          "ws_above_layer2_events": [
+            {
+              "segment": 2,
+              "jday": 1.042
+            }
+          ],
+          "h1h2_gt_035_count": 0,
+          "h1h2_gt_035_events": [],
+          "dltmin_reduced_count": 0,
+          "dltmin_reduced_events": [],
+          "dltmin_set_count": 0,
+          "dltmin_set_events": [],
+          "dltmin_hint_count": 0,
+          "wrn_exists": true,
+          "wrn_bytes": 742,
+          "w2_err": {
+            "present": false,
+            "unstable_ws_count": 0,
+            "text_head": ""
+          },
+          "snp_runtime": {
+            "present": true,
+            "file": "snp1.opt",
+            "bytes": 9614879,
+            "normal_termination": true,
+            "runtime_error": false,
+            "total_iterations": 191035,
+            "n_violations": 16878,
+            "pct_violations": 8.84,
+            "avg_timestep_s": 108,
+            "sim_days": 238.95833333333334,
+            "tail_add_layer_count": 0,
+            "tail_subtract_layer_count": 0
+          },
+          "dlt_trajectory": {
+            "present": true,
+            "file": "tsr_1_seg2.csv",
+            "last_jday": 239.943,
+            "full": {
+              "label": "full",
+              "n_samples": 2390,
+              "jday_first": 1.042,
+              "jday_last": 239.943,
+              "dlt_min_s": 5.0,
+              "dlt_max_s": 527.997,
+              "dlt_mean_s": 161.55312761506246,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            },
+            "window": {
+              "label": "jday[30.0,40.0)",
+              "n_samples": 100,
+              "jday_first": 30.042,
+              "jday_last": 39.942,
+              "dlt_min_s": 50.0,
+              "dlt_max_s": 50.0,
+              "dlt_mean_s": 50.0,
+              "n_samples_near_dltmin": 0,
+              "frac_samples_near_dltmin": 0.0
+            }
+          },
+          "exit_zero_masks_rollback": false
+        }
+      }
+    }
+  ],
+  "monotonicity": {
+    "DLTINTER_ON": {
+      "dltmax": [
+        20.0,
+        50.0,
+        100.0,
+        200.0
+      ],
+      "neg_counts": [
+        5,
+        4,
+        1,
+        5
+      ],
+      "monotone_decreasing": false,
+      "monotone_increasing": false,
+      "nonmonotonic": true,
+      "min_count": 1,
+      "max_count": 5,
+      "count_at_official_100": 1,
+      "tighter_than_official_worse": true,
+      "opposes_tighter_is_safer": true
+    },
+    "DLTINTER_OFF": {
+      "dltmax": [
+        20.0,
+        50.0,
+        100.0,
+        200.0
+      ],
+      "neg_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "monotone_decreasing": true,
+      "monotone_increasing": true,
+      "nonmonotonic": false,
+      "min_count": 0,
+      "max_count": 0,
+      "count_at_official_100": 0,
+      "tighter_than_official_worse": false,
+      "opposes_tighter_is_safer": false
+    }
+  },
+  "verdict": {
+    "exit0_masks_rollback": true,
+    "nonmonotonic_under_official_dltinter_on": true,
+    "nonmonotonic_when_dltmax_is_true_cap": false,
+    "interoff_eliminates_neg_thickness": true,
+    "recommendation": "Keep NHR as a required report item. Treat non-monotonic vs DLTMAX as conditional on DLTINTER=ON knot interpolation, not as a general CFL result."
+  },
+  "figures": [
+    "I:\\Projects\\20260810-CE-QUAL-W2\\06_PAPER\\figures\\nhr_dltmax_neg_thickness.png",
+    "I:\\Projects\\20260810-CE-QUAL-W2\\06_PAPER\\figures\\nhr_dltmax_layers_dltmin.png",
+    "I:\\Projects\\20260810-CE-QUAL-W2\\06_PAPER\\figures\\nhr_dltmax_heatmap.png"
+  ],
+  "columbia_scan": {
+    "case": "Columbia Slough Estuary",
+    "note": "Official DLTINTER=OFF, NDLT=1, DLTMAX default 360 s. SED_DIAG forced OFF. No H1<0 at any grid point.",
+    "n_jobs": 3,
+    "jobs": [
+      {
+        "name": "dltmax_120",
+        "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_columbia_dlt_scan\\dltmax_120",
+        "dltmax": 120,
+        "dltinter": "OFF",
+        "completed": true,
+        "last_jday": 55.0,
+        "neg_surface_thickness_count": 0,
+        "add_layer_count": 7,
+        "subtract_layer_count": 8,
+        "low_water_count": 0,
+        "dltmin_hint_count": 0,
+        "exit_zero_masks_rollback": false,
+        "snp_runtime": {
+          "present": true,
+          "file": "snp.opt",
+          "bytes": 2324576,
+          "normal_termination": true,
+          "runtime_error": false,
+          "total_iterations": 18419,
+          "n_violations": 0,
+          "pct_violations": 0.0,
+          "avg_timestep_s": 107,
+          "sim_days": 23.0,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "add_layer_jdays": [
+          32.302,
+          41.567,
+          44.68,
+          46.749,
+          47.772,
+          48.818,
+          50.336
+        ],
+        "subtract_layer_jdays": [
+          35.595,
+          36.722,
+          40.251,
+          41.282,
+          43.876,
+          47.014,
+          53.135,
+          54.921
+        ]
+      },
+      {
+        "name": "dltmax_360",
+        "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_columbia_dlt_scan\\dltmax_360",
+        "dltmax": 360,
+        "dltinter": "OFF",
+        "completed": true,
+        "last_jday": 55.0,
+        "neg_surface_thickness_count": 0,
+        "add_layer_count": 7,
+        "subtract_layer_count": 8,
+        "low_water_count": 0,
+        "dltmin_hint_count": 0,
+        "exit_zero_masks_rollback": false,
+        "snp_runtime": {
+          "present": true,
+          "file": "snp.opt",
+          "bytes": 2324577,
+          "normal_termination": true,
+          "runtime_error": false,
+          "total_iterations": 7328,
+          "n_violations": 49,
+          "pct_violations": 0.67,
+          "avg_timestep_s": 271,
+          "sim_days": 23.0,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "add_layer_jdays": [
+          32.302,
+          41.566,
+          44.682,
+          46.753,
+          47.779,
+          48.823,
+          50.337
+        ],
+        "subtract_layer_jdays": [
+          35.594,
+          36.723,
+          40.25,
+          41.281,
+          43.875,
+          47.021,
+          53.135,
+          54.925
+        ]
+      },
+      {
+        "name": "dltmax_720",
+        "dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260815_columbia_dlt_scan\\dltmax_720",
+        "dltmax": 720,
+        "dltinter": "OFF",
+        "completed": true,
+        "last_jday": 55.0,
+        "neg_surface_thickness_count": 0,
+        "add_layer_count": 7,
+        "subtract_layer_count": 8,
+        "low_water_count": 0,
+        "dltmin_hint_count": 0,
+        "exit_zero_masks_rollback": false,
+        "snp_runtime": {
+          "present": true,
+          "file": "snp.opt",
+          "bytes": 2324582,
+          "normal_termination": true,
+          "runtime_error": false,
+          "total_iterations": 6317,
+          "n_violations": 189,
+          "pct_violations": 2.99,
+          "avg_timestep_s": 314,
+          "sim_days": 23.0,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "add_layer_jdays": [
+          32.302,
+          41.569,
+          44.686,
+          46.759,
+          47.78,
+          48.823,
+          50.337
+        ],
+        "subtract_layer_jdays": [
+          35.594,
+          36.724,
+          40.252,
+          41.281,
+          43.877,
+          47.021,
+          53.135,
+          54.927
+        ]
+      }
+    ],
+    "neg_counts_by_dltmax": {
+      "120": 0,
+      "360": 0,
+      "720": 0
+    },
+    "add_sub_by_dltmax": {
+      "120": [
+        7,
+        8
+      ],
+      "360": [
+        7,
+        8
+      ],
+      "720": [
+        7,
+        8
+      ]
+    }
+  }
+}

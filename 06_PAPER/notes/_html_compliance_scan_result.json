@@ -1,0 +1,453 @@
+[
+  {
+    "path": "06_PAPER/drafts/P1_paper.html",
+    "size_mb": 8.742,
+    "DOCTYPE": true,
+    "html": true,
+    "head": true,
+    "style": true,
+    "body": true,
+    "charset_utf8": true,
+    "img_count": 25,
+    "src_data": 25,
+    "src_dotdot": 0,
+    "src_dot": 0,
+    "src_http": 0,
+    "src_other": [],
+    "table_count": 7,
+    "max_width_100": 1,
+    "chinese_font": true,
+    "pending_bu": 4,
+    "https_literal_count": 0,
+    "https_outside_datauri_samples": [],
+    "cdn_hits": {
+      "\\bd3\\.": 2
+    },
+    "fig_title_count": 0,
+    "h4_counts": {
+      "背景与作用": 0,
+      "如何阅读": 0,
+      "怎么读": 0,
+      "曲线": 0,
+      "分量含义": 0,
+      "可得出的结论": 0,
+      "通俗": 0
+    },
+    "h4_unique": [
+      "5.1.1 Bonneville TDG versus CCIW (skill)",
+      "5.1.2 Literature audit (motivation, not a W2 run)",
+      "5.2.1 Gated file versus pre-control snapshot",
+      "5.2.2 DART check, exceedance, and 2011 spill (not out-of-sample NSE)",
+      "5.3.1 DeGray temperature (internal consistency)",
+      "5.3.2 Columbia DO (internal consistency)",
+      "5.5.1 Transplanted-parameter SOD magnitude check"
+    ],
+    "term_present": {
+      "NSE": true,
+      "KGE": true,
+      "PBIAS": true,
+      "R²": false,
+      "TDG": true,
+      "SOD": true,
+      "DLTMAX": true,
+      "DLTINTER": true,
+      "DLTMIN": true,
+      "H1": true,
+      "ZMIN": true,
+      "KT": true,
+      "KTMAX": true,
+      "TDGTA": true,
+      "SYSTDG": true,
+      "VPR": true,
+      "NHR": true,
+      "segment": true,
+      "layer": true,
+      "JDAY": true,
+      "forrtl": true,
+      "α": true,
+      "β": true
+    }
+  },
+  {
+    "path": "06_PAPER/report/report.html",
+    "size_mb": 8.707,
+    "DOCTYPE": true,
+    "html": true,
+    "head": true,
+    "style": true,
+    "body": true,
+    "charset_utf8": true,
+    "img_count": 25,
+    "src_data": 25,
+    "src_dotdot": 0,
+    "src_dot": 0,
+    "src_http": 0,
+    "src_other": [],
+    "table_count": 8,
+    "max_width_100": 1,
+    "chinese_font": true,
+    "pending_bu": 5,
+    "https_literal_count": 0,
+    "https_outside_datauri_samples": [],
+    "cdn_hits": {},
+    "fig_title_count": 25,
+    "h4_counts": {
+      "背景与作用": 0,
+      "如何阅读": 25,
+      "怎么读": 0,
+      "曲线": 25,
+      "分量含义": 25,
+      "可得出的结论": 25,
+      "通俗": 25
+    },
+    "h4_unique": [
+      "产生背景与在全篇中的作用",
+      "可得出的结论与理由",
+      "如何阅读",
+      "曲线 / 分量含义",
+      "通俗解读"
+    ],
+    "term_present": {
+      "NSE": true,
+      "KGE": true,
+      "PBIAS": true,
+      "R²": true,
+      "TDG": true,
+      "SOD": true,
+      "DLTMAX": true,
+      "DLTINTER": true,
+      "DLTMIN": true,
+      "H1": true,
+      "ZMIN": true,
+      "KT": true,
+      "KTMAX": false,
+      "TDGTA": true,
+      "SYSTDG": true,
+      "VPR": true,
+      "NHR": true,
+      "segment": true,
+      "layer": true,
+      "JDAY": true,
+      "forrtl": false,
+      "α": true,
+      "β": true
+    },
+    "sections": {
+      "封面": false,
+      "目录": true,
+      "摘要": true,
+      "研究背景": true,
+      "数据与方法": true,
+      "研究过程": true,
+      "结果": true,
+      "分析与讨论": true,
+      "主要结论": true,
+      "不足与展望": true
+    },
+    "per_fig": [
+      {
+        "title": "图 1　TDGTA ON/OFF 多口径时间序列（全年与 CCIW 窗）",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 2　TDGTA ON/OFF 多口径 1:1 散点",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 3　KGE 分量分解（r / α / β）",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 4　观测可达范围与控制器 120% 封顶",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 5　DeGray 多通道水温时间序列",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 6　DeGray 水温通道 1:1 散点",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 7　DeGray KGE 分量（r/α/β）",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 8　DeGray R²–NSE 平面",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 9　Columbia 多断面 DO 时间序列",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 10　Columbia DO 断面 1:1 散点",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 11　Columbia DO 的 KGE 分量",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 12　Columbia R²–NSE 平面",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 13　R²–NSE 综合图（案例 + 文献动机）",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 14　库内 CCIW 与 DART 小时 TDG 散点",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 15　库内 CCIW 与 DART 对照时间序列",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 16　逐年有效小时超 120% 比例",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 17　逐年 TDG 年最大",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 18　TDGTA 泄流再分配 vs DART 实测泄流",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 19　泄流对照散点（QGT / TDGTA vs DART）",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 20　负厚度计数随 DLTMAX 变化",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 21　层增减与 DLTMIN 提示",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 22　NHR 扫描热图概览",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 23　Columbia 湿段 SOD 时间序列与 Almeida 参考",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 24　Columbia SOD 直方图",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      },
+      {
+        "title": "图 25　w2eval run-card 概念/示例拼图",
+        "missing": [
+          "背景与作用",
+          "如何阅读",
+          "曲线 / 分量含义",
+          "可得出的结论与理由",
+          "通俗版结论"
+        ],
+        "explain_chars": 0
+      }
+    ],
+    "figs_missing_any": 25,
+    "figs_short": [
+      "图 1　TDGTA ON/OFF 多口径时间序列（全年与 CCIW 窗）",
+      "图 2　TDGTA ON/OFF 多口径 1:1 散点",
+      "图 3　KGE 分量分解（r / α / β）",
+      "图 4　观测可达范围与控制器 120% 封顶",
+      "图 5　DeGray 多通道水温时间序列",
+      "图 6　DeGray 水温通道 1:1 散点",
+      "图 7　DeGray KGE 分量（r/α/β）",
+      "图 8　DeGray R²–NSE 平面",
+      "图 9　Columbia 多断面 DO 时间序列",
+      "图 10　Columbia DO 断面 1:1 散点",
+      "图 11　Columbia DO 的 KGE 分量",
+      "图 12　Columbia R²–NSE 平面",
+      "图 13　R²–NSE 综合图（案例 + 文献动机）",
+      "图 14　库内 CCIW 与 DART 小时 TDG 散点",
+      "图 15　库内 CCIW 与 DART 对照时间序列",
+      "图 16　逐年有效小时超 120% 比例",
+      "图 17　逐年 TDG 年最大",
+      "图 18　TDGTA 泄流再分配 vs DART 实测泄流",
+      "图 19　泄流对照散点（QGT / TDGTA vs DART）",
+      "图 20　负厚度计数随 DLTMAX 变化",
+      "图 21　层增减与 DLTMIN 提示",
+      "图 22　NHR 扫描热图概览",
+      "图 23　Columbia 湿段 SOD 时间序列与 Almeida 参考",
+      "图 24　Columbia SOD 直方图",
+      "图 25　w2eval run-card 概念/示例拼图"
+    ]
+  }
+]

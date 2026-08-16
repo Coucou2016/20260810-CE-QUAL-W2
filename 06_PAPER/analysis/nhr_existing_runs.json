@@ -1,0 +1,4082 @@
+{
+  "generated": "2026-08-15T00:41:08",
+  "parser": "00_INDEX/parse_nhr.py",
+  "n_cases": 17,
+  "cases": [
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\diag_columbia",
+      "case_name": "diag_columbia",
+      "parsed_at": "2026-08-15T00:41:07",
+      "completed": false,
+      "last_jday": null,
+      "dlt_schedule": {
+        "tmstrt": 32.0,
+        "tmend": 55.0,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          1.0
+        ],
+        "dltmax": [
+          360.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 55.0,
+            "dltmax": 360.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 0,
+        "add_layer_jdays": [],
+        "add_layer_events": [],
+        "subtract_layer_count": 0,
+        "subtract_layer_jdays": [],
+        "subtract_layer_events": [],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_missing": true,
+        "wrn_exists": false,
+        "wrn_bytes": 0,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": false
+        },
+        "dlt_trajectory": {
+          "present": false,
+          "last_jday": null
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "diag_columbia",
+      "run_id": "diag_columbia"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\diag_columbia2",
+      "case_name": "diag_columbia2",
+      "parsed_at": "2026-08-15T00:41:07",
+      "completed": false,
+      "last_jday": null,
+      "dlt_schedule": {
+        "tmstrt": 32.0,
+        "tmend": 55.0,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          1.0
+        ],
+        "dltmax": [
+          360.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 55.0,
+            "dltmax": 360.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 0,
+        "add_layer_jdays": [],
+        "add_layer_events": [],
+        "subtract_layer_count": 0,
+        "subtract_layer_jdays": [],
+        "subtract_layer_events": [],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_missing": true,
+        "wrn_exists": false,
+        "wrn_bytes": 0,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": false
+        },
+        "dlt_trajectory": {
+          "present": false,
+          "last_jday": null
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "diag_columbia2",
+      "run_id": "diag_columbia2"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\diag_longlake",
+      "case_name": "diag_longlake",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": false,
+      "last_jday": 151.442,
+      "dlt_schedule": {
+        "tmstrt": 1.0417,
+        "tmend": 240.0,
+        "ndlt": 6,
+        "dltmin": 0.1,
+        "dltinter": "ON",
+        "dltd": [
+          1.0,
+          1.2,
+          30.0,
+          40.0,
+          175.0,
+          193.0
+        ],
+        "dltmax": [
+          5.0,
+          800.0,
+          100.0,
+          1800.0,
+          60.0,
+          100.0
+        ],
+        "dltf": [
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.2,
+          0.2
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 1.2,
+            "dltmax": 5.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 1,
+            "jday_start": 1.2,
+            "jday_end": 30.0,
+            "dltmax": 800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 2,
+            "jday_start": 30.0,
+            "jday_end": 40.0,
+            "dltmax": 100.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 3,
+            "jday_start": 40.0,
+            "jday_end": 175.0,
+            "dltmax": 1800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 4,
+            "jday_start": 175.0,
+            "jday_end": 193.0,
+            "dltmax": 60.0,
+            "dltf": 0.2
+          },
+          {
+            "index": 5,
+            "jday_start": 193.0,
+            "jday_end": 240.0,
+            "dltmax": 100.0,
+            "dltf": 0.2
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 1,
+        "neg_surface_thickness_events": [
+          {
+            "segment": 3,
+            "jday": 31.936,
+            "dlt_at_warning": 74.022,
+            "z_m": 28.154,
+            "h1_m": -27.144,
+            "reduced_to_s": 0.1,
+            "nit": 13452
+          }
+        ],
+        "add_layer_count": 3,
+        "add_layer_jdays": [
+          33.883,
+          47.808,
+          54.659
+        ],
+        "add_layer_events": [
+          {
+            "layer": 4,
+            "jday": 33.883,
+            "nit": 14700,
+            "izmin": 21,
+            "waterbody": 1
+          },
+          {
+            "layer": 3,
+            "jday": 47.808,
+            "nit": 25224,
+            "izmin": 21,
+            "waterbody": 1
+          },
+          {
+            "layer": 2,
+            "jday": 54.659,
+            "nit": 29020,
+            "izmin": 34,
+            "waterbody": 1
+          }
+        ],
+        "subtract_layer_count": 3,
+        "subtract_layer_jdays": [
+          14.614,
+          25.449,
+          30.702
+        ],
+        "subtract_layer_events": [
+          {
+            "layer": 2,
+            "jday": 14.614,
+            "nit": 4559,
+            "izmin": 7,
+            "waterbody": 1
+          },
+          {
+            "layer": 3,
+            "jday": 25.449,
+            "nit": 9196,
+            "izmin": 20,
+            "waterbody": 1
+          },
+          {
+            "layer": 4,
+            "jday": 30.702,
+            "nit": 12787,
+            "izmin": 20,
+            "waterbody": 1
+          }
+        ],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 1,
+        "ws_above_layer2_events": [
+          {
+            "segment": 2,
+            "jday": 1.042
+          }
+        ],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 1,
+        "dltmin_reduced_events": [
+          {
+            "reduced_to_s": 0.1,
+            "jday": 31.936,
+            "nit": 13452
+          }
+        ],
+        "dltmin_set_count": 1,
+        "dltmin_set_events": [
+          {
+            "dlt_before_s": 0.09,
+            "jday": 31.936
+          }
+        ],
+        "dltmin_hint_count": 2,
+        "wrn_exists": true,
+        "wrn_bytes": 1093,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp1.opt",
+          "bytes": 6626199,
+          "normal_termination": false,
+          "runtime_error": false,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg2.csv",
+          "last_jday": 151.442,
+          "full": {
+            "label": "full",
+            "n_samples": 1505,
+            "jday_first": 1.042,
+            "jday_last": 151.442,
+            "dlt_min_s": 5.0,
+            "dlt_max_s": 507.576,
+            "dlt_mean_s": 151.3929601328904,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          }
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "diag_longlake",
+      "run_id": "diag_longlake"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260811\\Columbia Slough Estuary",
+      "case_name": "Columbia Slough Estuary",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": false,
+      "last_jday": null,
+      "dlt_schedule": {
+        "tmstrt": 32.0,
+        "tmend": 55.0,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          1.0
+        ],
+        "dltmax": [
+          360.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 55.0,
+            "dltmax": 360.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 0,
+        "add_layer_jdays": [],
+        "add_layer_events": [],
+        "subtract_layer_count": 0,
+        "subtract_layer_jdays": [],
+        "subtract_layer_events": [],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_missing": true,
+        "wrn_exists": false,
+        "wrn_bytes": 0,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": false
+        },
+        "dlt_trajectory": {
+          "present": false,
+          "last_jday": null
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260811/Columbia Slough Estuary",
+      "run_id": "run_20260811"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260811\\DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "case_name": "DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": false,
+      "last_jday": 136.306,
+      "dlt_schedule": {
+        "tmstrt": 64.5,
+        "tmend": 358.700000000001,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          64.5
+        ],
+        "dltmax": [
+          600.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 64.5,
+            "jday_end": 358.700000000001,
+            "dltmax": 600.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 0,
+        "add_layer_jdays": [],
+        "add_layer_events": [],
+        "subtract_layer_count": 0,
+        "subtract_layer_jdays": [],
+        "subtract_layer_events": [],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_exists": true,
+        "wrn_bytes": 121,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp.opt",
+          "bytes": 3535074,
+          "normal_termination": false,
+          "runtime_error": false,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg31.csv",
+          "last_jday": 136.306,
+          "full": {
+            "label": "full",
+            "n_samples": 719,
+            "jday_first": 64.5,
+            "jday_last": 136.306,
+            "dlt_min_s": 600.0,
+            "dlt_max_s": 600.0,
+            "dlt_mean_s": 600.0,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          }
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260811/DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "run_id": "run_20260811"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260811\\Long Lake",
+      "case_name": "Long Lake",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": false,
+      "last_jday": 1.042,
+      "dlt_schedule": {
+        "tmstrt": 1.0417,
+        "tmend": 240.0,
+        "ndlt": 6,
+        "dltmin": 0.1,
+        "dltinter": "ON",
+        "dltd": [
+          1.0,
+          1.2,
+          30.0,
+          40.0,
+          175.0,
+          193.0
+        ],
+        "dltmax": [
+          5.0,
+          800.0,
+          100.0,
+          1800.0,
+          60.0,
+          100.0
+        ],
+        "dltf": [
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.2,
+          0.2
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 1.2,
+            "dltmax": 5.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 1,
+            "jday_start": 1.2,
+            "jday_end": 30.0,
+            "dltmax": 800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 2,
+            "jday_start": 30.0,
+            "jday_end": 40.0,
+            "dltmax": 100.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 3,
+            "jday_start": 40.0,
+            "jday_end": 175.0,
+            "dltmax": 1800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 4,
+            "jday_start": 175.0,
+            "jday_end": 193.0,
+            "dltmax": 60.0,
+            "dltf": 0.2
+          },
+          {
+            "index": 5,
+            "jday_start": 193.0,
+            "jday_end": 240.0,
+            "dltmax": 100.0,
+            "dltf": 0.2
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 0,
+        "add_layer_jdays": [],
+        "add_layer_events": [],
+        "subtract_layer_count": 0,
+        "subtract_layer_jdays": [],
+        "subtract_layer_events": [],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 1,
+        "ws_above_layer2_events": [
+          {
+            "segment": 2,
+            "jday": 1.042
+          }
+        ],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_exists": true,
+        "wrn_bytes": 69,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp1.opt",
+          "bytes": 229842,
+          "normal_termination": false,
+          "runtime_error": false,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg2.csv",
+          "last_jday": 1.042,
+          "full": {
+            "label": "full",
+            "n_samples": 1,
+            "jday_first": 1.042,
+            "jday_last": 1.042,
+            "dlt_min_s": 5.0,
+            "dlt_max_s": 5.0,
+            "dlt_mean_s": 5.0,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          },
+          "window": {
+            "label": "jday[30.0,40.0)",
+            "n_samples": 0
+          }
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260811/Long Lake",
+      "run_id": "run_20260811"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260811_fixed\\Columbia Slough Estuary",
+      "case_name": "Columbia Slough Estuary",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": true,
+      "last_jday": 55.0,
+      "dlt_schedule": {
+        "tmstrt": 32.0,
+        "tmend": 55.0,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          1.0
+        ],
+        "dltmax": [
+          360.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 55.0,
+            "dltmax": 360.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 7,
+        "add_layer_jdays": [
+          32.302,
+          41.566,
+          44.682,
+          46.753,
+          47.779,
+          48.823,
+          50.337
+        ],
+        "add_layer_events": [
+          {
+            "layer": 5,
+            "jday": 32.302,
+            "nit": 98,
+            "izmin": 44,
+            "waterbody": 1
+          },
+          {
+            "layer": 8,
+            "jday": 41.566,
+            "nit": 2885,
+            "izmin": 11,
+            "waterbody": 1
+          },
+          {
+            "layer": 8,
+            "jday": 44.682,
+            "nit": 3943,
+            "izmin": 4,
+            "waterbody": 1
+          },
+          {
+            "layer": 7,
+            "jday": 46.753,
+            "nit": 4661,
+            "izmin": 25,
+            "waterbody": 1
+          },
+          {
+            "layer": 7,
+            "jday": 47.779,
+            "nit": 5000,
+            "izmin": 11,
+            "waterbody": 1
+          },
+          {
+            "layer": 6,
+            "jday": 48.823,
+            "nit": 5357,
+            "izmin": 32,
+            "waterbody": 1
+          },
+          {
+            "layer": 5,
+            "jday": 50.337,
+            "nit": 5823,
+            "izmin": 45,
+            "waterbody": 1
+          }
+        ],
+        "subtract_layer_count": 8,
+        "subtract_layer_jdays": [
+          35.594,
+          36.723,
+          40.25,
+          41.281,
+          43.875,
+          47.021,
+          53.135,
+          54.925
+        ],
+        "subtract_layer_events": [
+          {
+            "layer": 5,
+            "jday": 35.594,
+            "nit": 1084,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 6,
+            "jday": 36.723,
+            "nit": 1424,
+            "izmin": 43,
+            "waterbody": 1
+          },
+          {
+            "layer": 7,
+            "jday": 40.25,
+            "nit": 2485,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 8,
+            "jday": 41.281,
+            "nit": 2794,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 8,
+            "jday": 43.875,
+            "nit": 3618,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 7,
+            "jday": 47.021,
+            "nit": 4744,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 5,
+            "jday": 53.135,
+            "nit": 6747,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 6,
+            "jday": 54.925,
+            "nit": 7303,
+            "izmin": 2,
+            "waterbody": 1
+          }
+        ],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_exists": true,
+        "wrn_bytes": 1669,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp.opt",
+          "bytes": 2324577,
+          "normal_termination": true,
+          "runtime_error": false,
+          "total_iterations": 7328,
+          "n_violations": 49,
+          "pct_violations": 0.67,
+          "avg_timestep_s": 271,
+          "sim_days": 23.0,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg45.csv",
+          "last_jday": 55.0,
+          "full": {
+            "label": "full",
+            "n_samples": 116,
+            "jday_first": 32.0,
+            "jday_last": 55.0,
+            "dlt_min_s": 134.889,
+            "dlt_max_s": 360.0,
+            "dlt_mean_s": 349.3568448275862,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          }
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260811_fixed/Columbia Slough Estuary",
+      "run_id": "run_20260811_fixed"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260811_fixed\\DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "case_name": "DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": true,
+      "last_jday": 358.701,
+      "dlt_schedule": {
+        "tmstrt": 64.5,
+        "tmend": 358.700000000001,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          64.5
+        ],
+        "dltmax": [
+          600.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 64.5,
+            "jday_end": 358.700000000001,
+            "dltmax": 600.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 0,
+        "add_layer_jdays": [],
+        "add_layer_events": [],
+        "subtract_layer_count": 0,
+        "subtract_layer_jdays": [],
+        "subtract_layer_events": [],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_missing": true,
+        "wrn_exists": false,
+        "wrn_bytes": 0,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp.opt",
+          "bytes": 11077791,
+          "normal_termination": true,
+          "runtime_error": false,
+          "total_iterations": 42365,
+          "n_violations": 0,
+          "pct_violations": 0.0,
+          "avg_timestep_s": 600,
+          "sim_days": 294.20125,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg31.csv",
+          "last_jday": 358.701,
+          "full": {
+            "label": "full",
+            "n_samples": 2943,
+            "jday_first": 64.5,
+            "jday_last": 358.701,
+            "dlt_min_s": 600.0,
+            "dlt_max_s": 600.0,
+            "dlt_mean_s": 600.0,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          }
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260811_fixed/DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "run_id": "run_20260811_fixed"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260811_fixed\\Long Lake",
+      "case_name": "Long Lake",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": true,
+      "last_jday": 239.943,
+      "dlt_schedule": {
+        "tmstrt": 1.0417,
+        "tmend": 240.0,
+        "ndlt": 6,
+        "dltmin": 0.1,
+        "dltinter": "ON",
+        "dltd": [
+          1.0,
+          1.2,
+          30.0,
+          40.0,
+          175.0,
+          193.0
+        ],
+        "dltmax": [
+          5.0,
+          800.0,
+          100.0,
+          1800.0,
+          60.0,
+          100.0
+        ],
+        "dltf": [
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.2,
+          0.2
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 1.2,
+            "dltmax": 5.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 1,
+            "jday_start": 1.2,
+            "jday_end": 30.0,
+            "dltmax": 800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 2,
+            "jday_start": 30.0,
+            "jday_end": 40.0,
+            "dltmax": 100.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 3,
+            "jday_start": 40.0,
+            "jday_end": 175.0,
+            "dltmax": 1800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 4,
+            "jday_start": 175.0,
+            "jday_end": 193.0,
+            "dltmax": 60.0,
+            "dltf": 0.2
+          },
+          {
+            "index": 5,
+            "jday_start": 193.0,
+            "jday_end": 240.0,
+            "dltmax": 100.0,
+            "dltf": 0.2
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 1,
+        "neg_surface_thickness_events": [
+          {
+            "segment": 3,
+            "jday": 31.936,
+            "dlt_at_warning": 74.022,
+            "z_m": 28.154,
+            "h1_m": -27.144,
+            "reduced_to_s": 0.1,
+            "nit": 13452
+          }
+        ],
+        "add_layer_count": 3,
+        "add_layer_jdays": [
+          33.883,
+          47.808,
+          54.659
+        ],
+        "add_layer_events": [
+          {
+            "layer": 4,
+            "jday": 33.883,
+            "nit": 14700,
+            "izmin": 21,
+            "waterbody": 1
+          },
+          {
+            "layer": 3,
+            "jday": 47.808,
+            "nit": 25224,
+            "izmin": 21,
+            "waterbody": 1
+          },
+          {
+            "layer": 2,
+            "jday": 54.659,
+            "nit": 29020,
+            "izmin": 34,
+            "waterbody": 1
+          }
+        ],
+        "subtract_layer_count": 3,
+        "subtract_layer_jdays": [
+          14.614,
+          25.449,
+          30.702
+        ],
+        "subtract_layer_events": [
+          {
+            "layer": 2,
+            "jday": 14.614,
+            "nit": 4559,
+            "izmin": 7,
+            "waterbody": 1
+          },
+          {
+            "layer": 3,
+            "jday": 25.449,
+            "nit": 9196,
+            "izmin": 20,
+            "waterbody": 1
+          },
+          {
+            "layer": 4,
+            "jday": 30.702,
+            "nit": 12787,
+            "izmin": 20,
+            "waterbody": 1
+          }
+        ],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 1,
+        "ws_above_layer2_events": [
+          {
+            "segment": 2,
+            "jday": 1.042
+          }
+        ],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 1,
+        "dltmin_reduced_events": [
+          {
+            "reduced_to_s": 0.1,
+            "jday": 31.936,
+            "nit": 13452
+          }
+        ],
+        "dltmin_set_count": 1,
+        "dltmin_set_events": [
+          {
+            "dlt_before_s": 0.09,
+            "jday": 31.936
+          }
+        ],
+        "dltmin_hint_count": 2,
+        "wrn_exists": true,
+        "wrn_bytes": 1093,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp1.opt",
+          "bytes": 9614876,
+          "normal_termination": true,
+          "runtime_error": false,
+          "total_iterations": 226804,
+          "n_violations": 2395,
+          "pct_violations": 1.06,
+          "avg_timestep_s": 91,
+          "sim_days": 238.95833333333334,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg2.csv",
+          "last_jday": 239.943,
+          "full": {
+            "label": "full",
+            "n_samples": 2390,
+            "jday_first": 1.042,
+            "jday_last": 239.943,
+            "dlt_min_s": 5.0,
+            "dlt_max_s": 507.576,
+            "dlt_mean_s": 128.41096443514644,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          },
+          "window": {
+            "label": "jday[30.0,40.0)",
+            "n_samples": 100,
+            "jday_first": 30.042,
+            "jday_last": 39.942,
+            "dlt_min_s": 53.941,
+            "dlt_max_s": 227.041,
+            "dlt_mean_s": 143.98532999999995,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          }
+        },
+        "exit_zero_masks_rollback": true
+      },
+      "run_relative": "run_20260811_fixed/Long Lake",
+      "run_id": "run_20260811_fixed"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260811_repeat\\Long Lake",
+      "case_name": "Long Lake",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": false,
+      "last_jday": 1.042,
+      "dlt_schedule": {
+        "tmstrt": 1.0417,
+        "tmend": 240.0,
+        "ndlt": 6,
+        "dltmin": 0.1,
+        "dltinter": "ON",
+        "dltd": [
+          1.0,
+          1.2,
+          30.0,
+          40.0,
+          175.0,
+          193.0
+        ],
+        "dltmax": [
+          5.0,
+          800.0,
+          100.0,
+          1800.0,
+          60.0,
+          100.0
+        ],
+        "dltf": [
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.2,
+          0.2
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 1.2,
+            "dltmax": 5.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 1,
+            "jday_start": 1.2,
+            "jday_end": 30.0,
+            "dltmax": 800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 2,
+            "jday_start": 30.0,
+            "jday_end": 40.0,
+            "dltmax": 100.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 3,
+            "jday_start": 40.0,
+            "jday_end": 175.0,
+            "dltmax": 1800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 4,
+            "jday_start": 175.0,
+            "jday_end": 193.0,
+            "dltmax": 60.0,
+            "dltf": 0.2
+          },
+          {
+            "index": 5,
+            "jday_start": 193.0,
+            "jday_end": 240.0,
+            "dltmax": 100.0,
+            "dltf": 0.2
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 0,
+        "add_layer_jdays": [],
+        "add_layer_events": [],
+        "subtract_layer_count": 0,
+        "subtract_layer_jdays": [],
+        "subtract_layer_events": [],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 1,
+        "ws_above_layer2_events": [
+          {
+            "segment": 2,
+            "jday": 1.042
+          }
+        ],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_exists": true,
+        "wrn_bytes": 69,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp1.opt",
+          "bytes": 229842,
+          "normal_termination": false,
+          "runtime_error": false,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg2.csv",
+          "last_jday": 1.042,
+          "full": {
+            "label": "full",
+            "n_samples": 1,
+            "jday_first": 1.042,
+            "jday_last": 1.042,
+            "dlt_min_s": 5.0,
+            "dlt_max_s": 5.0,
+            "dlt_mean_s": 5.0,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          },
+          "window": {
+            "label": "jday[30.0,40.0)",
+            "n_samples": 0
+          }
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260811_repeat/Long Lake",
+      "run_id": "run_20260811_repeat"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260811_seq\\Columbia Slough Estuary",
+      "case_name": "Columbia Slough Estuary",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": false,
+      "last_jday": null,
+      "dlt_schedule": {
+        "tmstrt": 32.0,
+        "tmend": 55.0,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          1.0
+        ],
+        "dltmax": [
+          360.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 55.0,
+            "dltmax": 360.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 0,
+        "add_layer_jdays": [],
+        "add_layer_events": [],
+        "subtract_layer_count": 0,
+        "subtract_layer_jdays": [],
+        "subtract_layer_events": [],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_missing": true,
+        "wrn_exists": false,
+        "wrn_bytes": 0,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": false
+        },
+        "dlt_trajectory": {
+          "present": false,
+          "last_jday": null
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260811_seq/Columbia Slough Estuary",
+      "run_id": "run_20260811_seq"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260811_seq\\DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "case_name": "DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": false,
+      "last_jday": 64.5,
+      "dlt_schedule": {
+        "tmstrt": 64.5,
+        "tmend": 358.700000000001,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          64.5
+        ],
+        "dltmax": [
+          600.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 64.5,
+            "jday_end": 358.700000000001,
+            "dltmax": 600.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 0,
+        "add_layer_jdays": [],
+        "add_layer_events": [],
+        "subtract_layer_count": 0,
+        "subtract_layer_jdays": [],
+        "subtract_layer_events": [],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_exists": true,
+        "wrn_bytes": 121,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp.opt",
+          "bytes": 235661,
+          "normal_termination": false,
+          "runtime_error": false,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg31.csv",
+          "last_jday": 64.5,
+          "full": {
+            "label": "full",
+            "n_samples": 1,
+            "jday_first": 64.5,
+            "jday_last": 64.5,
+            "dlt_min_s": 600.0,
+            "dlt_max_s": 600.0,
+            "dlt_mean_s": 600.0,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          }
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260811_seq/DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "run_id": "run_20260811_seq"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260811_seq\\Long Lake",
+      "case_name": "Long Lake",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": false,
+      "last_jday": 1.042,
+      "dlt_schedule": {
+        "tmstrt": 1.0417,
+        "tmend": 240.0,
+        "ndlt": 6,
+        "dltmin": 0.1,
+        "dltinter": "ON",
+        "dltd": [
+          1.0,
+          1.2,
+          30.0,
+          40.0,
+          175.0,
+          193.0
+        ],
+        "dltmax": [
+          5.0,
+          800.0,
+          100.0,
+          1800.0,
+          60.0,
+          100.0
+        ],
+        "dltf": [
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.2,
+          0.2
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 1.2,
+            "dltmax": 5.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 1,
+            "jday_start": 1.2,
+            "jday_end": 30.0,
+            "dltmax": 800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 2,
+            "jday_start": 30.0,
+            "jday_end": 40.0,
+            "dltmax": 100.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 3,
+            "jday_start": 40.0,
+            "jday_end": 175.0,
+            "dltmax": 1800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 4,
+            "jday_start": 175.0,
+            "jday_end": 193.0,
+            "dltmax": 60.0,
+            "dltf": 0.2
+          },
+          {
+            "index": 5,
+            "jday_start": 193.0,
+            "jday_end": 240.0,
+            "dltmax": 100.0,
+            "dltf": 0.2
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 0,
+        "add_layer_jdays": [],
+        "add_layer_events": [],
+        "subtract_layer_count": 0,
+        "subtract_layer_jdays": [],
+        "subtract_layer_events": [],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 1,
+        "ws_above_layer2_events": [
+          {
+            "segment": 2,
+            "jday": 1.042
+          }
+        ],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_exists": true,
+        "wrn_bytes": 69,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp1.opt",
+          "bytes": 229842,
+          "normal_termination": false,
+          "runtime_error": false,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg2.csv",
+          "last_jday": 1.042,
+          "full": {
+            "label": "full",
+            "n_samples": 1,
+            "jday_first": 1.042,
+            "jday_last": 1.042,
+            "dlt_min_s": 5.0,
+            "dlt_max_s": 5.0,
+            "dlt_mean_s": 5.0,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          },
+          "window": {
+            "label": "jday[30.0,40.0)",
+            "n_samples": 0
+          }
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260811_seq/Long Lake",
+      "run_id": "run_20260811_seq"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260814_bonneville\\Bonneville_SYSTDG",
+      "case_name": "Bonneville_SYSTDG",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": true,
+      "last_jday": null,
+      "dlt_schedule": {
+        "tmstrt": 40544.0,
+        "tmend": 40909.0,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          1.0
+        ],
+        "dltmax": [
+          3600.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 40909.0,
+            "dltmax": 3600.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 42,
+        "add_layer_jdays": [
+          40550.31,
+          40565.117,
+          40573.917,
+          40581.283,
+          40581.739,
+          40589.468,
+          40600.945,
+          40617.615,
+          40632.997,
+          40636.248,
+          40641.449,
+          40650.453,
+          40651.842,
+          40660.089,
+          40662.929,
+          40664.617,
+          40667.151,
+          40671.979,
+          40673.019,
+          40688.569,
+          40693.815,
+          40701.047,
+          40704.316,
+          40705.456,
+          40713.022,
+          40714.977,
+          40721.507,
+          40721.914,
+          40725.683,
+          40730.508,
+          40736.245,
+          40741.337,
+          40751.805,
+          40761.968,
+          40768.736,
+          40776.596,
+          40785.751,
+          40786.774,
+          40801.654,
+          40845.161,
+          40860.5,
+          40899.027
+        ],
+        "add_layer_events": [
+          {
+            "layer": 9,
+            "jday": 40550.31,
+            "nit": 4912,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40565.117,
+            "nit": 17711,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40573.917,
+            "nit": 30712,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40581.283,
+            "nit": 40061,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40581.739,
+            "nit": 40466,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40589.468,
+            "nit": 48806,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40600.945,
+            "nit": 63528,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40617.615,
+            "nit": 81339,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40632.997,
+            "nit": 98218,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40636.248,
+            "nit": 102271,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40641.449,
+            "nit": 112616,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40650.453,
+            "nit": 128341,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40651.842,
+            "nit": 130093,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40660.089,
+            "nit": 140276,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40662.929,
+            "nit": 143820,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40664.617,
+            "nit": 145676,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40667.151,
+            "nit": 149135,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40671.979,
+            "nit": 156059,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40673.019,
+            "nit": 157300,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40688.569,
+            "nit": 188748,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40693.815,
+            "nit": 202669,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40701.047,
+            "nit": 222391,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40704.316,
+            "nit": 231802,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40705.456,
+            "nit": 235108,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40713.022,
+            "nit": 256252,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 15,
+            "jday": 40714.977,
+            "nit": 261488,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 15,
+            "jday": 40721.507,
+            "nit": 278423,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 14,
+            "jday": 40721.914,
+            "nit": 279407,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 13,
+            "jday": 40725.683,
+            "nit": 288422,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 13,
+            "jday": 40730.508,
+            "nit": 297880,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 12,
+            "jday": 40736.245,
+            "nit": 307883,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40741.337,
+            "nit": 317983,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40751.805,
+            "nit": 333539,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40761.968,
+            "nit": 344430,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40768.736,
+            "nit": 350421,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40776.596,
+            "nit": 357420,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40785.751,
+            "nit": 364589,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40786.774,
+            "nit": 365339,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40801.654,
+            "nit": 374086,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40845.161,
+            "nit": 398489,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40860.5,
+            "nit": 407716,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40899.027,
+            "nit": 432388,
+            "izmin": 76,
+            "waterbody": 1
+          }
+        ],
+        "subtract_layer_count": 43,
+        "subtract_layer_jdays": [
+          40544.002,
+          40547.48,
+          40560.104,
+          40562.52,
+          40563.631,
+          40568.842,
+          40581.218,
+          40583.623,
+          40590.708,
+          40614.769,
+          40630.677,
+          40633.463,
+          40635.423,
+          40638.042,
+          40651.381,
+          40653.966,
+          40662.394,
+          40663.648,
+          40665.839,
+          40668.567,
+          40672.655,
+          40673.629,
+          40677.216,
+          40677.598,
+          40680.601,
+          40684.212,
+          40685.49,
+          40688.002,
+          40691.512,
+          40698.863,
+          40701.002,
+          40701.095,
+          40710.626,
+          40720.119,
+          40728.931,
+          40764.394,
+          40768.618,
+          40785.618,
+          40786.413,
+          40801.53,
+          40843.342,
+          40860.209,
+          40897.491
+        ],
+        "subtract_layer_events": [
+          {
+            "layer": 8,
+            "jday": 40544.002,
+            "nit": 3,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40547.48,
+            "nit": 2633,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40560.104,
+            "nit": 11798,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40562.52,
+            "nit": 14119,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40563.631,
+            "nit": 15735,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40568.842,
+            "nit": 23123,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40581.218,
+            "nit": 40014,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40583.623,
+            "nit": 42268,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40590.708,
+            "nit": 50194,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40614.769,
+            "nit": 77860,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40630.677,
+            "nit": 95344,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40633.463,
+            "nit": 98756,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40635.423,
+            "nit": 101319,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40638.042,
+            "nit": 105834,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40651.381,
+            "nit": 129471,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40653.966,
+            "nit": 132804,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40662.394,
+            "nit": 143167,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40663.648,
+            "nit": 144632,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40665.839,
+            "nit": 147216,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40668.567,
+            "nit": 150921,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40672.655,
+            "nit": 156894,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40673.629,
+            "nit": 158127,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40677.216,
+            "nit": 163560,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 12,
+            "jday": 40677.598,
+            "nit": 164066,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 13,
+            "jday": 40680.601,
+            "nit": 169353,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 14,
+            "jday": 40684.212,
+            "nit": 178544,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 15,
+            "jday": 40685.49,
+            "nit": 181040,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40688.002,
+            "nit": 187751,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40691.512,
+            "nit": 196948,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40698.863,
+            "nit": 216811,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40701.002,
+            "nit": 222310,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40701.095,
+            "nit": 222525,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40710.626,
+            "nit": 249536,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 15,
+            "jday": 40720.119,
+            "nit": 274922,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 13,
+            "jday": 40728.931,
+            "nit": 294494,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40764.394,
+            "nit": 346479,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40768.618,
+            "nit": 350320,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40785.618,
+            "nit": 364492,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40786.413,
+            "nit": 365052,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40801.53,
+            "nit": 374025,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40843.342,
+            "nit": 397334,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40860.209,
+            "nit": 407535,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40897.491,
+            "nit": 431280,
+            "izmin": 76,
+            "waterbody": 1
+          }
+        ],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_exists": true,
+        "wrn_bytes": 9942,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "BON_snp.opt",
+          "bytes": 70548917,
+          "normal_termination": true,
+          "runtime_error": false,
+          "total_iterations": 438555,
+          "n_violations": 7495,
+          "pct_violations": 1.71,
+          "avg_timestep_s": 71,
+          "sim_days": 365.0,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": false,
+          "last_jday": null
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260814_bonneville/Bonneville_SYSTDG",
+      "run_id": "run_20260814_bonneville"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260814_bonneville_notarget\\Bonneville_SYSTDG",
+      "case_name": "Bonneville_SYSTDG",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": true,
+      "last_jday": null,
+      "dlt_schedule": {
+        "tmstrt": 40544.0,
+        "tmend": 40909.0,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          1.0
+        ],
+        "dltmax": [
+          3600.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 40909.0,
+            "dltmax": 3600.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 48,
+        "add_layer_jdays": [
+          40550.31,
+          40565.117,
+          40573.917,
+          40581.283,
+          40581.739,
+          40589.468,
+          40600.947,
+          40617.572,
+          40632.995,
+          40633.815,
+          40635.777,
+          40638.755,
+          40641.419,
+          40650.453,
+          40651.88,
+          40660.116,
+          40662.932,
+          40663.951,
+          40667.099,
+          40671.951,
+          40672.863,
+          40689.155,
+          40693.387,
+          40699.671,
+          40699.818,
+          40699.85,
+          40699.985,
+          40700.181,
+          40704.932,
+          40705.866,
+          40713.92,
+          40715.108,
+          40721.508,
+          40721.969,
+          40725.919,
+          40730.567,
+          40737.261,
+          40741.461,
+          40751.315,
+          40761.959,
+          40768.727,
+          40776.552,
+          40785.747,
+          40786.779,
+          40801.651,
+          40845.16,
+          40860.505,
+          40899.032
+        ],
+        "add_layer_events": [
+          {
+            "layer": 9,
+            "jday": 40550.31,
+            "nit": 4912,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40565.117,
+            "nit": 17711,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40573.917,
+            "nit": 30712,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40581.283,
+            "nit": 40061,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40581.739,
+            "nit": 40466,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40589.468,
+            "nit": 48806,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40600.947,
+            "nit": 63538,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40617.572,
+            "nit": 81165,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40632.995,
+            "nit": 97980,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40633.815,
+            "nit": 98881,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40635.777,
+            "nit": 101634,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 12,
+            "jday": 40638.755,
+            "nit": 107244,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40641.419,
+            "nit": 112667,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40650.453,
+            "nit": 128537,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40651.88,
+            "nit": 130267,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40660.116,
+            "nit": 140405,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40662.932,
+            "nit": 143859,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40663.951,
+            "nit": 145065,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40667.099,
+            "nit": 149042,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40671.951,
+            "nit": 155428,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40672.863,
+            "nit": 156501,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40689.155,
+            "nit": 189841,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40693.387,
+            "nit": 201490,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40699.671,
+            "nit": 218663,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40699.818,
+            "nit": 219066,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40699.85,
+            "nit": 219145,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40699.985,
+            "nit": 219510,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40700.181,
+            "nit": 220056,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40704.932,
+            "nit": 233885,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40705.866,
+            "nit": 236526,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40713.92,
+            "nit": 258922,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 15,
+            "jday": 40715.108,
+            "nit": 262026,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 15,
+            "jday": 40721.508,
+            "nit": 278784,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 14,
+            "jday": 40721.969,
+            "nit": 279918,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 13,
+            "jday": 40725.919,
+            "nit": 289331,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 13,
+            "jday": 40730.567,
+            "nit": 300531,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 12,
+            "jday": 40737.261,
+            "nit": 315610,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40741.461,
+            "nit": 323834,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40751.315,
+            "nit": 338356,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40761.959,
+            "nit": 349796,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40768.727,
+            "nit": 356002,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40776.552,
+            "nit": 363357,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40785.747,
+            "nit": 370536,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40786.779,
+            "nit": 371335,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40801.651,
+            "nit": 380098,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40845.16,
+            "nit": 404608,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40860.505,
+            "nit": 413801,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40899.032,
+            "nit": 438644,
+            "izmin": 76,
+            "waterbody": 1
+          }
+        ],
+        "subtract_layer_count": 49,
+        "subtract_layer_jdays": [
+          40544.002,
+          40547.48,
+          40560.104,
+          40562.52,
+          40563.631,
+          40568.842,
+          40581.218,
+          40583.623,
+          40590.708,
+          40614.793,
+          40630.671,
+          40633.462,
+          40634.607,
+          40634.891,
+          40638.04,
+          40638.324,
+          40651.381,
+          40653.969,
+          40662.404,
+          40663.635,
+          40665.84,
+          40668.569,
+          40672.656,
+          40673.626,
+          40677.283,
+          40678.447,
+          40679.567,
+          40683.97,
+          40685.365,
+          40687.852,
+          40690.381,
+          40696.672,
+          40699.656,
+          40699.8,
+          40699.836,
+          40699.968,
+          40700.164,
+          40700.481,
+          40709.518,
+          40719.956,
+          40728.847,
+          40764.387,
+          40768.619,
+          40785.624,
+          40786.423,
+          40801.497,
+          40843.336,
+          40860.209,
+          40897.489
+        ],
+        "subtract_layer_events": [
+          {
+            "layer": 8,
+            "jday": 40544.002,
+            "nit": 3,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40547.48,
+            "nit": 2633,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40560.104,
+            "nit": 11798,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40562.52,
+            "nit": 14119,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40563.631,
+            "nit": 15735,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40568.842,
+            "nit": 23123,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40581.218,
+            "nit": 40014,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40583.623,
+            "nit": 42268,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40590.708,
+            "nit": 50194,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40614.793,
+            "nit": 77878,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40630.671,
+            "nit": 95223,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40633.462,
+            "nit": 98517,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40634.607,
+            "nit": 99855,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40634.891,
+            "nit": 100166,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40638.04,
+            "nit": 106128,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 12,
+            "jday": 40638.324,
+            "nit": 106491,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40651.381,
+            "nit": 129665,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40653.969,
+            "nit": 132935,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40662.404,
+            "nit": 143274,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40663.635,
+            "nit": 144665,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40665.84,
+            "nit": 147340,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40668.569,
+            "nit": 150895,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40672.656,
+            "nit": 156282,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40673.626,
+            "nit": 157517,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 11,
+            "jday": 40677.283,
+            "nit": 163095,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 12,
+            "jday": 40678.447,
+            "nit": 165391,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 13,
+            "jday": 40679.567,
+            "nit": 167722,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 14,
+            "jday": 40683.97,
+            "nit": 177271,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 15,
+            "jday": 40685.365,
+            "nit": 180365,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40687.852,
+            "nit": 186318,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40690.381,
+            "nit": 193206,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40696.672,
+            "nit": 210572,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40699.656,
+            "nit": 218632,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40699.8,
+            "nit": 219033,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40699.836,
+            "nit": 219118,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40699.968,
+            "nit": 219478,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40700.164,
+            "nit": 220024,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 17,
+            "jday": 40700.481,
+            "nit": 220921,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 16,
+            "jday": 40709.518,
+            "nit": 246621,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 15,
+            "jday": 40719.956,
+            "nit": 274897,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 13,
+            "jday": 40728.847,
+            "nit": 296615,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40764.387,
+            "nit": 351834,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 10,
+            "jday": 40768.619,
+            "nit": 355903,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40785.624,
+            "nit": 370442,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40786.423,
+            "nit": 371012,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40801.497,
+            "nit": 380008,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40843.336,
+            "nit": 403364,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40860.209,
+            "nit": 413630,
+            "izmin": 76,
+            "waterbody": 1
+          },
+          {
+            "layer": 9,
+            "jday": 40897.489,
+            "nit": 437401,
+            "izmin": 76,
+            "waterbody": 1
+          }
+        ],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_exists": true,
+        "wrn_bytes": 11350,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "BON_snp.opt",
+          "bytes": 70518916,
+          "normal_termination": true,
+          "runtime_error": false,
+          "total_iterations": 444801,
+          "n_violations": 7614,
+          "pct_violations": 1.71,
+          "avg_timestep_s": 70,
+          "sim_days": 365.0,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": false,
+          "last_jday": null
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260814_bonneville_notarget/Bonneville_SYSTDG",
+      "run_id": "run_20260814_bonneville_notarget"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260814_columbia_diag\\Columbia Slough Estuary",
+      "case_name": "Columbia Slough Estuary",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": true,
+      "last_jday": 55.0,
+      "dlt_schedule": {
+        "tmstrt": 32.0,
+        "tmend": 55.0,
+        "ndlt": 1,
+        "dltmin": 1.0,
+        "dltinter": "OFF",
+        "dltd": [
+          1.0
+        ],
+        "dltmax": [
+          360.0
+        ],
+        "dltf": [
+          0.9
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 55.0,
+            "dltmax": 360.0,
+            "dltf": 0.9
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 0,
+        "neg_surface_thickness_events": [],
+        "add_layer_count": 7,
+        "add_layer_jdays": [
+          32.302,
+          41.566,
+          44.682,
+          46.753,
+          47.779,
+          48.823,
+          50.337
+        ],
+        "add_layer_events": [
+          {
+            "layer": 5,
+            "jday": 32.302,
+            "nit": 98,
+            "izmin": 44,
+            "waterbody": 1
+          },
+          {
+            "layer": 8,
+            "jday": 41.566,
+            "nit": 2885,
+            "izmin": 11,
+            "waterbody": 1
+          },
+          {
+            "layer": 8,
+            "jday": 44.682,
+            "nit": 3943,
+            "izmin": 4,
+            "waterbody": 1
+          },
+          {
+            "layer": 7,
+            "jday": 46.753,
+            "nit": 4661,
+            "izmin": 25,
+            "waterbody": 1
+          },
+          {
+            "layer": 7,
+            "jday": 47.779,
+            "nit": 5000,
+            "izmin": 11,
+            "waterbody": 1
+          },
+          {
+            "layer": 6,
+            "jday": 48.823,
+            "nit": 5357,
+            "izmin": 32,
+            "waterbody": 1
+          },
+          {
+            "layer": 5,
+            "jday": 50.337,
+            "nit": 5823,
+            "izmin": 45,
+            "waterbody": 1
+          }
+        ],
+        "subtract_layer_count": 8,
+        "subtract_layer_jdays": [
+          35.594,
+          36.723,
+          40.25,
+          41.281,
+          43.875,
+          47.021,
+          53.135,
+          54.925
+        ],
+        "subtract_layer_events": [
+          {
+            "layer": 5,
+            "jday": 35.594,
+            "nit": 1084,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 6,
+            "jday": 36.723,
+            "nit": 1424,
+            "izmin": 43,
+            "waterbody": 1
+          },
+          {
+            "layer": 7,
+            "jday": 40.25,
+            "nit": 2485,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 8,
+            "jday": 41.281,
+            "nit": 2794,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 8,
+            "jday": 43.875,
+            "nit": 3618,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 7,
+            "jday": 47.021,
+            "nit": 4744,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 5,
+            "jday": 53.135,
+            "nit": 6747,
+            "izmin": 45,
+            "waterbody": 1
+          },
+          {
+            "layer": 6,
+            "jday": 54.925,
+            "nit": 7303,
+            "izmin": 2,
+            "waterbody": 1
+          }
+        ],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 0,
+        "ws_above_layer2_events": [],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 0,
+        "dltmin_reduced_events": [],
+        "dltmin_set_count": 0,
+        "dltmin_set_events": [],
+        "dltmin_hint_count": 0,
+        "wrn_exists": true,
+        "wrn_bytes": 1669,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp.opt",
+          "bytes": 2324577,
+          "normal_termination": true,
+          "runtime_error": false,
+          "total_iterations": 7328,
+          "n_violations": 49,
+          "pct_violations": 0.67,
+          "avg_timestep_s": 271,
+          "sim_days": 23.0,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg45.csv",
+          "last_jday": 55.0,
+          "full": {
+            "label": "full",
+            "n_samples": 116,
+            "jday_first": 32.0,
+            "jday_last": 55.0,
+            "dlt_min_s": 134.889,
+            "dlt_max_s": 360.0,
+            "dlt_mean_s": 349.3568448275862,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          }
+        },
+        "exit_zero_masks_rollback": false
+      },
+      "run_relative": "run_20260814_columbia_diag/Columbia Slough Estuary",
+      "run_id": "run_20260814_columbia_diag"
+    },
+    {
+      "case_dir": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260814_longlake_dlt\\Long Lake",
+      "case_name": "Long Lake",
+      "parsed_at": "2026-08-15T00:41:08",
+      "completed": true,
+      "last_jday": 239.943,
+      "dlt_schedule": {
+        "tmstrt": 1.0417,
+        "tmend": 240.0,
+        "ndlt": 6,
+        "dltmin": 0.1,
+        "dltinter": "ON",
+        "dltd": [
+          1.0,
+          1.2,
+          30.0,
+          40.0,
+          175.0,
+          193.0
+        ],
+        "dltmax": [
+          5.0,
+          800.0,
+          20.0,
+          1800.0,
+          60.0,
+          100.0
+        ],
+        "dltf": [
+          0.9,
+          0.9,
+          0.9,
+          0.9,
+          0.2,
+          0.2
+        ],
+        "windows": [
+          {
+            "index": 0,
+            "jday_start": 1.0,
+            "jday_end": 1.2,
+            "dltmax": 5.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 1,
+            "jday_start": 1.2,
+            "jday_end": 30.0,
+            "dltmax": 800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 2,
+            "jday_start": 30.0,
+            "jday_end": 40.0,
+            "dltmax": 20.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 3,
+            "jday_start": 40.0,
+            "jday_end": 175.0,
+            "dltmax": 1800.0,
+            "dltf": 0.9
+          },
+          {
+            "index": 4,
+            "jday_start": 175.0,
+            "jday_end": 193.0,
+            "dltmax": 60.0,
+            "dltf": 0.2
+          },
+          {
+            "index": 5,
+            "jday_start": 193.0,
+            "jday_end": 240.0,
+            "dltmax": 100.0,
+            "dltf": 0.2
+          }
+        ]
+      },
+      "nhr": {
+        "neg_surface_thickness_count": 5,
+        "neg_surface_thickness_events": [
+          {
+            "segment": 3,
+            "jday": 31.975,
+            "dlt_at_warning": 239.731,
+            "z_m": 10.958,
+            "h1_m": -9.948,
+            "reduced_to_s": 0.1,
+            "nit": 17796
+          },
+          {
+            "segment": 3,
+            "jday": 32.688,
+            "dlt_at_warning": 89.46,
+            "z_m": 20.265,
+            "h1_m": -19.255,
+            "reduced_to_s": 0.1,
+            "nit": 18271
+          },
+          {
+            "segment": 3,
+            "jday": 32.867,
+            "dlt_at_warning": 213.683,
+            "z_m": 11.947,
+            "h1_m": -10.937,
+            "reduced_to_s": 0.1,
+            "nit": 18463
+          },
+          {
+            "segment": 3,
+            "jday": 33.015,
+            "dlt_at_warning": 188.004,
+            "z_m": 48.257,
+            "h1_m": -47.247,
+            "reduced_to_s": 0.1,
+            "nit": 18605
+          },
+          {
+            "segment": 3,
+            "jday": 33.122,
+            "dlt_at_warning": 233.28,
+            "z_m": 12.0,
+            "h1_m": -10.99,
+            "reduced_to_s": 0.1,
+            "nit": 18726
+          }
+        ],
+        "add_layer_count": 3,
+        "add_layer_jdays": [
+          33.884,
+          47.8,
+          54.657
+        ],
+        "add_layer_events": [
+          {
+            "layer": 4,
+            "jday": 33.884,
+            "nit": 19283,
+            "izmin": 21,
+            "waterbody": 1
+          },
+          {
+            "layer": 3,
+            "jday": 47.8,
+            "nit": 28930,
+            "izmin": 21,
+            "waterbody": 1
+          },
+          {
+            "layer": 2,
+            "jday": 54.657,
+            "nit": 32726,
+            "izmin": 34,
+            "waterbody": 1
+          }
+        ],
+        "subtract_layer_count": 3,
+        "subtract_layer_jdays": [
+          14.614,
+          25.447,
+          30.708
+        ],
+        "subtract_layer_events": [
+          {
+            "layer": 2,
+            "jday": 14.614,
+            "nit": 4559,
+            "izmin": 7,
+            "waterbody": 1
+          },
+          {
+            "layer": 3,
+            "jday": 25.447,
+            "nit": 9448,
+            "izmin": 20,
+            "waterbody": 1
+          },
+          {
+            "layer": 4,
+            "jday": 30.708,
+            "nit": 17102,
+            "izmin": 20,
+            "waterbody": 1
+          }
+        ],
+        "low_water_count": 0,
+        "low_water_events": [],
+        "ws_above_layer2_count": 1,
+        "ws_above_layer2_events": [
+          {
+            "segment": 2,
+            "jday": 1.042
+          }
+        ],
+        "h1h2_gt_035_count": 0,
+        "h1h2_gt_035_events": [],
+        "dltmin_reduced_count": 5,
+        "dltmin_reduced_events": [
+          {
+            "reduced_to_s": 0.1,
+            "jday": 31.975,
+            "nit": 17796
+          },
+          {
+            "reduced_to_s": 0.1,
+            "jday": 32.688,
+            "nit": 18271
+          },
+          {
+            "reduced_to_s": 0.1,
+            "jday": 32.867,
+            "nit": 18463
+          },
+          {
+            "reduced_to_s": 0.1,
+            "jday": 33.015,
+            "nit": 18605
+          },
+          {
+            "reduced_to_s": 0.1,
+            "jday": 33.122,
+            "nit": 18726
+          }
+        ],
+        "dltmin_set_count": 5,
+        "dltmin_set_events": [
+          {
+            "dlt_before_s": 0.09,
+            "jday": 31.975
+          },
+          {
+            "dlt_before_s": 0.09,
+            "jday": 32.688
+          },
+          {
+            "dlt_before_s": 0.09,
+            "jday": 32.867
+          },
+          {
+            "dlt_before_s": 0.09,
+            "jday": 33.015
+          },
+          {
+            "dlt_before_s": 0.09,
+            "jday": 33.122
+          }
+        ],
+        "dltmin_hint_count": 10,
+        "wrn_exists": true,
+        "wrn_bytes": 2504,
+        "w2_err": {
+          "present": false,
+          "unstable_ws_count": 0,
+          "text_head": ""
+        },
+        "snp_runtime": {
+          "present": true,
+          "file": "snp1.opt",
+          "bytes": 9614876,
+          "normal_termination": true,
+          "runtime_error": false,
+          "total_iterations": 230624,
+          "n_violations": 2494,
+          "pct_violations": 1.08,
+          "avg_timestep_s": 89,
+          "sim_days": 238.95833333333334,
+          "tail_add_layer_count": 0,
+          "tail_subtract_layer_count": 0
+        },
+        "dlt_trajectory": {
+          "present": true,
+          "file": "tsr_1_seg2.csv",
+          "last_jday": 239.943,
+          "full": {
+            "label": "full",
+            "n_samples": 2390,
+            "jday_first": 1.042,
+            "jday_last": 239.943,
+            "dlt_min_s": 5.0,
+            "dlt_max_s": 507.576,
+            "dlt_mean_s": 127.12144560669451,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          },
+          "window": {
+            "label": "jday[30.0,40.0)",
+            "n_samples": 100,
+            "jday_first": 30.042,
+            "jday_last": 39.943,
+            "dlt_min_s": 27.39,
+            "dlt_max_s": 231.096,
+            "dlt_mean_s": 151.35912,
+            "n_samples_near_dltmin": 0,
+            "frac_samples_near_dltmin": 0.0
+          }
+        },
+        "exit_zero_masks_rollback": true
+      },
+      "run_relative": "run_20260814_longlake_dlt/Long Lake",
+      "run_id": "run_20260814_longlake_dlt"
+    }
+  ],
+  "summary_table": [
+    {
+      "run": "diag_columbia",
+      "completed": false,
+      "last_jday": null,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "diag_columbia2",
+      "completed": false,
+      "last_jday": null,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "diag_longlake",
+      "completed": false,
+      "last_jday": 151.442,
+      "neg": 1,
+      "add": 3,
+      "sub": 3,
+      "low_water": 0,
+      "dltmin_hint": 2,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811/Columbia Slough Estuary",
+      "completed": false,
+      "last_jday": null,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811/DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "completed": false,
+      "last_jday": 136.306,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811/Long Lake",
+      "completed": false,
+      "last_jday": 1.042,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811_fixed/Columbia Slough Estuary",
+      "completed": true,
+      "last_jday": 55.0,
+      "neg": 0,
+      "add": 7,
+      "sub": 8,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811_fixed/DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "completed": true,
+      "last_jday": 358.701,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811_fixed/Long Lake",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg": 1,
+      "add": 3,
+      "sub": 3,
+      "low_water": 0,
+      "dltmin_hint": 2,
+      "exit0_masks_rollback": true
+    },
+    {
+      "run": "run_20260811_repeat/Long Lake",
+      "completed": false,
+      "last_jday": 1.042,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811_seq/Columbia Slough Estuary",
+      "completed": false,
+      "last_jday": null,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811_seq/DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "completed": false,
+      "last_jday": 64.5,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811_seq/Long Lake",
+      "completed": false,
+      "last_jday": 1.042,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260814_bonneville/Bonneville_SYSTDG",
+      "completed": true,
+      "last_jday": null,
+      "neg": 0,
+      "add": 42,
+      "sub": 43,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260814_bonneville_notarget/Bonneville_SYSTDG",
+      "completed": true,
+      "last_jday": null,
+      "neg": 0,
+      "add": 48,
+      "sub": 49,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260814_columbia_diag/Columbia Slough Estuary",
+      "completed": true,
+      "last_jday": 55.0,
+      "neg": 0,
+      "add": 7,
+      "sub": 8,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260814_longlake_dlt/Long Lake",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg": 5,
+      "add": 3,
+      "sub": 3,
+      "low_water": 0,
+      "dltmin_hint": 10,
+      "exit0_masks_rollback": true
+    }
+  ],
+  "completed_only": [
+    {
+      "run": "run_20260811_fixed/Columbia Slough Estuary",
+      "completed": true,
+      "last_jday": 55.0,
+      "neg": 0,
+      "add": 7,
+      "sub": 8,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811_fixed/DeGray Reservoir with sediment diagenesis and vertical algae migration",
+      "completed": true,
+      "last_jday": 358.701,
+      "neg": 0,
+      "add": 0,
+      "sub": 0,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260811_fixed/Long Lake",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg": 1,
+      "add": 3,
+      "sub": 3,
+      "low_water": 0,
+      "dltmin_hint": 2,
+      "exit0_masks_rollback": true
+    },
+    {
+      "run": "run_20260814_bonneville/Bonneville_SYSTDG",
+      "completed": true,
+      "last_jday": null,
+      "neg": 0,
+      "add": 42,
+      "sub": 43,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260814_bonneville_notarget/Bonneville_SYSTDG",
+      "completed": true,
+      "last_jday": null,
+      "neg": 0,
+      "add": 48,
+      "sub": 49,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260814_columbia_diag/Columbia Slough Estuary",
+      "completed": true,
+      "last_jday": 55.0,
+      "neg": 0,
+      "add": 7,
+      "sub": 8,
+      "low_water": 0,
+      "dltmin_hint": 0,
+      "exit0_masks_rollback": false
+    },
+    {
+      "run": "run_20260814_longlake_dlt/Long Lake",
+      "completed": true,
+      "last_jday": 239.943,
+      "neg": 5,
+      "add": 3,
+      "sub": 3,
+      "low_water": 0,
+      "dltmin_hint": 10,
+      "exit0_masks_rollback": true
+    }
+  ]
+}
