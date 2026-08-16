@@ -80,16 +80,16 @@ def fig04_r2_vs_nse() -> Path:
     w1 = load_json("w1_provenance_metrics.json")
     w5 = load_json("w5_lit_audit_summary.json")
 
-    # Prefer card JSON (clean A/B/C) — same numbers as w3_tdgta_off_metrics.json
-    card = json.loads((CARDS / "bonneville_tdgta_on.json").read_text(encoding="utf-8"))
+    # Prefer analysis JSON (authoritative); cards are downstream.
+    w3 = load_json("w3_tdgta_off_metrics.json")
     bon_pts = []
-    for c in card["metrics_panel"]["calibers"]:
-        if c["caliber"] in ("A", "B", "C"):
+    for m in w3["metrics"]:
+        if m.get("run") == "ON" and m.get("caliber") in ("A", "B", "C"):
             bon_pts.append(
                 {
-                    "label": f"BON {c['caliber']}",
-                    "r2": c["r2"],
-                    "nse": c["nse"],
+                    "label": f"BON {m['caliber']}",
+                    "r2": m["r2"],
+                    "nse": m["nse"],
                     "kind": "skill",
                 }
             )
@@ -124,9 +124,21 @@ def fig04_r2_vs_nse() -> Path:
         for v in parse_table2_r2(item["r2"]):
             lit_unk.append((v, f"n{item['n']}"))
 
-    fig, ax = plt.subplots(figsize=(8.2, 6.0))
+    # 2 + 1 strip: (a) skill, (b) internal, (c) literature R² rug (no NSE).
+    try:
+        from sp_plot_style import apply_style, save_fig
 
-    def scatter(pts, color, marker, label, z=4):
+        apply_style()
+    except Exception:
+        save_fig = None
+
+    fig = plt.figure(figsize=(10.8, 6.2))
+    gs = fig.add_gridspec(2, 2, height_ratios=[3.2, 1.0], hspace=0.35, wspace=0.28)
+    ax_sk = fig.add_subplot(gs[0, 0])
+    ax_in = fig.add_subplot(gs[0, 1])
+    ax_rug = fig.add_subplot(gs[1, :])
+
+    def scatter(ax, pts, color, marker, label, z=4):
         if not pts:
             return
         ax.scatter(
@@ -149,53 +161,62 @@ def fig04_r2_vs_nse() -> Path:
                 textcoords="offset points",
             )
 
-    scatter(bon_pts, "tab:red", "o", "Bonneville skill (ON A/B/C vs CCIW)")
-    scatter(dg_pts, "tab:blue", "s", "DeGray T internal (primary)")
-    scatter(col_pts, "tab:green", "^", "Columbia DO internal (primary)")
+    scatter(ax_sk, bon_pts, "#D55E00", "o", "Bonneville ON A/B/C vs CCIW")
+    scatter(ax_in, dg_pts, "#0072B2", "s", "DeGray T (primary)")
+    scatter(ax_in, col_pts, "#009E73", "^", "Columbia DO (primary)")
 
-    # Literature R² as top rug (NSE not available in audit JSON)
-    y_max = ax.get_ylim()[1] if ax.get_ylim()[1] > 1 else 1.2
-    # set after collecting NSE range
-    all_nse = [p["nse"] for p in bon_pts + dg_pts + col_pts]
-    y_lo = min(all_nse) - 0.4
-    y_hi = max(1.05, max(all_nse) + 0.4)
-    ax.set_ylim(y_lo, y_hi)
+    def finish_axis(ax, pts, title):
+        all_nse = [p["nse"] for p in pts]
+        y_lo = min(all_nse) - 0.4
+        y_hi = max(1.05, max(all_nse) + 0.4)
+        ax.set_ylim(y_lo, y_hi)
+        ax.axhline(0.0, color="k", lw=0.8, ls="--")
+        ax.set_xlabel(r"$R^2$")
+        ax.set_ylabel("NSE")
+        ax.set_title(title, fontsize=9.5)
+        ax.grid(True, alpha=0.3)
+        ax.set_xlim(-0.02, 1.05)
+        ax.legend(loc="lower left", fontsize=7, framealpha=0.92)
 
-    rug_y = y_hi - 0.08 * (y_hi - y_lo)
-
-    def rug(items, color, label, marker="|"):
-        if not items:
-            return
-        xs = [v for v, _ in items]
-        ax.scatter(
-            xs,
-            [rug_y] * len(xs),
-            c=color,
-            marker=marker,
-            s=90,
-            label=label,
-            zorder=5,
-            clip_on=False,
-        )
-
-    rug(lit_skill, "darkorange", "Benicio Table 2 R² (confirmed W2↔obs skill; NSE not in audit)")
-    rug(lit_not, "0.55", "Benicio Table 2 R² (not W2↔obs skill)")
-    rug(lit_unk, "0.75", "Benicio Table 2 R² (skill unknown)")
-
-    ax.axhline(0.0, color="k", lw=0.8, ls="--")
-    ax.set_xlabel("R²")
-    ax.set_ylabel("NSE")
-    ax.set_title(
-        "Fig. 4  R² vs NSE: Bonneville skill, DeGray/Columbia internal,\n"
-        "Benicio et al. Table 2 R² as top rug (no fabricated NSE)"
+    finish_axis(ax_sk, bon_pts, "(a) Observational skill — Bonneville TDG vs CCIW")
+    finish_axis(
+        ax_in,
+        dg_pts + col_pts,
+        "(b) Internal consistency — DeGray T / Columbia DO\n(no independent observations; not field skill)",
     )
-    ax.grid(True, alpha=0.3)
-    ax.legend(loc="lower left", fontsize=7, framealpha=0.92)
-    ax.set_xlim(-0.02, 1.05)
-    fig.tight_layout()
+
+    y_map = {"skill": 2, "other": 1, "unk": 0}
+    for items, ykey, color, lab in (
+        (lit_skill, "skill", "darkorange", "confirmed W2↔obs skill (1)"),
+        (lit_not, "other", "0.45", "confirmed other object (7)"),
+        (lit_unk, "unk", "0.7", "unresolved (4)"),
+    ):
+        if not items:
+            continue
+        xs = [v for v, _ in items]
+        ax_rug.scatter(xs, [y_map[ykey]] * len(xs), c=color, marker="|", s=140, label=lab, zorder=3)
+    ax_rug.set_yticks([0, 1, 2])
+    ax_rug.set_yticklabels(["unresolved", "other object", "W2↔obs skill"], fontsize=8)
+    ax_rug.set_xlim(-0.02, 1.05)
+    ax_rug.set_xlabel(r"Benicio et al. Table 2 $R^2$ (NSE unavailable in audit; not inferred)")
+    ax_rug.set_title(
+        "(c) Literature $R^2$ audit strip — not a pooled skill ranking with panels (a)/(b)",
+        fontsize=9.5,
+    )
+    ax_rug.grid(True, axis="x", alpha=0.3)
+    ax_rug.legend(loc="upper right", fontsize=7, ncol=3, framealpha=0.92)
+
+    fig.suptitle(
+        "Fig. 4  $R^2$–NSE evidence taxonomy: observational skill | internal consistency | literature $R^2$\n"
+        "Panels (a) and (b) have different evaluation objects and must not be pooled as skill",
+        fontsize=10.5,
+    )
     out = FIGURES / "fig04_r2_vs_nse_literature.png"
-    fig.savefig(out, dpi=150)
-    plt.close()
+    if save_fig is not None:
+        save_fig(fig, out)
+    else:
+        fig.savefig(out, dpi=300, bbox_inches="tight")
+        plt.close()
     print(f"wrote {out}")
     return out
 

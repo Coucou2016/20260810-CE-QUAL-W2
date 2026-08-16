@@ -291,7 +291,7 @@ All three station pairs have NSE < −1.48. Ranking by *R*² would select I=49 v
 
 **Figure C2.** Columbia DO scatter and *R*²–NSE (**internal consistency**; not observational skill). Files: `../figures/w1_columbia_DO_scatter.png`, `../figures/w1_columbia_DO_r2_vs_nse.png` (exist).
 
-**Figure 4.** *R*² versus NSE for Bonneville ON A/B/C (**observational skill** vs CCIW), DeGray primary **internal-consistency** pairs, and Columbia primary **internal-consistency** pairs. Benicio et al. Table 2 *R*² values appear as a top rug only (audit has no NSE numbers for those cells; confirmed W2↔obs skill is Lima Neto *R*² = 0.32). Separate DeGray and Columbia panels: Figures D3 and C2. File: `../figures/fig04_r2_vs_nse_literature.png` (exists).
+**Figure 4.** *R*² versus NSE with evidence classes separated: **(a)** Bonneville ON A/B/C versus CCIW (**observational skill**); **(b)** DeGray temperature and Columbia DO primary pairs (**internal consistency only**—no independent observations); **(c)** Benicio et al. Table 2 *R*² as an audit strip (confirmed W2↔obs / other object / unresolved; **NSE was not available in the literature audit and is not inferred**). Panels (a) and (b) have different evaluation objects and must not be interpreted as a pooled skill comparison. File: `../figures/fig04_r2_vs_nse_literature.png` (exists).
 
 **Table 4.** Primary internal-consistency pairs. Kind = `internal_consistency`. Do not quote these NSE/KGE values as calibration skill. <!-- w1_provenance_metrics.json -->
 
@@ -332,7 +332,7 @@ SNP `NV` is a different series. INTER OFF / 20 s: NV = 16803 (7.75% of NIT = 216
 
 Columbia’s smaller scan (official already `NDLT=1`, `DLTINTER=OFF`, DLTMAX 360 s) at 120/360/720 s: negative thickness 0/0/0, add/sub 7/8 at all three. Layer-event counts are insensitive to DLTMAX on this deck. H1 < 0 non-monotonicity is not a cross-case law. Sample size for negative thickness is **one waterbody** (Long Lake).
 
-**Figure 6.** Long Lake negative-thickness counts versus DLTMAX under DLTINTER ON and OFF (**numerical-health evidence**; reporting recommendation only—**not** a universal timestep-stability criterion). File: `../figures/nhr_dltmax_neg_thickness.png` (exists). Companions: `../figures/nhr_dltmax_layers_dltmin.png`, `../figures/nhr_dltmax_heatmap.png` (exist).
+**Figure 6.** Long Lake numerical-health scan. Negative surface-layer-thickness warning counts versus the **DLTMAX schedule knot at JDAY 30**. With `DLTINTER=ON`, this knot is the starting value for interpolation toward the JDAY-40 knot and is **not** the realized timestep or a hard DLTMAX over JDAY 30–40 (e.g. the 20 s knot has TSR-sampled window maximum DLT = 231.096 s). With `DLTINTER=OFF`, the specified values act as stepwise window caps. Counts are warning-line events, not unique model days. Reporting recommendation only—**not** a universal timestep-stability criterion. File: `../figures/nhr_dltmax_neg_thickness.png` (exists). Companions: `../figures/nhr_dltmax_layers_dltmin.png`, `../figures/nhr_dltmax_heatmap.png` (exist).
 
 ### 5.5 Reproducibility audit and run-card implementation
 

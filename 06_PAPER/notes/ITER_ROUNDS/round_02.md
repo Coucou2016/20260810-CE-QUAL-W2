@@ -26,4 +26,5 @@ All five minimal fixes **adopted** after local grep + prior PASS audit. No veto 
 
 ## Git
 
-(filled after push)
+- SHA: `c036526` (push origin/main)
+- Theme B URL: https://chatgpt.com/c/6a819d49-3cd8-83ea-b3c8-289ba7dcf436

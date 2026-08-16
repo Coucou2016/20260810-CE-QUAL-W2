@@ -108,7 +108,10 @@ def plot_scan(payload: dict) -> list[str]:
     for ax, inter, title in zip(
         axes,
         ("ON", "OFF"),
-        ("DLTINTER=ON (official interpolation to 1800 s)", "DLTINTER=OFF (step DLTMAX in window)"),
+        (
+            "DLTINTER=ON: interpolated schedule (toward JDAY-40 1800 s)",
+            "DLTINTER=OFF: stepwise window cap",
+        ),
     ):
         rows = _series(jobs, inter)
         if not rows:
@@ -119,15 +122,31 @@ def plot_scan(payload: dict) -> list[str]:
         colors = ["#c0392b" if abs(x - 100) < 1e-9 else "#2471a3" for x in xs]
         ax.plot(xs, ys, "-o", color="#1f4e79", lw=1.6, ms=7, zorder=2)
         ax.scatter(xs, ys, c=colors, s=55, zorder=3, edgecolors="k", linewidths=0.4)
-        for x, y in zip(xs, ys):
-            ax.annotate(str(y), (x, y), textcoords="offset points", xytext=(0, 8), ha="center", fontsize=9)
-        ax.axvline(100, color="#888", ls="--", lw=0.8, label="official DLTMAX=100 s")
-        ax.set_xlabel("DLTMAX knot at JDAY 30 (s)")
+        for r, x, y in zip(rows, xs, ys):
+            win = (r.get("dlt_trajectory") or {}).get("window") or {}
+            wmax = win.get("dlt_max_s")
+            label = str(y)
+            if wmax is not None:
+                label = f"{y}\n(win max {wmax:.0f}s)"
+            ax.annotate(
+                label,
+                (x, y),
+                textcoords="offset points",
+                xytext=(0, 8),
+                ha="center",
+                fontsize=7,
+            )
+        ax.axvline(100, color="#888", ls="--", lw=0.8, label="official DLTMAX knot=100 s")
+        ax.set_xlabel("DLTMAX schedule knot at JDAY 30 (s)\n≠ realized window Δt when DLTINTER=ON")
         ax.set_title(title, fontsize=10)
         ax.set_xticks(xs)
         ax.grid(True, alpha=0.3)
     axes[0].set_ylabel("Negative surface layer thickness events")
-    fig.suptitle("Long Lake: NHR negative-thickness count vs DLTMAX (JDAY 30–40 window)", fontsize=12)
+    fig.suptitle(
+        "Long Lake: negative-thickness warnings vs JDAY-30 DLTMAX schedule knot\n"
+        "(point labels: TSR-sampled window max DLT; knot ≠ hard window cap under DLTINTER=ON)",
+        fontsize=11,
+    )
     fig.tight_layout()
     p1 = FIG_DIR / "nhr_dltmax_neg_thickness.png"
     fig.savefig(p1, dpi=160)
