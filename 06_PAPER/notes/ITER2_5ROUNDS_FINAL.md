@@ -9,9 +9,9 @@ Public repo: https://github.com/Coucou2016/20260810-CE-QUAL-W2
 |---|---|---|---|---|
 | 2-01 | Paper de-processization | https://chatgpt.com/c/6a81f023-6e24-83ea-b398-fcfacbff3192 | `06_PAPER/notes/chatgpt_briefs/round2_01_brief.md` | `913986f` |
 | 2-02 | GMD Methods voice | same | `round2_02_brief.md` | `55b0637` |
-| 2-03 | Evidence authenticity | same (combined) | `round2_03_brief.md` | (this final) |
-| 2-04 | Captions academicization | same (combined) | `round2_04_brief.md` | (this final) |
-| 2-05 | Submission completeness | same (combined) | `round2_05_brief.md` | (this final) |
+| 2-03 | Evidence authenticity | same (combined) | `round2_03_brief.md` | 1105455 |
+| 2-04 | Captions academicization | same (combined) | `round2_04_brief.md` | 1105455 |
+| 2-05 | Submission completeness | same (combined) | `round2_05_brief.md` | 1105455 |
 
 Raw replies: `round2_01_raw.md`, `round2_02_raw.md`, `round2_03_04_05_raw.md`.  
 Per-round notes: `06_PAPER/notes/ITER_ROUNDS/round2_0{1..5}.md`.
@@ -55,4 +55,4 @@ Local HTML: `06_PAPER/drafts/P1_paper.html` (rebuild via `06_PAPER/analysis/buil
 
 ## Final HEAD SHA
 
-(see commit that adds this file)
+1105455
