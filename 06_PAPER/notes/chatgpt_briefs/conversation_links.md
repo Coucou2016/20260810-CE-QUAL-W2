@@ -59,7 +59,16 @@
 - **URL:** https://chatgpt.com/c/6a8188fb-f1f0-83ea-b44b-cd639d077748
 - **Title (browser):** GMD framework review / GitHub repo review
 - **Mode:** text paste only; **no attachments**; **web search ON**
-- **GitHub read:** Yes (advisor: repository readable; searched github.com + GMD/MDPI sources)
+- **GitHub read:** Yes
 - **Repo:** https://github.com/Coucou2016/20260810-CE-QUAL-W2
-- **Cursor judgment + applied minimal edits:** ../DUAL_AGENT_GITHUB_REVIEW_20260816.md
-- **Local raw:** github_repo_review_raw_20260816.md
+- **Cursor judgment:** `../DUAL_AGENT_GITHUB_REVIEW_20260816.md`
+- **Local raw:** `github_repo_review_raw_20260816.md`
+
+## 2026-08-17 ROUND 2 series (paper maturity)
+
+- **URL:** https://chatgpt.com/c/6a81f023-6e24-83ea-b398-fcfacbff3192
+- **Title:** Web Search and Brief Analysis / ROUND 2-01→05
+- **Mode:** GitHub path/URL only; **no attachments**; web search ON
+- **Briefs:** `round2_01_brief.md` … `round2_05_brief.md`
+- **Final:** `../ITER2_5ROUNDS_FINAL.md`
+
