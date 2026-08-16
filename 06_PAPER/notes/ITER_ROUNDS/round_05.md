@@ -28,4 +28,4 @@ PASS 40/40
 ## Git
 
 - Content SHA: `b847302`
-- Tip SHA (this note): `058a541` then encoding-fix commit below
+- Tip SHA: `77ff9bc`

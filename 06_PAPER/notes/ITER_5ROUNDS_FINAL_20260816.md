@@ -12,7 +12,7 @@ Public repo: https://github.com/Coucou2016/20260810-CE-QUAL-W2
 | 2 | B number consistency | https://chatgpt.com/c/6a819d49-3cd8-83ea-b3c8-289ba7dcf436 | `c036526` |
 | 3 | B figures / NHR | same Theme B chat | `e5cab85` |
 | 4 | B pairing Methods/SI | same Theme B chat | `6821379` |
-| 5 | A submission readiness | Theme A chat (ROUND 5/5) | `b847302` (content); tip after notes `058a541+` |
+| 5 | A submission readiness | Theme A chat (ROUND 5/5) | `b847302` (content); tip `77ff9bc` |
 
 ## Per-round adopt / veto / land
 
