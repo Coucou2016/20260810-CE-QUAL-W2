@@ -1,5 +1,7 @@
 ﻿# CE-QUAL-W2 assessment paper (public code + drafts)
 
+**Public repository:** https://github.com/Coucou2016/20260810-CE-QUAL-W2
+
 Working materials for a **Geoscientific Model Development** *Methods for assessment of models* manuscript on CE-QUAL-W2 evaluation practice: **variable provenance (VPR)**, **control-state outputs**, **numerical health (NHR)**, and **run-cards** (`w2eval`).
 
 This public repository contains **structured scripts, Markdown drafts, analysis JSON, figures, and notes**. It does **not** ship multi-GB model runs, the CE-QUAL-W2 executable, or hourly observation caches. See [`06_PAPER/GITHUB_CONTENTS.md`](06_PAPER/GITHUB_CONTENTS.md).
