@@ -25,4 +25,4 @@ PASS 40/40 (`_audit_p1_numbers_20260816.py`)
 
 ## Git
 
-- SHA: *(filled after push)*
+- SHA: `6821379`

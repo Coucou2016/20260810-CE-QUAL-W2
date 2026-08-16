@@ -13,7 +13,7 @@ Blueprint: P1_MERGED_BLUEPRINT.md. Prior structural draft: P1_GMD_draft_v1.md (r
 
 **Version scope (title-locked):** Primary executable and hydrodynamic integrations use distributed **`w2_v455_ifx.exe` (v4.5.5)**. The demonstration corpus also **inventories** official example folders from **v5.0 beta** (Table 3); we do **not** claim a single-version paper or a cross-release skill comparison.
 
-**Draft status:** v2 merged manuscript (2026-08-16; blueprint-confirm softens + local pre-sub checklist same day). Restructured from v1 per `P1_MERGED_BLUEPRINT.md` (GMD Methods spine + nature-skills discipline; figure inventory unchanged). Not a camera-ready submission. Zenodo archive not yet minted. Out-of-sample NSE was **not** computed.
+**Draft status:** v2 matured through ≥5 Cursor×ChatGPT advisor rounds (2026-08-16). Blueprint + claim–evidence matrix aligned; pairing-tolerance Appendix B added. Not a camera-ready submission. Zenodo archive **待补充** (not minted). Out-of-sample NSE was **not** computed.
 
 ## Unresolved discrepancies
 
@@ -408,7 +408,7 @@ Almeida and Coelho (2025) is both a journal precedent (GMD accepts open, reprodu
 
 Goodness-of-fit values reported for different CE-QUAL-W2 applications should be treated as conditionally comparable: like-for-like comparison requires sufficient information on variable provenance, controller state, and numerical health.
 
-1. **Variable provenance.** Same Bonneville run, same CCIW, *n* = 1614: *R*² stays in 0.5082–0.5512 while NSE is −2.8044, +0.5000, and −2.7516. <!-- w3_tdgta_off_metrics.json --> DeGray and Columbia reproduce the *R*²-blind / αβ-visible pattern as internal consistency, not as field skill. In the 38-paper eutrophication corpus, **VPR-core** is reconstructable in 2/38 studies and a W2 output file or column is named in 0/38. <!-- w5_lit_audit_summary.json -->
+1. **Variable provenance.** Same Bonneville run, same CCIW, *n* = 1614: *R*² stays in 0.5082–0.5512 while NSE is −2.8044, +0.5000, and −2.7516. <!-- w3_tdgta_off_metrics.json --> DeGray and Columbia reproduce the *R*²-blind / αβ-visible pattern as internal consistency, not as field skill. In the 38-paper eutrophication corpus, **VPR-core** is reconstructable in 2/38 studies and a W2 output file or column is named in 0/38; Table-2 object coding of the review’s twelve *R*² entries is **1 confirmed skill / 7 confirmed other objects / 4 unresolved**. <!-- w5_lit_audit_summary.json --> Pairing-tolerance scans of archived ON outputs (Appendix B) keep A/C NSE negative and B NSE positive across the tested grids without changing Table 1 baselines. <!-- pairing_tolerance_scan.json -->
 
 2. **Control-state / gated outputs.** The skill-best Bonneville series lives in `TDGTarget_output.csv` and vanishes when `TDGTA=OFF`. `TDG_output.csv` is a pre-control snapshot (ON/OFF MAE = 0) and is not B. **15.55% (251/1614)** of paired observations exceed the controller cap. <!-- w3_tdgta_off_metrics.json --> DART shows the example observations are intact and that >120% hours remain common in 2016–2025; those years have no model NSE in this study. <!-- w4_cciw_vs_dart.json -->
 
@@ -422,7 +422,9 @@ Until those practices are standard, a table of *R*² values across CE-QUAL-W2 st
 
 ## 8 Code and data availability
 
-GMD requires a **Code and data availability** section before acknowledgements, with persistent public archives (e.g. Zenodo DOI) for the precise code/data versions used in a Methods for assessment paper ([GMD code and data policy](https://www.geoscientific-model-development.net/policies/code_and_data_policy.html); [manuscript types](https://www.geoscientific-model-development.net/about/manuscript_types.html)). **No Zenodo DOI has been minted for this draft.** A structured public GitHub snapshot (scripts, drafts, analysis JSON, figures; **not** the full model-run archive) is at https://github.com/Coucou2016/20260810-CE-QUAL-W2 — GitHub is **not** a substitute for a persistent Zenodo deposit. Paths below are relative to the local project root (to be replaced by an archive tree at submission).
+GMD requires a **Code and data availability** section before acknowledgements, with persistent public archives (e.g. Zenodo DOI) for the precise code/data versions used in a Methods for assessment paper ([GMD code and data policy](https://www.geoscientific-model-development.net/policies/code_and_data_policy.html); [manuscript types](https://www.geoscientific-model-development.net/about/manuscript_types.html)). **No Zenodo DOI has been minted for this draft (待补充).** A structured public GitHub snapshot (scripts, drafts, analysis JSON, figures; **not** the full model-run archive) is at https://github.com/Coucou2016/20260810-CE-QUAL-W2 — GitHub is **not** a substitute for a persistent Zenodo deposit. Paths below are relative to the local project root (to be replaced by an archive tree at submission).
+
+**User steps to mint Zenodo (do not invent a DOI here):** (1) create a GitHub release or zip of the paper-relevant tree at a frozen commit; (2) upload to https://zenodo.org/ and reserve a DOI; (3) replace “待补充” in this section with `https://doi.org/10.5281/zenodo.XXXXXX` and cite that version in the submission cover letter; (4) keep large run archives out of the public deposit unless separately licensed.
 
 **Analysis JSON (authoritative numbers)**
 
