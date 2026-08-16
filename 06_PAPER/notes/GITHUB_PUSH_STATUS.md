@@ -9,7 +9,7 @@
 | Commit SHA | `d8ef2d1a4b36536f4135278b24fcd3becf1b760d` (short: `d8ef2d1`) |
 | Branch | `main` → `origin/main` |
 | Visibility | public |
-| ChatGPT new-chat review | **NOT executed** (this agent session has Shell only; cursor-ide-browser MCP unavailable) |
+| ChatGPT new-chat review | **DONE** — https://chatgpt.com/c/6a8188fb-f1f0-83ea-b44b-cd639d077748 (web search ON; GitHub readable; see `DUAL_AGENT_GITHUB_REVIEW_20260816.md`) |
 
 ## Preconditions checked
 

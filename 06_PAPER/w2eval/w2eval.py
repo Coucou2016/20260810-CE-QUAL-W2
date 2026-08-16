@@ -17,7 +17,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(r"I:\Projects\20260810-CE-QUAL-W2")
+# Resolve repo root from this file location (portable; no machine-specific path).
+ROOT = Path(__file__).resolve().parents[2]
 PAPER = ROOT / "06_PAPER"
 ANALYSIS = PAPER / "analysis"
 DEFAULT_OUT = PAPER / "w2eval" / "cards"
