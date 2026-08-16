@@ -14,3 +14,8 @@ Public repo already had ChatGPT-落地 draft softens (~`efd1737` / `7d9811b`). D
 - Paper HTML: success (~8.75 MB, 25 images)
 - Report: HTML 8,786,851 B; MD 117,367 B; PDF 9,917,580 B; `pdf_ok=True`
 - Includes html in git commit --trailer "Co-authored-by: Cursor <cursoragent@cursor.com>"? **No** (ignored by design)
+
+## Pushed
+- Commit: `de530c587adab751dfe51ef4356b39785585daff` (`de530c5`)
+- Contains html/pdf? **No** (gitignored)
+- URL: https://github.com/Coucou2016/20260810-CE-QUAL-W2/commit/de530c587adab751dfe51ef4356b39785585daff
