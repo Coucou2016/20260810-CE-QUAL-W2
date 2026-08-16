@@ -1,32 +1,14 @@
 <!--
-P1 working draft for Geoscientific Model Development (Methods for assessment of models).
-Not a final submission. Numbers follow analysis JSON / run-cards; notes are narrative only.
-Do not treat DeGray temperature or Columbia DO metrics as skill versus observations.
-Blueprint: P1_MERGED_BLUEPRINT.md. Prior structural draft: P1_GMD_draft_v1.md (retained).
+Manuscript for Geoscientific Model Development (Methods for assessment of models).
+Numbers follow archived analysis records. DeGray temperature and Columbia DO metrics are internal consistency, not skill versus observations.
+Authoring notes and JSON reconciliation live outside this submission-facing draft.
 -->
 
 # Variable provenance, control-state outputs, and numerical health: a methods framework for assessing reported goodness-of-fit in CE-QUAL-W2 v4.5.5 applications (with v5.0 beta example inventory)
 
-**Working Chinese title:** 变量溯源、控制状态输出与数值健康：面向 CE-QUAL-W2 v4.5.5（兼 v5.0 beta 算例清单）拟合优度报告的方法学评估框架
+**Intended article type:** *Geoscientific Model Development* — Methods for assessment of models.
 
-**Target journal:** *Geoscientific Model Development* (**Methods for assessment of models**)
-
-**Version scope (title-locked):** Primary executable and hydrodynamic integrations use distributed **`w2_v455_ifx.exe` (v4.5.5)**. The demonstration corpus also **inventories** official example folders from **v5.0 beta** (Table 3); we do **not** claim a single-version paper or a cross-release skill comparison.
-
-**Draft status:** v2 matured through ≥5 Cursor×ChatGPT advisor rounds (2026-08-16). Blueprint + claim–evidence matrix aligned; pairing-tolerance Appendix B added. Not a camera-ready submission. Zenodo archive **待补充** (not minted). Out-of-sample NSE was **not** computed.
-
-## Unresolved discrepancies
-
-Where notes or the paper plan round or reuse v1 labels, this draft follows the analysis JSON. Items below are the differences a reader will notice if they compare files:
-
-1. `w1_provenance_metrics.json` still labels the Bonneville B series `BON_B_SYSTDG_TDG_TDG` (plan v1 name). `w3_tdgta_off_metrics.json` and the run-cards identify B as the controller file `TDGTarget_output.csv`. **This draft follows W3.**
-2. Notes/plan round the Columbia wet-cell SOD in-band fraction to 89.6% and the below-band fraction to ~10.5%. JSON: `frac_in_0.5_3.0 = 0.8955` (968/1081) and `frac_below_0.5 = 0.1045`. **Draft uses JSON.**
-3. Notes/plan round CCIW versus DART hourly MAE to 0.027% and the |Δ|≤0.051 match rate to 99.5%. JSON: `mae = 0.026537`, `match_rate_abs_le_0p051 = 0.994945`. **Draft uses JSON** (prose may round with a source tag).
-4. Notes/plan write 2011 spill as QGT versus DART *r* = 0.87 and reallocation-day means ~174 → ~39 kcfs (*r* = −0.60). JSON: `r = 0.868638`; realloc means 173.8573 → 39.2308 kcfs; `r = −0.596447`. **Draft uses JSON.**
-5. W3 notes write the pairing window as JDAY 40613–40681. JSON `reachable_range.obs_jday_min/max = 40613.583 / 40681.542`. **Draft uses JSON.**
-6. The plan writes “Bonneville 80+” layer add/subtract events. JSON completed runs: TDGTA ON add = 42, sub = 43; OFF add = 48, sub = 49. **Draft uses JSON.**
-7. W2 notes write SNP violations at DLTINTER OFF / 20 s as “about 8%”. JSON `pct_violations = 7.75`. **Draft uses 7.75%.**
-8. The plan writes 15.6% of paired observations >120%. JSON `frac_obs_gt_120 = 0.1555` (251/1614). **Draft uses 15.55% (251/1614).**
+All hydrodynamic integrations analysed here used CE-QUAL-W2 v4.5.5 (`w2_v455_ifx.exe`). Official v5.0 beta example folders are included only in the example inventory (Table 3); no cross-release skill comparison is made. Out-of-sample NSE was not computed. A persistent Zenodo archive of the paper-relevant materials is pending (**待补充**).
 
 ---
 
@@ -97,7 +79,7 @@ A VPR is the tuple that makes an evaluation object reconstructable by a second a
 
 {output file, column name, segment *I* or mapped station, layer *K* or withdrawal elevation, units, derivation chain, time support (instantaneous / daily mean / snapshot / event log), pairing tolerance}.
 
-Derivation chain distinguishes native TSR, Henry conversion from N2+DO, pre-control SYSTDG writes, and post-control controller writes. Time support and pairing tolerance are part of the object: Bonneville A/C use nearest-neighbour pairing with tolerance 0.05 d; B/S use 0.6 d to match the daily SYSTDG file against hourly CCIW. Changing the tolerance is a different evaluation. To assess sensitivity to the pairing rule, we recomputed metrics from the archived CCIW observations and TDGTA=ON outputs without rerunning W2 (`pairing_tolerance_scan.json`). We scanned nearest-neighbour tolerances of 0.01, 0.02, 0.05, 0.10, and 0.25 d for A/C and 0.25, 0.50, 0.60, 0.75, 1.00, and 1.50 d for B/S. Each tolerance defines a distinct VPR evaluation object; the Table 1 baseline remains A/C = 0.05 d and B/S = 0.6 d. Within this archived-output sensitivity scan, A and C retained negative NSE at every successful tested tolerance, whereas B retained positive NSE; this supports the sign-level qualitative contrast over the tested pairing rules, not robustness to pairing choices in general. C *R*² ranges 0.4502–0.5512 across the A/C grid (more sensitive at tight tolerances) while A is flat at 0.5082; B *R*² ranges 0.5332–0.5417. Paired counts and metrics are listed in Appendix B. The Bonneville multi-channel comparison is therefore an **evaluation-object sensitivity** demonstration (channel identity plus time-support/pairing choices), not a claim that only the output-file label changed while every other pairing choice was held fixed. DeGray and Columbia VPRs are labelled `internal_consistency`; their “reference” series is another model channel, not a field observation.
+Derivation chain distinguishes native TSR, Henry conversion from N2+DO, pre-control SYSTDG writes, and post-control controller writes. Time support and pairing tolerance are part of the object: Bonneville A/C use nearest-neighbour pairing with tolerance 0.05 d; B/S use 0.6 d to match the daily SYSTDG file against hourly CCIW. Changing the tolerance is a different evaluation. To assess sensitivity to the pairing rule, we recomputed metrics from the archived CCIW observations and TDGTA=ON outputs without rerunning W2 (`pairing_tolerance_scan.json`). We scanned nearest-neighbour tolerances of 0.01, 0.02, 0.05, 0.10, and 0.25 d for A/C and 0.25, 0.50, 0.60, 0.75, 1.00, and 1.50 d for B/S. Each tolerance defines a distinct VPR evaluation object; the Table 1 baseline remains A/C = 0.05 d and B/S = 0.6 d. Within this archived-output sensitivity scan, A and C retained negative NSE at every successful tested tolerance, whereas B retained positive NSE; this supports the sign-level qualitative contrast over the tested pairing rules, not robustness to pairing choices in general. C *R*² ranges 0.4502–0.5512 across the A/C grid (more sensitive at tight tolerances) while A is flat at 0.5082; B *R*² ranges 0.5332–0.5417. Paired counts and metrics are listed in Appendix A. The Bonneville multi-channel comparison is therefore an **evaluation-object sensitivity** demonstration (channel identity plus time-support/pairing choices), not a claim that only the output-file label changed while every other pairing choice was held fixed. DeGray and Columbia VPRs are labelled `internal_consistency`; their “reference” series is another model channel, not a field observation.
 
 ### 3.4 Controller-conditional evaluation
 
@@ -105,7 +87,7 @@ When an internal control rule can bind, skill is reported **conditional on contr
 
 ### 3.5 Numerical Health Record (NHR)
 
-An NHR is an **execution-diagnostic record**, not a convergence test or a numerical-stability certificate. It is parsed from `w2.wrn`, `w2.err`, SNP runtime footers, and (when present) TSR DLT samples (`00_INDEX/parse_nhr.py`). Recommended fields for this paper:
+An NHR is an **execution-diagnostic record**, not a convergence test or a numerical-stability certificate. It was derived programmatically from `w2.wrn`, `w2.err`, SNP runtime footers, and, where available, TSR timestep records. Recommended fields for this paper:
 
 - negative surface-thickness count and event list (segment, JDAY, DLT at warning, H1, Z);
 - add-layer and subtract-layer counts (geometry thresholds; not failures by themselves);
@@ -127,21 +109,21 @@ For paired series *s* (simulation or alternate channel) and *o* (observation or 
 \alpha=\sigma_s/\sigma_o,\quad \beta=\mu_s/\mu_o.
 \]
 
-Pearson *r* is invariant under affine maps *s*′ = *a s* + *b* with *a* ≠ 0. Consequently *R*² cannot see α or β. NSE and KGE can. Variable misidentification that stretches or shifts a series while preserving rank correlation is invisible to *R*² by construction. That is the theoretical content of Contribution 1; Sect. 5 supplies the empirical instances. `w2eval` copies these scores from analysis JSON and does not reimplement the formulae.
+Pearson *r* is invariant under affine maps *s*′ = *a s* + *b* with *a* ≠ 0. Consequently *R*² cannot see α or β. NSE and KGE can. Variable misidentification that stretches or shifts a series while preserving rank correlation is invisible to *R*² by construction. That is the theoretical content of Contribution 1; Sect. 5 supplies the empirical instances. `w2eval` copies these scores from the archived analysis records and does not reimplement the formulae.
 
 ### 3.7 w2eval
 
-`w2eval` is a minimum viable run-card generator (`06_PAPER/w2eval/w2eval.py`). It reads cached JSON, not the executable. Each card has three sections: VPR, metrics panel, NHR. Five cards exist: Bonneville TDGTA ON, Bonneville TDGTA OFF, Long Lake DLT/NHR, Columbia DO internal consistency plus SOD magnitude, and DeGray temperature internal consistency (`06_PAPER/w2eval/cards/`). The tool does not launch `w2_v455_ifx.exe`, does not recompute NSE, and does not draw figures. If the JSON and the run directory diverge, the card follows the JSON.
+`w2eval` is a minimal run-card generator that consumes the archived analysis records and writes the VPR, metrics, and NHR components. Five cards are provided for the Bonneville TDGTA ON/OFF cases, Long Lake DLT/NHR, Columbia DO internal consistency plus SOD magnitude, and DeGray temperature internal consistency. The tool neither launches CE-QUAL-W2 nor recomputes the performance metrics; when archived records and a run directory diverge, the card follows the archived analysis.
 
-### 3.8 Literature audit methods (W5)
+### 3.8 Literature-audit methods
 
-Coding definitions follow `w5_lit_audit_summary.json`. Inclusion is the review’s own 38-row Table 1 (refs [12]–[14], [18], [21]–[54]); we do not re-run a bibliographic search. **Full text** covering methods-plus-calibration results was legally obtainable for **9 of 38** papers (23.7%); the remaining 29 were coded from abstracts and the review tables only.
+Coding definitions follow the archived literature-audit summary record (`w5_lit_audit_summary.json` in the accompanying repository). Inclusion is the review’s own 38-row Table 1 (refs [12]–[14], [18], [21]–[54]); we do not re-run a bibliographic search. **Full text** covering methods-plus-calibration results was legally obtainable for **9 of 38** papers (23.7%); the remaining 29 were coded from abstracts and the review tables only.
 
 `vpr_reconstruct = yes` is the literature-audit **VPR-core** criterion: from the paper alone (not supplement), a locatable segment or mapped station, a layer or sampling depth, the constituent identity, and the comparison period. It is **weaker** than the full eight-field VPR in Sect. 3.3. An output filename is never required for `yes` in this corpus because none of the 38 provide one. Every coded field uses a three-way transparency rule: **confirmed present**, **confirmed absent** (positively established from accessible material), and **unknown / not verifiable**. Paywalled or abstract-only rows without a usable statement were coded `unknown` and are **never** converted to confirmed absence (`no`). Secondary citations of MAE/RMSE were flagged and not treated as verified primary text. Control-rule coding is `described` / `not_mentioned` / `NA`; none of the 38 is a TDG/SYSTDG paper, because the review query is eutrophication. Claim 2 is therefore **not** extrapolated from those 38 studies; they support only the weaker statement that run state is rarely declared as an evaluation condition. For the review’s Table 2 (*n* = 12), coding follows `table2_r2_is_w2_obs_sim_skill`: **1** confirmed skill, **7** confirmed other objects, **4** unresolved.
 
-### 3.9 DART comparison methods (W4)
+### 3.9 DART comparison methods
 
-Hourly Cascade Island records were downloaded from Columbia River DART (Columbia Basin Research, University of Washington; source USACE NWD) for 2011–2025 using `sc=1` on the CSV endpoint. Library `Datetime` hour *h* on date *D* maps to DART `Hour = (h+1)×100` (hour-ending Pacific timestamp minus 1 h), verified on 2011-04-01. Exceedance percentages use hours with non-missing dissolved-gas percent as the denominator; CCIW winters are often missing. Out-of-sample NSE is explicitly not computed (`out_of_sample.computed_nse = false`). <!-- w4_cciw_vs_dart.json -->
+Hourly Cascade Island records were downloaded from Columbia River DART (Columbia Basin Research, University of Washington; source USACE NWD) for 2011–2025 using the public CSV endpoint with station code `sc=1`. Library `Datetime` hour *h* on date *D* maps to DART `Hour = (h+1)×100` (hour-ending Pacific timestamp minus 1 h), verified on 2011-04-01. Exceedance percentages use hours with non-missing dissolved-gas percent as the denominator; CCIW winters are often missing. Out-of-sample NSE was not computed. <!-- w4_cciw_vs_dart.json -->
 
 ---
 
@@ -149,15 +131,15 @@ Hourly Cascade Island records were downloaded from Columbia River DART (Columbia
 
 Official CE-QUAL-W2 example decks are used here as a heterogeneous **demonstration corpus** for auditing evaluation provenance and numerical health. They are not a multi-site validation campaign and are not presented as “calibration sites.”
 
-All hydrodynamic integrations used the distributed `w2_v455_ifx.exe`. We did not rerun the model for this manuscript; metrics are recomputed from archived output in `05_REPRO_RUNS/`.
+All hydrodynamic integrations used the distributed `w2_v455_ifx.exe`. Metrics reported here were recomputed from archived model outputs; no new hydrodynamic integrations were performed for the present analysis.
 
-**Bonneville Dam (skill versus observations).** Official SYSTDG example; `TDGTA=ON` in `05_REPRO_RUNS/run_20260814_bonneville/Bonneville_SYSTDG` and `TDGTA=OFF` in `…/run_20260814_bonneville_notarget/…`. Control file `TMSTRT = 40544`, `TMEND = 40909` (Excel serial; JDAY 40544 = 2011-01-01, origin 1899-12-30). <!-- w4_cciw_vs_dart.json --> Both runs reach the end-of-period criterion used by the project runner (`flowbal` last JDAY 40908; OFF `c_wdo` last JDAY 40909) without `w2.err`. Observations are the example file `CCIW_TDG_Temp_2011-2015.csv` (Cascade Island tailwater). Valid CCIW TDG does not cover the calendar year: all 1614 paired hours fall in JDAY 40613.583–40681.542 (about 11 March–18 May 2011). <!-- w3_tdgta_off_metrics.json --> The plan window 40544–40910 is the model window, not the paired evaluation window.
+**Bonneville Dam (skill versus observations).** Official SYSTDG example evaluated under documented `TDGTA=ON` and `TDGTA=OFF` configurations. Control file `TMSTRT = 40544`, `TMEND = 40909` (Excel serial; JDAY 40544 = 2011-01-01, origin 1899-12-30). <!-- w4_cciw_vs_dart.json --> Both integrations reach the prescribed simulation endpoint without a fatal `w2.err`. Observations are the example file `CCIW_TDG_Temp_2011-2015.csv` (Cascade Island tailwater). Valid CCIW TDG does not cover the calendar year: all 1614 paired hours fall in JDAY 40613.583–40681.542 (about 11 March–18 May 2011). <!-- w3_tdgta_off_metrics.json --> The full model period therefore differs from the observation-paired evaluation period reported below.
 
-**DeGray Reservoir (internal consistency, no observations).** `05_REPRO_RUNS/run_20260811_fixed/DeGray Reservoir with sediment diagenesis and vertical algae migration`. JDAY 64.5–358.7. Searches of v4.5.5 and v5.0 beta example folders found no independent temperature or DO observations. Metrics compare output channels on the same run.
+**DeGray Reservoir (internal consistency, no observations).** Official DeGray sediment-diagenesis example; evaluation window JDAY 64.5–358.7. Searches of v4.5.5 and v5.0 beta example folders found no independent temperature or DO observations. Metrics compare output channels on the same run.
 
-**Columbia Slough Estuary (internal consistency, no observations).** Hydrodynamics and DO from `05_REPRO_RUNS/run_20260814_columbia_diag/` with `SED_DIAG=ON`. Official `w2_con.csv` requests sediment diagenesis but the example does not ship `W2_diagenesis.npt`. Parameters were copied from DeGray, with region-2 end segment 31 → 50. That transplant is **not** a Columbia calibration. The series is short: TSR pairing *n* = 116 over JDAY 32–55 (~23 days). A `SED_DIAG=OFF` companion run exists at `run_20260811_fixed`; ON versus OFF DO is a process-switch comparison, not a provenance comparison, and is not used as Contribution 1 evidence.
+**Columbia Slough Estuary (internal consistency, no observations).** Hydrodynamics and DO under `SED_DIAG=ON`. Official `w2_con.csv` requests sediment diagenesis but the example does not ship `W2_diagenesis.npt`. Parameters were copied from DeGray, with region-2 end segment 31 → 50. That transplant is **not** a Columbia calibration. The series is short: TSR pairing *n* = 116 over JDAY 32–55 (~23 days). A `SED_DIAG=OFF` companion integration was also archived; ON versus OFF DO is a process-switch comparison, not a provenance comparison, and is not used as Contribution 1 evidence.
 
-**Long Lake (numerical health, no observations).** Official DLT schedule (`NDLT = 6`, `DLTMIN = 0.1` s, `DLTINTER=ON`). Baseline `run_20260811_fixed/Long Lake` and the DLTMAX scan `run_20260815_ll_dlt_scan/` (day-30 knot 20/50/100/200 s × `DLTINTER` ON/OFF). The distribution omits `HabitatFiles/`; without that directory the habitat output path in `w2_habitat.npt` raises Intel Fortran severe (29). Completed scan jobs all reach JDAY 239.943 with exit 0.
+**Long Lake (numerical health, no observations).** Official DLT schedule (`NDLT = 6`, `DLTMIN = 0.1` s, `DLTINTER=ON`), with a DLTMAX schedule-knot scan at day 30 (20/50/100/200 s × `DLTINTER` ON/OFF). The distribution omits `HabitatFiles/`; without that directory the habitat output path in `w2_habitat.npt` raises Intel Fortran severe (29). Completed scan jobs all reach JDAY 239.943 with exit 0.
 
 ---
 
@@ -174,7 +156,7 @@ Results are organized by methodological finding. Reservoir names identify the de
 
 Table 1 reports four calibers on the TDGTA=ON run and the same four with TDGTA=OFF, all paired to the same CCIW series (*n* = 1614; JDAY 40613.583–40681.542). <!-- w3_tdgta_off_metrics.json --> Observed TDG ranges from 107.7% to 129.1%; 251 of 1614 paired hours (15.55%) exceed 120%.
 
-**Table 1.** Bonneville TDG calibers versus CCIW. Kind = skill versus observations. B is absent when TDGTA=OFF. S is the SYSTDG pre-control snapshot, not a substitute for B. Baseline pairing tolerances: A/C = 0.05 d; B/S = 0.6 d (pairing-tolerance sensitivity in Appendix B). <!-- w3_tdgta_off_metrics.json -->
+**Table 1.** Bonneville TDG calibers versus CCIW. Kind = skill versus observations. B is absent when TDGTA=OFF. S is the SYSTDG pre-control snapshot, not a substitute for B. Baseline pairing tolerances: A/C = 0.05 d; B/S = 0.6 d (pairing-tolerance sensitivity in Appendix A). <!-- w3_tdgta_off_metrics.json -->
 
 | Run | Caliber | File | *R*² | NSE | KGE | *r* | α | β | PBIAS | MAE | Paired sim max |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -197,11 +179,11 @@ Three facts follow from the ON block alone.
 
 Figure 3 decomposes KGE into *r*, α, and β and is the glance test for Contribution 1. Figure 1 overlays the ON/OFF series on CCIW and the controller target band. Figure 2 shows 1:1 scatter.
 
-**Figure 1.** Bonneville TDG time series for calibers A, B, C, and S with `TDGTA` ON and OFF, CCIW observations, and the 120% target cap (**observational skill** versus CCIW; not an internal-consistency panel). Paired evaluation occupies JDAY 40613.583–40681.542 (*n* = 1614), not the full model year. File: `../figures/W3_tdgta_on_off_timeseries.png` (exists).
+**Figure 1.** Bonneville TDG time series for calibers A, B, C, and S with `TDGTA` ON and OFF, CCIW observations, and the 120% target cap (**observational skill** versus CCIW; not an internal-consistency panel). Paired evaluation occupies JDAY 40613.583–40681.542 (*n* = 1614), not the full model year.
 
-**Figure 2.** One-to-one scatter of the same calibers against CCIW (**observational skill**). OLS slopes 1.079 / 0.664 / 1.154 for ON A/B/C. File: `../figures/W3_tdgta_on_off_scatter.png` (exists).
+**Figure 2.** One-to-one scatter of the same calibers against CCIW (**observational skill**). OLS slopes 1.079 / 0.664 / 1.154 for ON A/B/C.
 
-**Figure 3.** KGE decomposition (*r*, α, β) for Bonneville ON/OFF calibers (**observational skill versus CCIW**). Companion **internal-consistency** decompositions (not field skill): DeGray temperature `../figures/w1_degray_T_kge_bars.png`; Columbia DO `../figures/w1_columbia_DO_kge_bars.png` (both exist). Core panel: `../figures/W3_tdgta_kge_decomposition.png` (exists).
+**Figure 3.** KGE decomposition (*r*, α, β) for Bonneville ON/OFF calibers (**observational skill versus CCIW**). Companion **internal-consistency** decompositions (not field skill) for DeGray temperature and Columbia DO are provided with the Supporting Information.
 
 #### 5.1.2 Literature audit (motivation, not a W2 run)
 
@@ -232,25 +214,21 @@ On TDGTA=ON, caliber B is the only series with NSE = +0.500, β = 0.9986, PBIAS 
 
 `TDG_output.csv` is produced by SYSTDG (`INPUT_SYSTDG` opens unit 88888) regardless of TDGTA. Source order in `TDGtarget.f90` / `hydroinout.F90` / `systdg.f90` is: the controller calls `SYSTDG_TDG` **before** reallocating; that first call of the day writes unit 88888 and advances `NXTSPLIT3`; later calls the same day do not rewrite the daily row. Consequently ON and OFF `TDG_output.csv` are identical (365 days, MAE = 0, max |Δ| = 0, raw max 131.7% both). The same file versus `TDGTarget_output.csv` has MAE = 1.7073, max |Δ| = 11.743, raw maxima 131.7% versus 120.1%. Column name `TDG_TDG` is shared; the evaluation object is not.
 
-We therefore write three sentences and only these three:
-
-1. The skill-best, β ≈ 1, 120.1%-capped series exists only in the controller-gated file `TDGTarget_output.csv`. OFF, that file is gone, so a freeze-the-metric / toggle-the-controller experiment cannot be done on path B.
-2. The physical TDG variable is not deleted. SYSTDG still writes a pre-control snapshot to `TDG_output.csv`. That snapshot cannot replace B.
-3. The 120% cap is a controller artefact, not a SYSTDG formula ceiling (hard cap in the metrics JSON: 145%). Observed paired maximum is 129.1%; 15.55% of paired hours exceed 120% and are structurally unreachable on B.
+These results establish three distinctions. The skill-best, β ≈ 1, 120.1%-capped series exists only in the controller-gated file `TDGTarget_output.csv`; when `TDGTA` is off that file is absent, so a freeze-the-metric / toggle-the-controller experiment cannot be performed on path B. Disabling the controller does not remove the physical TDG state, because SYSTDG continues to write the pre-control snapshot to `TDG_output.csv`, which cannot replace B. The 120% bound is a property of the controller pathway rather than a ceiling of the SYSTDG TDG formulation (model hard cap 145%); the observed paired maximum is 129.1%, and 15.55% of paired hours exceed 120% and are structurally unreachable on B.
 
 Turning the controller off does **not** make A a usable forecast: OFF A NSE = −2.3371 (still far below a mean forecast), KGE falls from 0.4089 to 0.1603 because α inflates from 1.513 to 1.791. OFF S NSE = +0.3573, paired max 127.49%, raw max 131.7%: it can exceed 120% but the paired series does not reach observed 129.1%. In-reservoir TSR (C) is almost unaffected (ON versus OFF MAE = 0.0075 on 6211 in-file points). Henry WDO (A) does move (MAE = 0.6951, OFF raw max 129.04%).
 
 #### 5.2.2 DART check, exceedance, and 2011 spill (not out-of-sample NSE)
 
-Library CCIW versus DART hourly TDG, 2011–2015, both valid: *n* = 17805, MAE = 0.026537%, RMSE = 0.04124%, |Δ| ≤ 0.051 match rate = 0.994945. <!-- w4_cciw_vs_dart.json --> Five hours differ by more than 1% (max |Δ| = 1.9), almost all in 2011–2012; 2013–2015 match at 1.0 within 0.05. Verdict recorded in JSON: `library_is_dart_rounded`. We find no evidence that the example observations were materially rewritten.
+Library CCIW versus DART hourly TDG, 2011–2015, both valid: *n* = 17805, MAE = 0.026537%, RMSE = 0.04124%, |Δ| ≤ 0.051 match rate = 0.994945. <!-- w4_cciw_vs_dart.json --> Five hours differ by more than 1% (max |Δ| = 1.9), almost all in 2011–2012; 2013–2015 match at 1.0 within 0.05. The library series is consistent with rounded DART values. We find no evidence that the example observations were materially rewritten.
 
-Among DART hours with non-missing TDG, 14.6842% exceed 120% in 2011–2015 (valid hours *n* = 17924) and 21.2% exceed 120% in 2016–2025 (*n* = 40434). Annual fractions are not a stationary 15%: 2015 has 0% of valid hours >120% (annual max 118.97%); 2017 has 46.9214% (annual max 131.38%). The cap problem does not age out of the record. **These percentages are not forecast skill.** The reproduced model’s `TMEND = 40909` covers about 2011 only. JSON flag: `out_of_sample.computed_nse = false`.
+Among DART hours with non-missing TDG, 14.6842% exceed 120% in 2011–2015 (valid hours *n* = 17924) and 21.2% exceed 120% in 2016–2025 (*n* = 40434). Annual fractions are not a stationary 15%: 2015 has 0% of valid hours >120% (annual max 118.97%); 2017 has 46.9214% (annual max 131.38%). The cap problem does not age out of the record. **These percentages are not forecast skill.** The reproduced model’s `TMEND = 40909` covers about 2011 only; out-of-sample NSE was not computed.
 
 2011 daily spill (365 paired days). Input `QGT` versus DART spill: *r* = 0.868638. Controller (`TDGTarget_output`) versus DART spill: *r* = 0.237349. Controller flag `C = R` on 116 days (U = 0, blank = 249). On reallocation days, mean DART spill is 173.8573 kcfs and mean controller spill is 39.2308 kcfs (*r* = −0.596447). <!-- w4_cciw_vs_dart.json --> The ON run’s low bias and 120% cap are partly the result of operating a different spill programme than 2011 reality, not merely of a better physical TDG closure.
 
-**Figure 5.** Paired-window CCIW TDG histogram (JDAY 40613.583–40681.542, *n* = 1614) with 120% controller-cap line; 251/1614 = 15.55% of hours exceed 120% and are unreachable on gated B. File: `../figures/fig05_tdg_reachable_range.png` (exists). Companion annual exceedance 2011–2025: `../figures/w4_tdg_gt120_annual.png` (exists; **exceedance frequency only—not forecast skill**; model NSE ends near 2011).
+**Figure 5.** Paired-window CCIW TDG histogram (JDAY 40613.583–40681.542, *n* = 1614) with 120% controller-cap line; 251/1614 = 15.55% of hours exceed 120% and are unreachable on gated B. Companion annual exceedance 2011–2025 is shown in the Supporting Information (**exceedance frequency only—not forecast skill**; model NSE ends near 2011).
 
-**Figure 8.** 2011 spill: QGT, TDGTA, and DART, including reallocation days 173.86 → 39.23 kcfs. File: `../figures/w4_spill_tdgta_vs_dart.png` (exists). Companion scatter: `../figures/w4_spill_scatter.png` (exists).
+**Figure 8.** 2011 spill: QGT, TDGTA, and DART, including reallocation days 173.86 → 39.23 kcfs.
 
 Library versus DART identity plots: `../figures/w4_cciw_vs_dart_scatter.png`, `../figures/w4_cciw_vs_dart_timeseries.png` (exist).
 
@@ -268,11 +246,11 @@ Gate 120 m versus surface T2 is *not* a counterexample to write as “gates equa
 
 Parser self-checks: SNP surface versus TSR T2, NSE = 1.0000 at 47 snapshots; PRF segment 26 surface versus TSR segment 31 surface, NSE = 0.9987. Cross-file surface channels agree; the disagreements are layer, outlet, and averaging operator.
 
-**Figure D1.** DeGray surface T2, Tvolavg, WDO, STR, and GATE time series (**internal consistency only**—no field observations). File: `../figures/w1_degray_T_timeseries.png` (exists).
+**Figure D1.** DeGray surface T2, Tvolavg, WDO, STR, and GATE time series (**internal consistency only**—no field observations).
 
-**Figure D2.** DeGray 1:1 channel scatter (**internal consistency**; not observational skill). File: `../figures/w1_degray_T_scatter.png` (exists).
+**Figure D2.** DeGray 1:1 channel scatter (**internal consistency**; not observational skill).
 
-**Figure D3.** DeGray *R*² versus NSE for channel pairs (**internal consistency**). File: `../figures/w1_degray_T_r2_vs_nse.png` (exists).
+**Figure D3.** DeGray *R*² versus NSE for channel pairs (**internal consistency**).
 
 #### 5.3.2 Columbia DO (internal consistency)
 
@@ -287,11 +265,11 @@ No independent observations. TSR segments 45, 49, and 33, `SED_DIAG=ON`, *n* = 1
 
 All three station pairs have NSE < −1.48. Ranking by *R*² would select I=49 versus I=33 as best; that pair still has negative NSE and α = 1.85. On the shallow tidal slough, SNP surface versus bottom NSE = 0.91: **wrong station is more dangerous than wrong layer**. The Columbia *R*² band (0.21–0.65) is wider than Bonneville’s 0.04, as expected for 23 tidal days. Generalization of Contribution 1 rests primarily on DeGray (*n* = 2943) plus Bonneville skill, with Columbia as a station-ambiguity illustration.
 
-**Figure C1.** Columbia TSR DO at I=45/49/33 (**internal consistency only**—no field observations). File: `../figures/w1_columbia_DO_timeseries.png` (exists).
+**Figure C1.** Columbia TSR DO at I=45/49/33 (**internal consistency only**—no field observations).
 
-**Figure C2.** Columbia DO scatter and *R*²–NSE (**internal consistency**; not observational skill). Files: `../figures/w1_columbia_DO_scatter.png`, `../figures/w1_columbia_DO_r2_vs_nse.png` (exist).
+**Figure C2.** Columbia DO scatter and *R*²–NSE (**internal consistency**; not observational skill). Files:,.
 
-**Figure 4.** *R*² versus NSE with evidence classes separated: **(a)** Bonneville ON A/B/C versus CCIW (**observational skill**); **(b)** DeGray temperature and Columbia DO primary pairs (**internal consistency only**—no independent observations); **(c)** Benicio et al. Table 2 *R*² as an audit strip (confirmed W2↔obs / other object / unresolved; **NSE was not available in the literature audit and is not inferred**). Panels (a) and (b) have different evaluation objects and must not be interpreted as a pooled skill comparison. File: `../figures/fig04_r2_vs_nse_literature.png` (exists).
+**Figure 4.** *R*² versus NSE with evidence classes separated: **(a)** Bonneville ON A/B/C versus CCIW (**observational skill**); **(b)** DeGray temperature and Columbia DO primary pairs (**internal consistency only**—no independent observations); **(c)** Benicio et al. Table 2 *R*² as an audit strip (confirmed W2↔obs / other object / unresolved; **NSE was not available in the literature audit and is not inferred**). Panels (a) and (b) have different evaluation objects and must not be interpreted as a pooled skill comparison.
 
 **Table 4.** Primary internal-consistency pairs. Kind = `internal_consistency`. Do not quote these NSE/KGE values as calibration skill. <!-- w1_provenance_metrics.json -->
 
@@ -332,13 +310,13 @@ SNP `NV` is a different series. INTER OFF / 20 s: NV = 16803 (7.75% of NIT = 216
 
 Columbia’s smaller scan (official already `NDLT=1`, `DLTINTER=OFF`, DLTMAX 360 s) at 120/360/720 s: negative thickness 0/0/0, add/sub 7/8 at all three. Layer-event counts are insensitive to DLTMAX on this deck. H1 < 0 non-monotonicity is not a cross-case law. Sample size for negative thickness is **one waterbody** (Long Lake).
 
-**Figure 6.** Long Lake numerical-health scan. Negative surface-layer-thickness warning counts versus the **DLTMAX schedule knot at JDAY 30**. With `DLTINTER=ON`, this knot is the starting value for interpolation toward the JDAY-40 knot and is **not** the realized timestep or a hard DLTMAX over JDAY 30–40 (e.g. the 20 s knot has TSR-sampled window maximum DLT = 231.096 s). With `DLTINTER=OFF`, the specified values act as stepwise window caps. Counts are warning-line events, not unique model days. Reporting recommendation only—**not** a universal timestep-stability criterion. File: `../figures/nhr_dltmax_neg_thickness.png` (exists). Companions: `../figures/nhr_dltmax_layers_dltmin.png`, `../figures/nhr_dltmax_heatmap.png` (exist).
+**Figure 6.** Long Lake numerical-health scan. Negative surface-layer-thickness warning counts versus the **DLTMAX schedule knot at JDAY 30**. With `DLTINTER=ON`, this knot is the starting value for interpolation toward the JDAY-40 knot and is **not** the realized timestep or a hard DLTMAX over JDAY 30–40 (e.g. the 20 s knot has TSR-sampled window maximum DLT = 231.096 s). With `DLTINTER=OFF`, the specified values act as stepwise window caps. Counts are warning-line events, not unique model days. Reporting recommendation only—**not** a universal timestep-stability criterion.
 
 ### 5.5 Reproducibility audit and run-card implementation
 
-**Table 3.** Official example suites inspected in this project (v4.5.5 eight folders + v5.0 beta nine folders = 17). Cells other than Bonneville, Columbia, DeGray, and Long Lake are inventory facts (folder exists), not independent run audits. We do not invent pass/fail for Detroit, Spokane, particle tracking, or cascade cases.
+**Table 3.** Official example suites included in the audit (v4.5.5 eight folders + v5.0 beta nine folders = 17). Execution outcomes are reported only for Bonneville, Columbia, DeGray, and Long Lake; the remaining entries document example availability and were not treated as independent run audits.
 
-| Suite | Example folder | Field observations in the distributed deck | Verified run defect (this project) |
+| Suite | Example folder | Field observations in the distributed deck | Execution status in the present audit |
 |---|---|---|---|
 | v4.5.5 | BonnevilleDam with TDG computed using SYSTDG | CCIW TDG/temperature (shared with v5 Bonneville_TDG) | None required to start; TDGTA default ON |
 | v4.5.5 | Columbia Slough Estuary | None found | `SED_DIAG=ON` without `W2_diagenesis.npt` |
@@ -349,15 +327,15 @@ Columbia’s smaller scan (official already `NDLT=1`, `DLTINTER=OFF`, DLTMAX 360
 | v5.0 beta | Columbia Slough Estuary; DeGray; Long Lake | None found in those folders | Same HabitatFiles / diagenesis issues as v4.5.5 counterparts |
 | v5.0 beta | DetroitReservoir; LMNR_ORGC; MultipleWaterBodyCascade; Particle Tracking in Reservoir; Spokane River | Not used as skill cases here | Not independently completed for this paper |
 
-Project notes further record that upstream Git distribution of Windows executables as Git LFS pointers means a naive clone does not yield a runnable `exe`. We did not re-hash LFS pointers for this draft; the working executable used throughout is the local `02_LIBRARY/07_executables/v4.5.5/w2_v455_ifx.exe`.
+The integrations analysed here used the distributed CE-QUAL-W2 v4.5.5 Windows executable `w2_v455_ifx.exe`. The executable itself is not redistributed with the manuscript repository; model source and executable availability follow the upstream CE-QUAL-W2 distribution.
 
 #### 5.5.1 Transplanted-parameter SOD magnitude check
 
-Columbia SOD, after the DeGray-template transplant, is an order-of-magnitude check against the Almeida and Coelho (2025) zero-order/hybrid scan band 0.5–3.0 g O₂ m⁻² d⁻¹ (a user-specified Portuguese-reservoir experiment, not a global ecological range). Wet cells (SOD > 0), instantaneous, JDAY ≥ 33 (spin-up row at JDAY 32 dropped): *n* = 1081, mean = 0.8762, median = 0.8082, min = 0.1349, max = 1.6761; 968/1081 (0.8955) lie in 0.5–3.0; 0.1045 lie below 0.5; **no point exceeds 3.0**. <!-- w7_columbia_sod_vs_almeida.json --> Last-day wet mean 0.7752 g O₂ m⁻² d⁻¹. CSOD mean 0.8034, NSOD mean 0.0727. This is **not** a Columbia calibration and supports **no** water-quality scenario inference. It only shows that the transplanted file did not produce absurd SOD.
+Columbia SOD, after the DeGray-template transplant, is an order-of-magnitude check against the 0.5–3.0 g O₂ m⁻² d⁻¹ range examined by Almeida and Coelho (2025); that published Portuguese-reservoir experiment is used as a magnitude reference and not as a global ecological range or a Columbia calibration. Wet cells (SOD > 0), instantaneous, JDAY ≥ 33 (spin-up row at JDAY 32 dropped): *n* = 1081, mean = 0.8762, median = 0.8082, min = 0.1349, max = 1.6761; 968/1081 (0.8955) lie in 0.5–3.0; 0.1045 lie below 0.5; **no point exceeds 3.0**. <!-- w7_columbia_sod_vs_almeida.json --> Last-day wet mean 0.7752 g O₂ m⁻² d⁻¹. CSOD mean 0.8034, NSOD mean 0.0727. This is **not** a Columbia calibration and supports **no** water-quality scenario inference. It only shows that the transplanted file did not produce absurd SOD.
 
-**Figure 7.** Example three-block **evaluation record** (VPR, metrics panel, NHR) typeset from `w2eval`; *R*²/NSE/KGE remain **downstream** statistics on the card, not a fourth scientific pillar. File: `../figures/fig07_w2eval_runcard.png` (exists). Sources: `../w2eval/cards/bonneville_tdgta_on.md`, `../w2eval/cards/bonneville_tdgta_on.json`.
+**Figure 7.** Example three-block **evaluation record** (VPR, metrics panel, NHR) typeset from `w2eval`; *R*²/NSE/KGE remain **downstream** statistics on the card, not a fourth scientific pillar../w2eval/cards/bonneville_tdgta_on.md`,.
 
-**Figure S1.** Columbia wet-cell SOD time series with 0.5–3.0 band and Almeida reference means (**transplanted-parameter plausibility check, not a Columbia calibration**). File: `../figures/w7_columbia_sod_timeseries.png` (exists). Histogram: `../figures/w7_columbia_sod_histogram.png` (exists).
+**Figure S1.** Columbia wet-cell SOD time series with 0.5–3.0 band and Almeida reference means (**transplanted-parameter plausibility check, not a Columbia calibration**).
 
 
 ## 6 Discussion
@@ -370,37 +348,21 @@ Let *s* be a simulated (or alternate-channel) series and *s*′ = *a s* + *b* wi
 
 We are not arguing that *R*² is useless. We are arguing that it is not a sufficient statistic for “how well W2 was calibrated”, and that it is the wrong axis for a cross-application ranking. α/β/NSE likewise do not **prove** provenance; they only expose bias and scale mismatches that *R*² can conceal.
 
-### 6.2 Likely referee objections
+### 6.2 Scope and interpretation limits
 
-**“The conclusion is tautological—metrics are always conditional on what was evaluated.”** The general principle is not new. The contribution here is operational for CE-QUAL-W2: three concrete reporting elements (VPR, controller-conditional evaluation, NHR) plus W2-specific examples showing how output provenance, controller gating, and internal numerical events change the interpretation of otherwise conventional GOF numbers. We do not claim novelty for the abstract idea that a metric depends on its evaluation protocol.
+The general principle that metrics depend on the evaluation protocol is not new (Bennett et al., 2013). The contribution here is operational for CE-QUAL-W2: three concrete reporting elements (VPR, controller-conditional evaluation, NHR) plus W2-specific examples showing how output provenance, controller gating, and internal numerical events change the interpretation of otherwise conventional goodness-of-fit numbers.
 
-**“The 17 examples validate the whole three-part framework.”** They do not. The suite exercises different failure modes. Bonneville supplies the principal observation-based skill contrast; DeGray and Columbia are internal-consistency diagnostics only; Long Lake informs NHR existence under exit 0; SOD is a transplanted-parameter plausibility check; Table 3 cells outside those decks are inventory facts, not independent validation runs. Demonstration of reporting ambiguities is the claim; full-framework validation across 17 applications is not.
+The demonstration corpus exercises distinct failure modes rather than validating a single three-part framework across all 17 official examples. Bonneville supplies the principal observation-based skill contrast; DeGray and Columbia provide within-run internal-consistency diagnostics because their official decks do not include the independent observations required for observational-skill evaluation; Long Lake informs NHR existence under exit 0; SOD is a transplanted-parameter plausibility check; Table 3 cells outside those decks are inventory facts, not independent validation runs.
 
-**“Nobody would pick the wrong output.”** Caliber A is the formula in `withdrawal.f90`. Caliber C is a TSR column named TDG. Caliber B is a file that exists only with the controller on. Among 38 eutrophication papers, a W2 output file or column name was confirmed in 0/38, and a paper-level **VPR-core** criterion is met in 2/38; unresolved rows remain `unknown`. The error is undetectable in the literature as published; undetectability is the finding.
+Caliber A follows the Henry conversion in `withdrawal.f90`; caliber C is a TSR column named TDG; caliber B exists only with the controller on. Among 38 eutrophication papers, a W2 output file or column name was confirmed in 0/38, and a paper-level **VPR-core** criterion is met in 2/38; unresolved rows remain `unknown`. Undetectability of output-channel identity in the published literature is itself a finding.
 
-**“DeGray and Columbia NSE values look like skill.”** They are labelled internal consistency in every table, run-card, and caption. Official decks contain no T or DO observations. If a referee wants isomorphic “NSE flips from negative to positive versus field data” at those sites, independent observations must be obtained first (Columbia: ORDEQ/USGS slough DO is a candidate; DeGray: 1980 profiles). Until then we will not write *skill*.
+The Long Lake scan demonstrates that exit status alone can omit relevant numerical-health information. The observed 5/4/1/5 pattern is specific to the tested `DLTINTER=ON` schedule knots and does not establish a general timestep–stability law; `DLTINTER=OFF` yields 0/0/0/0, and Columbia’s smaller DLTMAX scan remains 0/0/0. Disabling `TDGTA` removes the controller-specific output file, not the underlying physical TDG variable; SYSTDG still writes `TDG_output.csv`, and ON ≡ OFF on that file (MAE = 0).
 
-**“5/4/1/5 shows that smaller time steps are less stable.”** Only under official `DLTINTER=ON` knot interpolation at Long Lake. `DLTINTER=OFF` is 0/0/0/0. Columbia 120/360/720 s is 0/0/0. H1 < 0 has been seen at one waterbody. The claim we will defend is: report NHR (negative-thickness count, whether exit 0 hid it, `DLTINTER` state). The claim we will not defend is a cross-case CFL geometry law.
+The study does not estimate out-of-sample NSE for 2016–2025 because the reproduced simulation terminates near 2011; the later observations are used solely to characterize TDG exceedance frequency. Cross-version skill differences between v4.5.5 and v5.0 beta are outside the scope of this study. The fraction of simulated time spent at `DLTMIN` is not quantified because this would require additional source-level instrumentation. Columbia SOD parameters were transplanted from DeGray: 89.55% of wet cells fall in the Almeida and Coelho (2025) 0.5–3.0 g O₂ m⁻² d⁻¹ scan; none exceed 3.0. That is a sanity check on a missing example file, not a site calibration. Full-text availability for 9/38 papers limits precision on `unknown` rows but does not reverse the Table 2 object-mixing result among coded entries. VPR / controller-conditional evaluation / NHR are a **reporting recommendation** motivated by the demonstrated failure modes, not a decree of regulatory sufficiency for every W2 application.
 
-**“Turning TDGTA off deleted TDG.”** It deleted the gated evaluation file. SYSTDG still writes `TDG_output.csv`. ON ≡ OFF on that file (MAE = 0). Use of S as B is a VPR error.
+### 6.3 Relation to Almeida and Coelho (2025)
 
-**“21.2% exceedance in 2016–2025 validates the model.”** It does not. The model was not run after ~2011. The statistic supports reachable-range persistence only.
-
-**“Columbia SOD in the Almeida band means diagenesis is calibrated.”** Parameters were transplanted from DeGray. 89.55% of wet cells fall in a Portuguese-reservoir scan grid; none exceed 3.0 g O₂ m⁻² d⁻¹. That is a sanity check on a missing example file, not a site calibration.
-
-**“Full-text rate 9/38 undermines the audit.”** It limits precision on `unknown` rows. It does not reverse the Table 2 object-mixing result, which is concentrated in papers we did read or that the review text itself reinterprets. Confirmed-absent statements are reserved for codes that were positively established; unknowns stay unknown.
-
-**“You are proposing a mandatory community standard from a small case set.”** No. VPR / controller-conditional evaluation / NHR are a **reporting recommendation** motivated by the demonstrated failure modes. We do not claim regulatory sufficiency or that the present cases prove these fields are complete for every W2 application.
-
-### 6.3 Downgraded and refused claims
-
-Relative to an earlier internal plan (v1) this manuscript **drops** two sentences: that the physical TDG variable is deleted when the controller is off, and that reducing DLTMAX generally increases geometric instability. Out-of-sample NSE is **refused** until `TMEND` is extended and 2016+ meteorology, boundaries, and outflows are prepared. Cross-version (v4.5.5 versus v5.0 beta) skill drift is not reported (optional task T3, not done). Exact fraction of simulated time spent at DLTMIN is not reported (needs instrumentation, T4).
-
-What remains, and what we think is publishable as a GMD **methods-for-assessment** paper, is a **reporting recommendation**: publish VPR, publish controller state and reachable range, publish NHR. Without them, direct comparability of goodness-of-fit cannot generally be established from the metric alone. The present case set motivates those fields; it does not decree a mandatory community standard.
-
-### 6.4 Relation to Almeida and Coelho (2025)
-
-Almeida and Coelho (2025) is both a journal precedent (GMD accepts open, reproducible W2 evaluation) and an independent SOD magnitude anchor. Their article type evaluates sediment-diagenesis **process options**; ours is complementary: an auditable assessment layer **under** such performance statistics (Methods for assessment of models). Our Columbia mean 0.8762 g O₂ m⁻² d⁻¹ lies below their sediment-diagenesis best mean (1.07) and inside their 0.5–3.0 scan. We use that fact only as listed in Sect. 5.5. A future Morris/Sobol study of the transplanted `W2_diagenesis.npt` (plan T6) would be a different paper; 0.876 is not Columbia’s true SOD.
+Almeida and Coelho (2025) is both a journal precedent (GMD accepts open, reproducible W2 evaluation) and an independent SOD magnitude anchor. Their article type evaluates sediment-diagenesis **process options**; ours is complementary: an auditable assessment layer **under** such performance statistics (Methods for assessment of models). Our Columbia mean 0.8762 g O₂ m⁻² d⁻¹ lies below their sediment-diagenesis best mean (1.07) and inside their 0.5–3.0 scan. We use that fact only as listed in Sect. 5.5. A formal sensitivity analysis of the transplanted diagenesis parameters would constitute a separate investigation and is not inferred from the present magnitude check; 0.876 is not Columbia’s true SOD.
 
 ---
 
@@ -408,13 +370,13 @@ Almeida and Coelho (2025) is both a journal precedent (GMD accepts open, reprodu
 
 Goodness-of-fit values reported for different CE-QUAL-W2 applications should be treated as conditionally comparable: like-for-like comparison requires sufficient information on variable provenance, controller state, and numerical health.
 
-1. **Variable provenance.** Same Bonneville run, same CCIW, *n* = 1614: *R*² stays in 0.5082–0.5512 while NSE is −2.8044, +0.5000, and −2.7516. <!-- w3_tdgta_off_metrics.json --> DeGray and Columbia reproduce the *R*²-blind / αβ-visible pattern as internal consistency, not as field skill. In the 38-paper eutrophication corpus, **VPR-core** is reconstructable in 2/38 studies and a W2 output file or column is named in 0/38; Table-2 object coding of the review’s twelve *R*² entries is **1 confirmed skill / 7 confirmed other objects / 4 unresolved**. <!-- w5_lit_audit_summary.json --> Pairing-tolerance scans of archived ON outputs (Appendix B) keep A/C NSE negative and B NSE positive across the tested grids without changing Table 1 baselines. <!-- pairing_tolerance_scan.json -->
+1. **Variable provenance.** Same Bonneville run, same CCIW, *n* = 1614: *R*² stays in 0.5082–0.5512 while NSE is −2.8044, +0.5000, and −2.7516. <!-- w3_tdgta_off_metrics.json --> DeGray and Columbia reproduce the *R*²-blind / αβ-visible pattern as internal consistency, not as field skill. In the 38-paper eutrophication corpus, **VPR-core** is reconstructable in 2/38 studies and a W2 output file or column is named in 0/38; Table-2 object coding of the review’s twelve *R*² entries is **1 confirmed skill / 7 confirmed other objects / 4 unresolved**. <!-- w5_lit_audit_summary.json --> Pairing-tolerance scans of archived ON outputs (Appendix A) keep A/C NSE negative and B NSE positive across the tested grids without changing Table 1 baselines. <!-- pairing_tolerance_scan.json -->
 
 2. **Control-state / gated outputs.** The skill-best Bonneville series lives in `TDGTarget_output.csv` and vanishes when `TDGTA=OFF`. `TDG_output.csv` is a pre-control snapshot (ON/OFF MAE = 0) and is not B. **15.55% (251/1614)** of paired observations exceed the controller cap. <!-- w3_tdgta_off_metrics.json --> DART shows the example observations are intact and that >120% hours remain common in 2016–2025; those years have no model NSE in this study. <!-- w4_cciw_vs_dart.json -->
 
 3. **Numerical health.** Exit 0 can mask H1 < 0 → DLTMIN rollback. Counts 5/4/1/5 are a Long Lake, `DLTINTER=ON` knot result; `DLTINTER=OFF` is all zeros; H1 < 0 was not observed at completed Bonneville, Columbia, or DeGray runs. Report NHR. Do not generalize “smaller Δ*t* is less stable”.
 
-4. **Protocol.** Evaluate W2 with a VPR, a controller-conditional statement including reachable range, and an NHR. `w2eval` writes those three blocks from cached JSON. These are recommended reporting elements, not a claim that the present cases prove regulatory sufficiency for every application. Official examples, as distributed, cannot support a calibration claim except at Bonneville: only that deck includes observations, Long Lake is missing `HabitatFiles/`, and Columbia diagenesis parameters used here are a DeGray transplant.
+4. **Protocol.** Evaluate W2 with a VPR, a controller-conditional statement including reachable range, and an NHR. `w2eval` writes those three blocks from archived analysis records. These are recommended reporting elements, not a claim that the present cases prove regulatory sufficiency for every application. Official examples, as distributed, cannot support a calibration claim except at Bonneville: only that deck includes observations, Long Lake is missing `HabitatFiles/`, and Columbia diagenesis parameters used here are a DeGray transplant.
 
 Until those practices are standard, a table of *R*² values across CE-QUAL-W2 studies should not be assumed to rank like-for-like evaluation objects.
 
@@ -422,84 +384,19 @@ Until those practices are standard, a table of *R*² values across CE-QUAL-W2 st
 
 ## 8 Code and data availability
 
-GMD requires a **Code and data availability** section before acknowledgements, with persistent public archives (e.g. Zenodo DOI) for the precise code/data versions used in a Methods for assessment paper ([GMD code and data policy](https://www.geoscientific-model-development.net/policies/code_and_data_policy.html); [manuscript types](https://www.geoscientific-model-development.net/about/manuscript_types.html)). **No Zenodo DOI has been minted for this draft (待补充).** A structured public GitHub snapshot (scripts, drafts, analysis JSON, figures; **not** the full model-run archive) is at https://github.com/Coucou2016/20260810-CE-QUAL-W2 — GitHub is **not** a substitute for a persistent Zenodo deposit. Paths below are relative to the local project root (to be replaced by an archive tree at submission).
+The public development repository for this study is https://github.com/Coucou2016/20260810-CE-QUAL-W2. Paper-facing analysis records are under `06_PAPER/analysis/`, and the run-card implementation and example cards are under `06_PAPER/w2eval/`. Reproducibility utilities used for the reported analyses are provided under `00_INDEX/`. Archived model outputs used to recompute metrics are retained under `05_REPRO_RUNS/` where redistribution is permitted. Observation extracts used here include the official Bonneville CCIW example series and DART hourly Cascade Island downloads under `06_PAPER/data/dart_cciw/`.
 
-**User steps to mint Zenodo (do not invent a DOI here):** (1) create a GitHub release or zip of the paper-relevant tree at a frozen commit; (2) upload to https://zenodo.org/ and reserve a DOI; (3) replace “待补充” in this section with `https://doi.org/10.5281/zenodo.XXXXXX` and cite that version in the submission cover letter; (4) keep large run archives out of the public deposit unless separately licensed.
+A frozen persistent archive of the paper-relevant code and data is pending. Zenodo DOI: **待补充**. GitHub alone is not a substitute for a persistent archive under the GMD code and data policy (https://www.geoscientific-model-development.net/policies/code_and_data_policy.html).
 
-**Analysis JSON (authoritative numbers)**
-
-- `06_PAPER/analysis/w3_tdgta_off_metrics.json` — Bonneville ON/OFF A/B/C/S
-- `06_PAPER/analysis/w1_provenance_metrics.json` — DeGray T and Columbia DO internal consistency
-- `06_PAPER/analysis/w4_cciw_vs_dart.json` — DART download, CCIW identity, exceedance, 2011 spill
-- `06_PAPER/analysis/w5_lit_audit_summary.json` and `06_PAPER/analysis/w5_lit_audit.csv` — 38-paper audit
-- `06_PAPER/analysis/w7_columbia_sod_vs_almeida.json` — SOD magnitude
-- `06_PAPER/analysis/nhr_dlt_scan.json` — Long Lake × Columbia DLT scans
-- `06_PAPER/analysis/nhr_existing_runs.json` — NHR for archived runs
-- `06_PAPER/analysis/pairing_tolerance_scan.json` — Bonneville A/B/C/S pairing-tolerance scan (no W2 rerun)
-
-**Run-cards**
-
-- `06_PAPER/w2eval/w2eval.py`
-- `06_PAPER/w2eval/cards/*.md` and `*.json`
-
-**Scripts (recompute from existing output; do not require a new W2 integration)**
-
-- `00_INDEX/eval_w3_tdgta_off.py`, `00_INDEX/eval_bonneville_tailwater.py`, `00_INDEX/eval_systdg_tdg.py`
-- `00_INDEX/parse_nhr.py`, `00_INDEX/download_dart_cciw.py`
-- `06_PAPER/analysis/w1_w7_provenance.py`
-- `06_PAPER/analysis/pairing_tolerance_scan.py` — recompute pairing-tolerance scan from archived CCIW + ON outputs
-
-**Archived W2 output**
-
-- `05_REPRO_RUNS/run_20260814_bonneville/` and `run_20260814_bonneville_notarget/`
-- `05_REPRO_RUNS/run_20260811_fixed/` (DeGray, Long Lake, Columbia SED_DIAG OFF)
-- `05_REPRO_RUNS/run_20260814_columbia_diag/`
-- `05_REPRO_RUNS/run_20260815_ll_dlt_scan/` and `run_20260815_columbia_dlt_scan/`
-
-**Observations**
-
-- Example CCIW: `02_LIBRARY/06_examples/v5.0_beta/Bonneville_TDG/CCIW_TDG_Temp_2011-2015.csv`
-- DART hours: `06_PAPER/data/dart_cciw/cciw_hourly_YYYY.csv` (2011–2025)
-
-**Source (v4.5 tree used for line citations)**
-
-- `02_LIBRARY/05_source/github_v4.5/model/w2_model_source/` (`w2_4_win.f90`, `layeraddsub.F90`, `update.F90`, `TDGtarget.f90`, `systdg.f90`, `withdrawal.f90`, `endsimulation.F90`)
-
-**Executable used**
-
-- `02_LIBRARY/07_executables/v4.5.5/w2_v455_ifx.exe`
+The CE-QUAL-W2 executable is not redistributed in this repository and should be obtained from the upstream CE-QUAL-W2 distribution. Any artefacts that cannot be redistributed will be identified with their access source and restriction in the archived release. Line citations to model source (`w2_4_win.f90`, `layeraddsub.F90`, `update.F90`, `TDGtarget.f90`, `systdg.f90`, `withdrawal.f90`, `endsimulation.F90`) refer to the v4.5 source tree used for this study.
 
 DART data citation: Columbia River DART, Columbia Basin Research, University of Washington, Hourly Water Quality Measurements, https://cbr.washington.edu/dart/query/wqm_hourly (downloaded 2026-08-15). Almeida and Coelho (2025) reproduction package: https://doi.org/10.5281/zenodo.15775127.
 
 ---
 
-## Appendix A: Figure file map
+## Appendix A: Pairing-tolerance scan (no W2 rerun)
 
-Paths relative to `06_PAPER/drafts/`. Full inventory: `P1_figure_inventory.md`. SciencePlots redraw 2026-08-16; filenames unchanged.
-
-| Paper figure | Path | Status |
-|---|---|---|
-| Fig. 1 TDG time series | `../figures/W3_tdgta_on_off_timeseries.png` | exists |
-| Fig. 2 TDG 1:1 | `../figures/W3_tdgta_on_off_scatter.png` | exists |
-| Fig. 3 KGE bars (Bonneville) | `../figures/W3_tdgta_kge_decomposition.png` | exists |
-| Fig. 3b DeGray KGE | `../figures/w1_degray_T_kge_bars.png` | exists |
-| Fig. 3c Columbia KGE | `../figures/w1_columbia_DO_kge_bars.png` | exists |
-| Fig. 4 combined *R*²–NSE + literature rug | `../figures/fig04_r2_vs_nse_literature.png` | exists |
-| Fig. 5 reachable-range histogram | `../figures/fig05_tdg_reachable_range.png` | exists |
-| Fig. 5 companion (annual >120%) | `../figures/w4_tdg_gt120_annual.png` | exists |
-| Fig. 6 NHR scan | `../figures/nhr_dltmax_neg_thickness.png` | exists |
-| Fig. 7 run-card graphic | `../figures/fig07_w2eval_runcard.png` | exists |
-| Fig. 8 2011 spill | `../figures/w4_spill_tdgta_vs_dart.png` | exists |
-| DeGray T panels | `../figures/w1_degray_T_*.png` | exist |
-| Columbia DO panels | `../figures/w1_columbia_DO_*.png` | exist |
-| Columbia SOD | `../figures/w7_columbia_sod_*.png` | exist |
-| W4 library/DART companions | `../figures/w4_cciw_vs_dart_*.png`, `w4_spill_scatter.png`, `w4_tdg_annual_max.png` | exist |
-
----
-
-## Appendix B: Pairing-tolerance scan (no W2 rerun)
-
-Nearest-neighbour pairing of archived CCIW observations to TDGTA=ON Bonneville outputs. Each row is a distinct VPR evaluation object. Baseline rows match Table 1. Source: `06_PAPER/analysis/pairing_tolerance_scan.json`.
+Nearest-neighbour pairing of archived CCIW observations to TDGTA=ON Bonneville outputs. Each row is a distinct VPR evaluation object. Baseline rows match Table 1. Source analysis record: `pairing_tolerance_scan.json` in the accompanying repository.
 
 | Caliber | Tolerance (d) | *n* | *R*² | NSE | Baseline | Status |
 |---|---:|---:|---:|---:|:---:|---|
@@ -528,17 +425,17 @@ Nearest-neighbour pairing of archived CCIW observations to TDGTA=ON Bonneville o
 
 ---
 
-## Author contributions (stub — CRediT-style)
+## Author contributions (CRediT-style; names 待补充)
 
 - Conceptualization; Methodology; Software; Formal analysis; Investigation; Data curation; Writing — original draft; Writing — review & editing: project authors (to be named).
 - Resources (model code and example decks): Cole, Wells, and the CE-QUAL-W2 community.
 - Resources (observations): USACE NWD via DART and the official Bonneville example.
 
-## Competing interests (stub)
+## Competing interests
 
 The authors declare that they have no conflict of interest.
 
-## Acknowledgements (stub)
+## Acknowledgements
 
 CE-QUAL-W2 example decks and source are distributed by ERDC / Portland State University. DART is operated by Columbia Basin Research, University of Washington.
 
