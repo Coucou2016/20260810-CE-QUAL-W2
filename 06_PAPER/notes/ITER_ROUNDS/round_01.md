@@ -34,4 +34,5 @@
 
 ## Git
 
-(commit SHA filled after push)
+- SHA: `8a0142410af58bb4cb4ea61daecab67c480578f9` (short `8a01424`)
+- Push: yes → origin/main

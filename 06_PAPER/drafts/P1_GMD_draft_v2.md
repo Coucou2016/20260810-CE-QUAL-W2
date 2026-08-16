@@ -36,7 +36,7 @@ In CE-QUAL-W2 evaluation practice, the interpretation and cross-study portabilit
 
 We reproduce official example applications and show three independent reasons why reported goodness-of-fit should be interpreted conditionally. First, the same run emits several numerical series that a practitioner might call “TDG”, “temperature”, or “dissolved oxygen”. At Bonneville Dam, pairing the same Cascade Island (CCIW) observations (*n* = 1614; JDAY 40613.583–40681.542) to three output channels yields *R*² in a narrow band 0.508–0.551 while Nash–Sutcliffe efficiency (NSE) is −2.804, +0.500, and −2.752. <!-- w3_tdgta_off_metrics.json --> The highest *R*² is among the worst NSE values. The same *R*²-blind, α/β-visible pattern appears as **internal consistency** (not skill versus observations) for DeGray surface temperature versus volume-average temperature (*R*² = 0.9027, NSE = −0.5855, *n* = 2943) and for Columbia Slough dissolved oxygen at three TSR segments (highest-*R*² pair *R*² = 0.6505, NSE = −1.4821, *n* = 116). <!-- w1_provenance_metrics.json --> Pearson *R*² is invariant to affine rescaling of the simulated series and therefore cannot detect the variance-ratio (α) and bias-ratio (β) errors that variable misidentification produces.
 
-Second, the skill-best Bonneville series (NSE = +0.500, β = 0.9986, paired maximum 120.09%) exists only in the controller-gated file `TDGTarget_output.csv`. Turning `TDGTA` off removes that file; it does **not** delete the physical TDG variable. SYSTDG still writes `TDG_TDG` to `TDG_output.csv`, a pre-control snapshot that is bit-identical on and off (MAE = 0) and cannot substitute for the gated series (daily MAE = 1.7073 versus the gated file; raw maxima 131.7% versus 120.1%). <!-- w3_tdgta_off_metrics.json --> Independent DART hours confirm that the example observations were not rewritten (hourly *n* = 17805, MAE = 0.026537%). Out-of-sample NSE for 2016–2025 was **not** computed: the reproduced model ends near 2011 (TMEND = 40909). Those later years are used only for exceedance frequency (21.2% of valid hours >120%) and for the 2011 spill comparison.
+Second, the skill-best Bonneville series (NSE = +0.500, β = 0.9986, paired maximum 120.09%) exists only in the controller-gated file `TDGTarget_output.csv`. Turning `TDGTA` off removes that file; it does **not** delete the physical TDG variable. SYSTDG still writes `TDG_TDG` to `TDG_output.csv`, a pre-control snapshot that is bit-identical on and off (MAE = 0) and cannot substitute for the gated series (daily MAE = 1.7073 versus the gated file; raw maxima 131.7% versus 120.1%). <!-- w3_tdgta_off_metrics.json --> Independent DART hours confirm that the example observations were not rewritten (hourly *n* = 17805, MAE = 0.026537%). <!-- w4_cciw_vs_dart.json --> Out-of-sample NSE for 2016–2025 was **not** computed: the reproduced model ends near 2011 (TMEND = 40909). Those later years are used only for exceedance frequency (21.2% of valid hours >120%) and for the 2011 spill comparison.
 
 Third, a run can return exit code 0 and “Normal termination” while `w2.wrn` records negative surface-layer thickness (H1 < 0) rollbacks to DLTMIN. That geometry failure is visible only at Long Lake among completed runs. Under official `DLTINTER=ON`, negative-thickness counts at the day-30 DLTMAX knot 20/50/100/200 s are 5/4/1/5; under `DLTINTER=OFF` they are 0/0/0/0. <!-- nhr_dlt_scan.json --> The main claim is that a Numerical Health Record (NHR) should accompany reported evaluation statistics, not that smaller time steps are less stable.
 
@@ -205,12 +205,12 @@ Figure 3 decomposes KGE into *r*, α, and β and is the glance test for Contribu
 
 #### 5.1.2 Literature audit (motivation, not a W2 run)
 
-**Table 2.** Structured audit of Benicio et al. (2024) Table 1 (*n* = 38). <!-- w5_lit_audit_summary.json -->
+**Table 2.** Structured audit of Benicio et al. (2024) Table 1 (*n* = 38). Review Table 2 *R*² object coding: **1** confirmed W2↔observation skill / **7** confirmed other objects / **4** unresolved. <!-- w5_lit_audit_summary.json -->
 
 | Item | Count | Share |
 |---|---:|---:|
 | Full text (methods + calibration results) | 9 | 23.7% |
-| VPR reconstructable from the paper (`yes`) | 2 | 5.3% |
+| VPR-core reconstructable from the paper (`yes`) | 2 | 5.3% |
 | VPR `partial` / `no` / `unknown` | 6 / 11 / 19 | 15.8% / 28.9% / 50.0% |
 | W2 output file or column named | 0 | 0% |
 | Location to segment *I* or mapped station | 3 | 7.9% |
@@ -218,7 +218,7 @@ Figure 3 decomposes KGE into *r*, α, and β and is the glance test for Contribu
 | Reports NSE / KGE / PBIAS | 2 / 0 / 1 | 5.3% / 0% / 2.6% |
 | *R*² without NSE | 9 of 11 | 81.8% of *R*² papers |
 | Open W2 inputs or code | 1 | 2.6% |
-| Table 2 *R*² confirmed as W2↔observation skill | 1 of 12 | Lima Neto 0.32 |
+| Table 2 *R*² object coding (W2↔obs skill / other / unresolved) | 1 / 7 / 4 of 12 | Lima Neto 0.32 is the confirmed skill cell |
 
 The two reconstructable papers are Lima Neto (2023) (outlet = segment 31, second cell; inlet = segment 2, second cell; still no output filename) and Chang et al. (2015) (Station 1 → segment 3 surface; not in the review’s Table 2). We do **not** claim that all 38 papers report only *R*²: 11 report *R*², and many others report AME/RMSE or nothing that we could verify. We do **not** treat Table 2’s 0.32 and 0.977 as a skill gap: 0.977 is a load-reduction response curve.
 
@@ -408,9 +408,9 @@ Almeida and Coelho (2025) is both a journal precedent (GMD accepts open, reprodu
 
 Goodness-of-fit values reported for different CE-QUAL-W2 applications should be treated as conditionally comparable: like-for-like comparison requires sufficient information on variable provenance, controller state, and numerical health.
 
-1. **Variable provenance.** Same Bonneville run, same CCIW, *n* = 1614: *R*² stays in 0.508–0.551 while NSE is −2.804, +0.500, and −2.752. DeGray and Columbia reproduce the *R*²-blind / αβ-visible pattern as internal consistency, not as field skill. In the 38-paper eutrophication corpus, VPR is reconstructable 2/38 times and output files are named 0/38 times.
+1. **Variable provenance.** Same Bonneville run, same CCIW, *n* = 1614: *R*² stays in 0.5082–0.5512 while NSE is −2.8044, +0.5000, and −2.7516. <!-- w3_tdgta_off_metrics.json --> DeGray and Columbia reproduce the *R*²-blind / αβ-visible pattern as internal consistency, not as field skill. In the 38-paper eutrophication corpus, **VPR-core** is reconstructable in 2/38 studies and a W2 output file or column is named in 0/38. <!-- w5_lit_audit_summary.json -->
 
-2. **Control-state / gated outputs.** The skill-best Bonneville series lives in `TDGTarget_output.csv` and vanishes when `TDGTA=OFF`. `TDG_output.csv` is a pre-control snapshot (ON/OFF MAE = 0) and is not B. Fifteen point five five percent of paired observations exceed the controller cap. DART shows the example observations are intact and that >120% hours remain common in 2016–2025; those years have no model NSE in this study.
+2. **Control-state / gated outputs.** The skill-best Bonneville series lives in `TDGTarget_output.csv` and vanishes when `TDGTA=OFF`. `TDG_output.csv` is a pre-control snapshot (ON/OFF MAE = 0) and is not B. **15.55% (251/1614)** of paired observations exceed the controller cap. <!-- w3_tdgta_off_metrics.json --> DART shows the example observations are intact and that >120% hours remain common in 2016–2025; those years have no model NSE in this study. <!-- w4_cciw_vs_dart.json -->
 
 3. **Numerical health.** Exit 0 can mask H1 < 0 → DLTMIN rollback. Counts 5/4/1/5 are a Long Lake, `DLTINTER=ON` knot result; `DLTINTER=OFF` is all zeros; H1 < 0 was not observed at completed Bonneville, Columbia, or DeGray runs. Report NHR. Do not generalize “smaller Δ*t* is less stable”.
 
