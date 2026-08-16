@@ -76,7 +76,7 @@ v2 inserts **§2 Evidence taxonomy**, merges model architecture into **§3 Asses
 ## 3. Contribution sentences (use in Intro; falsifiable)
 
 ### C1 — Variable provenance (VPR)
-> We show that goodness-of-fit statistics can depend materially on the provenance of the evaluated output variable, and introduce a **variable provenance record (VPR)** that makes the model quantity, extraction route, processing state, and evaluation target explicit.
+> We show that goodness-of-fit statistics can depend materially on the provenance of the evaluated output variable, and define and operationalize a CE-QUAL-W2-specific eight-field **variable provenance record (VPR)** as the variable-provenance component of the evaluation record.
 
 Bonneville lock: same CCIW pairs (*n* = 1614), *R*² ≈ 0.51–0.55 while NSE spans −2.80 to +0.50 (`w3_tdgta_off_metrics.json`).
 
@@ -84,17 +84,17 @@ Bonneville lock: same CCIW pairs (*n* = 1614), *R*² ≈ 0.51–0.55 while NSE s
 **Write:** “*R*² and NSE describe different properties; neither resolves ambiguity in *which* model quantity entered the metric.”
 
 ### C2 — Control-state / gated outputs
-> We identify **control-state dependence** as a source of **evaluation ambiguity** when diagnostic or controller-specific outputs are conditionally available, and incorporate control-state provenance into the evaluation record.
+> We demonstrate, for CE-QUAL-W2 controller-gated outputs, how **control state** changes the available evaluation object and therefore require control-state provenance in the evaluation record.
 
 Operational lock: OFF removes `TDGTarget_output.csv`; SYSTDG `TDG_output.csv` remains pre-control snapshot (ON/OFF MAE = 0). Avoid “confounder” if it invites causal over-reading.
 
 ### C3 — Numerical health record (NHR)
-> We propose that statistical performance be accompanied by a **numerical health record (NHR)** documenting execution diagnostics relevant to interpretation of **reported evaluation statistics**.
+> For CE-QUAL-W2 evaluations, we define a **numerical health record (NHR)** component that records execution diagnostics relevant to interpretation of **reported evaluation statistics**.
 
 Bound: reporting recommendation, not universal timestep law; clearest H1<0 evidence at Long Lake (ON 5/4/1/5; OFF 0/0/0/0).
 
 ### C4 — Run-cards / demo corpus
-> We implement these reporting elements in reproducible **run-cards** and use official CE-QUAL-W2 examples as a heterogeneous **demonstration corpus** for auditing evaluation provenance and numerical-health information.
+> We implement the CE-QUAL-W2 evaluation-object contract as reproducible **run-cards** and demonstrate it on heterogeneous official examples used as a **demonstration corpus**.
 
 **Forbidden:** “first reproducible validation of CE-QUAL-W2.”
 
