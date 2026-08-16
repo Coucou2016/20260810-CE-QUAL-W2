@@ -106,7 +106,7 @@ Cursor = sole executor + independent verifier. ChatGPT = advisor with **web sear
 |---|---|
 | Remote | `origin` → https://github.com/Coucou2016/20260810-CE-QUAL-W2.git |
 | Branch | `main` |
-| Status goal | Follow-up commit pushed with Phase-4 text fixes (see `git log -1` after push) |
+| Status goal | Follow-up commit **`efd1737`** pushed with Phase-4 text fixes |
 | Forbidden actions | No deploy, no production changes, no secrets, no ZIP to ChatGPT |
 
 ---
