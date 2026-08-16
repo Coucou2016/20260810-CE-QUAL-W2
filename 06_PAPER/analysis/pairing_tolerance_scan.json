@@ -1,0 +1,358 @@
+{
+  "generated": "2026-08-16T19:32:53",
+  "run": "I:\\Projects\\20260810-CE-QUAL-W2\\05_REPRO_RUNS\\run_20260814_bonneville\\Bonneville_SYSTDG",
+  "baseline_tol_d": {
+    "A": 0.05,
+    "C": 0.05,
+    "B": 0.6,
+    "S": 0.6
+  },
+  "note": "Nearest-neighbor pairing; changing tol is a different VPR evaluation object. No W2 rerun.",
+  "calibers": {
+    "A": {
+      "grid_d": [
+        0.01,
+        0.02,
+        0.05,
+        0.1,
+        0.25
+      ],
+      "rows": [
+        {
+          "tol_d": 0.01,
+          "n": 1614,
+          "r2": 0.5082,
+          "nse": -2.8044,
+          "kge": 0.4089,
+          "mae": 6.8783,
+          "sim_max": 121.29,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.02,
+          "n": 1614,
+          "r2": 0.5082,
+          "nse": -2.8044,
+          "kge": 0.4089,
+          "mae": 6.8783,
+          "sim_max": 121.29,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.05,
+          "n": 1614,
+          "r2": 0.5082,
+          "nse": -2.8044,
+          "kge": 0.4089,
+          "mae": 6.8783,
+          "sim_max": 121.29,
+          "is_baseline": true,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.1,
+          "n": 1614,
+          "r2": 0.5082,
+          "nse": -2.8044,
+          "kge": 0.4089,
+          "mae": 6.8783,
+          "sim_max": 121.29,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.25,
+          "n": 1614,
+          "r2": 0.5082,
+          "nse": -2.8044,
+          "kge": 0.4089,
+          "mae": 6.8783,
+          "sim_max": 121.29,
+          "is_baseline": false,
+          "status": "ok"
+        }
+      ]
+    },
+    "C": {
+      "grid_d": [
+        0.01,
+        0.02,
+        0.05,
+        0.1,
+        0.25
+      ],
+      "rows": [
+        {
+          "tol_d": 0.01,
+          "n": 1157,
+          "r2": 0.4502,
+          "nse": -3.8076,
+          "kge": 0.4011,
+          "mae": 7.9871,
+          "sim_max": 118.14,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.02,
+          "n": 1614,
+          "r2": 0.5512,
+          "nse": -2.7516,
+          "kge": 0.3854,
+          "mae": 6.8404,
+          "sim_max": 123.4,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.05,
+          "n": 1614,
+          "r2": 0.5512,
+          "nse": -2.7516,
+          "kge": 0.3854,
+          "mae": 6.8404,
+          "sim_max": 123.4,
+          "is_baseline": true,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.1,
+          "n": 1614,
+          "r2": 0.5512,
+          "nse": -2.7516,
+          "kge": 0.3854,
+          "mae": 6.8404,
+          "sim_max": 123.4,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.25,
+          "n": 1614,
+          "r2": 0.5512,
+          "nse": -2.7516,
+          "kge": 0.3854,
+          "mae": 6.8404,
+          "sim_max": 123.4,
+          "is_baseline": false,
+          "status": "ok"
+        }
+      ]
+    },
+    "B": {
+      "grid_d": [
+        0.25,
+        0.5,
+        0.6,
+        0.75,
+        1.0,
+        1.5
+      ],
+      "rows": [
+        {
+          "tol_d": 0.25,
+          "n": 875,
+          "r2": 0.5417,
+          "nse": 0.5211,
+          "kge": 0.7094,
+          "mae": 2.2899,
+          "sim_max": 120.09,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.5,
+          "n": 1614,
+          "r2": 0.5332,
+          "nse": 0.5,
+          "kge": 0.7152,
+          "mae": 2.1957,
+          "sim_max": 120.09,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.6,
+          "n": 1614,
+          "r2": 0.5332,
+          "nse": 0.5,
+          "kge": 0.7152,
+          "mae": 2.1957,
+          "sim_max": 120.09,
+          "is_baseline": true,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.75,
+          "n": 1614,
+          "r2": 0.5332,
+          "nse": 0.5,
+          "kge": 0.7152,
+          "mae": 2.1957,
+          "sim_max": 120.09,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 1.0,
+          "n": 1614,
+          "r2": 0.5332,
+          "nse": 0.5,
+          "kge": 0.7152,
+          "mae": 2.1957,
+          "sim_max": 120.09,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 1.5,
+          "n": 1614,
+          "r2": 0.5332,
+          "nse": 0.5,
+          "kge": 0.7152,
+          "mae": 2.1957,
+          "sim_max": 120.09,
+          "is_baseline": false,
+          "status": "ok"
+        }
+      ]
+    },
+    "S": {
+      "grid_d": [
+        0.25,
+        0.5,
+        0.6,
+        0.75,
+        1.0,
+        1.5
+      ],
+      "rows": [
+        {
+          "tol_d": 0.25,
+          "n": 875,
+          "r2": 0.5689,
+          "nse": 0.3924,
+          "kge": 0.7283,
+          "mae": 2.8171,
+          "sim_max": 126.59,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.5,
+          "n": 1614,
+          "r2": 0.5614,
+          "nse": 0.3573,
+          "kge": 0.7057,
+          "mae": 2.7463,
+          "sim_max": 127.49,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.6,
+          "n": 1614,
+          "r2": 0.5614,
+          "nse": 0.3573,
+          "kge": 0.7057,
+          "mae": 2.7463,
+          "sim_max": 127.49,
+          "is_baseline": true,
+          "status": "ok"
+        },
+        {
+          "tol_d": 0.75,
+          "n": 1614,
+          "r2": 0.5614,
+          "nse": 0.3573,
+          "kge": 0.7057,
+          "mae": 2.7463,
+          "sim_max": 127.49,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 1.0,
+          "n": 1614,
+          "r2": 0.5614,
+          "nse": 0.3573,
+          "kge": 0.7057,
+          "mae": 2.7463,
+          "sim_max": 127.49,
+          "is_baseline": false,
+          "status": "ok"
+        },
+        {
+          "tol_d": 1.5,
+          "n": 1614,
+          "r2": 0.5614,
+          "nse": 0.3573,
+          "kge": 0.7057,
+          "mae": 2.7463,
+          "sim_max": 127.49,
+          "is_baseline": false,
+          "status": "ok"
+        }
+      ]
+    }
+  },
+  "stability_summary": {
+    "A": {
+      "baseline": {
+        "tol_d": 0.05,
+        "n": 1614,
+        "r2": 0.5082,
+        "nse": -2.8044,
+        "kge": 0.4089,
+        "mae": 6.8783,
+        "sim_max": 121.29
+      },
+      "n_scan_ok": 5,
+      "r2_min": 0.5082,
+      "r2_max": 0.5082,
+      "nse_sign_set": [
+        -1
+      ],
+      "nse_sign_stable": true
+    },
+    "B": {
+      "baseline": {
+        "tol_d": 0.6,
+        "n": 1614,
+        "r2": 0.5332,
+        "nse": 0.5,
+        "kge": 0.7152,
+        "mae": 2.1957,
+        "sim_max": 120.09
+      },
+      "n_scan_ok": 6,
+      "r2_min": 0.5332,
+      "r2_max": 0.5417,
+      "nse_sign_set": [
+        1
+      ],
+      "nse_sign_stable": true
+    },
+    "C": {
+      "baseline": {
+        "tol_d": 0.05,
+        "n": 1614,
+        "r2": 0.5512,
+        "nse": -2.7516,
+        "kge": 0.3854,
+        "mae": 6.8404,
+        "sim_max": 123.4
+      },
+      "n_scan_ok": 5,
+      "r2_min": 0.4502,
+      "r2_max": 0.5512,
+      "nse_sign_set": [
+        -1
+      ],
+      "nse_sign_stable": true
+    }
+  },
+  "claim_safe_sentence": "Across the scanned pairing tolerances, Bonneville ON A/B/C retain the paper's qualitative pattern (A and C negative NSE; B positive NSE near +0.5) at the baseline tolerances used in Table 1; changing tol changes n and is a different evaluation object."
+}

@@ -97,7 +97,7 @@ A VPR is the tuple that makes an evaluation object reconstructable by a second a
 
 {output file, column name, segment *I* or mapped station, layer *K* or withdrawal elevation, units, derivation chain, time support (instantaneous / daily mean / snapshot / event log), pairing tolerance}.
 
-Derivation chain distinguishes native TSR, Henry conversion from N2+DO, pre-control SYSTDG writes, and post-control controller writes. Time support and pairing tolerance are part of the object: Bonneville A/C use nearest-neighbour pairing with tolerance 0.05 d; B/S use 0.6 d to match the daily SYSTDG file against hourly CCIW. Changing the tolerance is a different evaluation. The Bonneville multi-channel comparison is therefore an **evaluation-object sensitivity** demonstration (channel identity plus time-support/pairing choices), not a claim that only the output-file label changed while every other pairing choice was held fixed. DeGray and Columbia VPRs are labelled `internal_consistency`; their “reference” series is another model channel, not a field observation.
+Derivation chain distinguishes native TSR, Henry conversion from N2+DO, pre-control SYSTDG writes, and post-control controller writes. Time support and pairing tolerance are part of the object: Bonneville A/C use nearest-neighbour pairing with tolerance 0.05 d; B/S use 0.6 d to match the daily SYSTDG file against hourly CCIW. Changing the tolerance is a different evaluation. To assess sensitivity to the pairing rule, we recomputed metrics from the archived CCIW observations and TDGTA=ON outputs without rerunning W2 (`pairing_tolerance_scan.json`). We scanned nearest-neighbour tolerances of 0.01, 0.02, 0.05, 0.10, and 0.25 d for A/C and 0.25, 0.50, 0.60, 0.75, 1.00, and 1.50 d for B/S. Each tolerance defines a distinct VPR evaluation object; the Table 1 baseline remains A/C = 0.05 d and B/S = 0.6 d. Within this archived-output sensitivity scan, A and C retained negative NSE at every successful tested tolerance, whereas B retained positive NSE; this supports the sign-level qualitative contrast over the tested pairing rules, not robustness to pairing choices in general. C *R*² ranges 0.4502–0.5512 across the A/C grid (more sensitive at tight tolerances) while A is flat at 0.5082; B *R*² ranges 0.5332–0.5417. Paired counts and metrics are listed in Appendix B. The Bonneville multi-channel comparison is therefore an **evaluation-object sensitivity** demonstration (channel identity plus time-support/pairing choices), not a claim that only the output-file label changed while every other pairing choice was held fixed. DeGray and Columbia VPRs are labelled `internal_consistency`; their “reference” series is another model channel, not a field observation.
 
 ### 3.4 Controller-conditional evaluation
 
@@ -174,7 +174,7 @@ Results are organized by methodological finding. Reservoir names identify the de
 
 Table 1 reports four calibers on the TDGTA=ON run and the same four with TDGTA=OFF, all paired to the same CCIW series (*n* = 1614; JDAY 40613.583–40681.542). <!-- w3_tdgta_off_metrics.json --> Observed TDG ranges from 107.7% to 129.1%; 251 of 1614 paired hours (15.55%) exceed 120%.
 
-**Table 1.** Bonneville TDG calibers versus CCIW. Kind = skill versus observations. B is absent when TDGTA=OFF. S is the SYSTDG pre-control snapshot, not a substitute for B. <!-- w3_tdgta_off_metrics.json -->
+**Table 1.** Bonneville TDG calibers versus CCIW. Kind = skill versus observations. B is absent when TDGTA=OFF. S is the SYSTDG pre-control snapshot, not a substitute for B. Baseline pairing tolerances: A/C = 0.05 d; B/S = 0.6 d (pairing-tolerance sensitivity in Appendix B). <!-- w3_tdgta_off_metrics.json -->
 
 | Run | Caliber | File | *R*² | NSE | KGE | *r* | α | β | PBIAS | MAE | Paired sim max |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -433,6 +433,7 @@ GMD requires a **Code and data availability** section before acknowledgements, w
 - `06_PAPER/analysis/w7_columbia_sod_vs_almeida.json` — SOD magnitude
 - `06_PAPER/analysis/nhr_dlt_scan.json` — Long Lake × Columbia DLT scans
 - `06_PAPER/analysis/nhr_existing_runs.json` — NHR for archived runs
+- `06_PAPER/analysis/pairing_tolerance_scan.json` — Bonneville A/B/C/S pairing-tolerance scan (no W2 rerun)
 
 **Run-cards**
 
@@ -444,6 +445,7 @@ GMD requires a **Code and data availability** section before acknowledgements, w
 - `00_INDEX/eval_w3_tdgta_off.py`, `00_INDEX/eval_bonneville_tailwater.py`, `00_INDEX/eval_systdg_tdg.py`
 - `00_INDEX/parse_nhr.py`, `00_INDEX/download_dart_cciw.py`
 - `06_PAPER/analysis/w1_w7_provenance.py`
+- `06_PAPER/analysis/pairing_tolerance_scan.py` — recompute pairing-tolerance scan from archived CCIW + ON outputs
 
 **Archived W2 output**
 
@@ -490,6 +492,37 @@ Paths relative to `06_PAPER/drafts/`. Full inventory: `P1_figure_inventory.md`. 
 | Columbia DO panels | `../figures/w1_columbia_DO_*.png` | exist |
 | Columbia SOD | `../figures/w7_columbia_sod_*.png` | exist |
 | W4 library/DART companions | `../figures/w4_cciw_vs_dart_*.png`, `w4_spill_scatter.png`, `w4_tdg_annual_max.png` | exist |
+
+---
+
+## Appendix B: Pairing-tolerance scan (no W2 rerun)
+
+Nearest-neighbour pairing of archived CCIW observations to TDGTA=ON Bonneville outputs. Each row is a distinct VPR evaluation object. Baseline rows match Table 1. Source: `06_PAPER/analysis/pairing_tolerance_scan.json`.
+
+| Caliber | Tolerance (d) | *n* | *R*² | NSE | Baseline | Status |
+|---|---:|---:|---:|---:|:---:|---|
+| A | 0.01 | 1614 | 0.5082 | −2.8044 |  | ok |
+| A | 0.02 | 1614 | 0.5082 | −2.8044 |  | ok |
+| A | 0.05 | 1614 | 0.5082 | −2.8044 | yes | ok |
+| A | 0.10 | 1614 | 0.5082 | −2.8044 |  | ok |
+| A | 0.25 | 1614 | 0.5082 | −2.8044 |  | ok |
+| C | 0.01 | 1157 | 0.4502 | −3.8076 |  | ok |
+| C | 0.02 | 1614 | 0.5512 | −2.7516 |  | ok |
+| C | 0.05 | 1614 | 0.5512 | −2.7516 | yes | ok |
+| C | 0.10 | 1614 | 0.5512 | −2.7516 |  | ok |
+| C | 0.25 | 1614 | 0.5512 | −2.7516 |  | ok |
+| B | 0.25 | 875 | 0.5417 | +0.5211 |  | ok |
+| B | 0.50 | 1614 | 0.5332 | +0.5000 |  | ok |
+| B | 0.60 | 1614 | 0.5332 | +0.5000 | yes | ok |
+| B | 0.75 | 1614 | 0.5332 | +0.5000 |  | ok |
+| B | 1.00 | 1614 | 0.5332 | +0.5000 |  | ok |
+| B | 1.50 | 1614 | 0.5332 | +0.5000 |  | ok |
+| S | 0.25 | 875 | 0.5689 | +0.3924 |  | ok |
+| S | 0.50 | 1614 | 0.5614 | +0.3573 |  | ok |
+| S | 0.60 | 1614 | 0.5614 | +0.3573 | yes | ok |
+| S | 0.75 | 1614 | 0.5614 | +0.3573 |  | ok |
+| S | 1.00 | 1614 | 0.5614 | +0.3573 |  | ok |
+| S | 1.50 | 1614 | 0.5614 | +0.3573 |  | ok |
 
 ---
 
